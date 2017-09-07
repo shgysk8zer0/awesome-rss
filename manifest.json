@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "awesome-rss",
+  "version": "1.0",
+  "description": "Puts an RSS/Atom subscribe button back in URL bar",
+  "homepage_url": "https://github.com/shgysk8zer0/awesome-rss",
+  "icons": {
+    "48": "icons/rss.svg"
+  },
+
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ],
+
+  "page_action": {
+    "default_icon": "icons/rss.svg",
+    "default_title": "Subscribe"
+  },
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["document.js"]
+  }]
+
+}

@@ -1,0 +1,16 @@
+language: php
+php:
+  - '5.5'
+  - '5.6'
+env:
+  global:
+    - MIN_PHP_VERSION="5.5"
+    - AUTOLOAD_DIR="classes"
+    - AUTOLOAD_EXTS=".php"
+    - AUTOLOAD_FUNC="spl_autoload"
+    - AUTOLOAD_SCRIPT="./autoloader.php"
+    - COMPONENTS_DIR="components"
+    - CONFIG_DIR="config"
+before_script:
+  npm install
+script: npm run test

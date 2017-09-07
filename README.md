@@ -6,7 +6,7 @@ Puts an RSS/Atom subscribe button back in URL bar ![icon](./icons/rss-dark.svg)
 [![license](https://img.shields.io/github/license/shgysk8zer0/awesome-rss.svg)](./LICENSE)
 [![Build Status](https://travis-ci.org/shgysk8zer0/awesome-rss.svg)](https://travis-ci.org/shgysk8zer0/awesome-rss)
 [![GitHub release](https://img.shields.io/github/release/shgysk8zer0/awesome-rss.svg)](https://github.com/shgysk8zer0/awesome-rss/releases)
-[![GitHub issues](https://img.shields.io/github/issues/shgysk8zer0/awesome-rss/shields.svg)](https://github.com/shgysk8zer0/awesome-rss/issues)
+[![GitHub issues](https://img.shields.io/github/issues/shgysk8zer0/awesome-rss.svg)](https://github.com/shgysk8zer0/awesome-rss/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/shgysk8zer0/awesome-rss.svg)](https://github.com/shgysk8zer0/awesome-rss/pulls)
 
 [![Mozilla Add-on](https://img.shields.io/amo/v/awesome-rss.svg)](https://addons.mozilla.org/en-US/firefox/addon/awesome-rss/)

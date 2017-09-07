@@ -8,7 +8,7 @@
         "sourceType": "module",
         "ecmaVersion": 2017
     },
-    "plugins": ["async-await", "babel"],
+    "plugins": ["async-await"],
     "rules": {
         "indent": [
             2,

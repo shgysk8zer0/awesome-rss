@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "awesome-rss",
+  "name": "Awesome RSS",
   "developer": {
     "name": "Chris Zuber",
     "url": "https://chriszuber.com"
@@ -14,11 +14,6 @@
     "48": "icons/rss-dark.svg",
     "96": "icons/rss-dark.svg"
   },
-  "theme_icons": [{
-    "dark": "icons/rss.svg",
-    "light": "icons/rss-dark.svg",
-    "size": 48
-  }],
   "permissions": [
     "activeTab",
     "tabs"

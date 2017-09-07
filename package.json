@@ -1,0 +1,40 @@
+{
+  "name": "awesome-rss",
+  "version": "0.0.1",
+  "description": "Puts an RSS/Atom subscribe button back in URL bar",
+  "keywords": [
+    "WebExtension",
+    "Firefox",
+    "RSS",
+    "Subscribe"
+  ],
+  "author": {
+    "name": "Chris Zuber",
+    "email": "chris@chriszuber.com",
+    "url": "https://chriszuber.com"
+  },
+  "contributors": [],
+  "homepage": "https://chriszuber.com/",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shgysk8zer0/awesome-rss"
+  },
+  "bugs": {
+    "url": "https://github.com/shgysk8zer0/awesome-rss/issues"
+  },
+  "engines": {
+    "npm": ">=3.10"
+  },
+  "devDependencies": {
+    "eslint": "^4.6.1",
+    "eslint-plugin-async-await": "0.0.0",
+    "web-ext": "^2.0.0"
+  },
+  "scripts": {
+    "lint:js": "eslint .",
+    "lint:ext": "web-ext lint",
+    "build": "web-ext build -i .git/ screenshot.png node_modules/ docs/ -o",
+    "test": "npm run lint:js && npm run lint:ext && npm build"
+  }
+}

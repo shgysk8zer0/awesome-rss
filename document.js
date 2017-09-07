@@ -1,12 +1,12 @@
-browser.runtime.onMessage.addListener(msg => {
+browser.runtime.onMessage.addListener(tab => {
 	const LINK_TYPES = ['application/rss+xml', 'application/atom+xml'];
-	const QUERY = 'link[rel="alternate"]';
+	const QUERY = 'link[rel="alternate"][type]';
 	const links = Array.from(document.querySelectorAll(QUERY));
-	console.log(msg);
-	console.info(links);
-	browser.runtime.sendMessage(links.filter(link => {
+
+	tab.links = links.filter(link => {
 		return LINK_TYPES.includes(link.type);
 	}).map(link => {
 		return {type: link.type, href: link.href};
-	}));
+	});
+	browser.runtime.sendMessage(tab);
 });

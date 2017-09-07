@@ -1,6 +1,7 @@
 # Awesome RSS
 Puts an RSS/Atom subscribe button back in URL bar ![icon](./icons/rss-dark.svg)
 - - -
+![screenshot](./screenshot.png)
 
 [![license](https://img.shields.io/github/license/shgysk8zer0/awesome-rss.svg)](./LICENSE)
 [![Build Status](https://travis-ci.org/shgysk8zer0/awesome-rss.svg)](https://travis-ci.org/shgysk8zer0/awesome-rss)
@@ -24,7 +25,6 @@ Puts an RSS/Atom subscribe button back in URL bar ![icon](./icons/rss-dark.svg)
 [![Twitter Follow](https://img.shields.io/twitter/follow/shgysk8zer0.svg?style=social&label=Follow)](https://twitter.com/shgysk8zer0)
 [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=shgysk8zer0%2Fawesome-rss%3A%20Puts%20an%20RSS%2FAtom%20subscribe%20button%20back%20in%20URL%20bar&url=https%3A%2F%2Fgithub.com%2Fshgysk8zer0%2Fawesome-rss&original_referer=)
 
-![screenshot](./screenshot.png)
 
 ## Quick Links
 - [Contributing](./docs/CONTRIBUTING.md)

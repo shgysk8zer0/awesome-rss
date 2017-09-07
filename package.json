@@ -35,6 +35,6 @@
     "lint:js": "eslint .",
     "lint:ext": "web-ext lint",
     "build": "web-ext build -i .git/ screenshot.png node_modules/ docs/ -o",
-    "test": "npm run lint:js && npm run lint:ext"
+    "test": "npm run lint:js && npm run lint:ext && npm build"
   }
 }

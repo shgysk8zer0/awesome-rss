@@ -1,4 +1,6 @@
 # Awesome RSS
+
+[![Join the chat at https://gitter.im/awesome-rss/Lobby](https://badges.gitter.im/awesome-rss/Lobby.svg)](https://gitter.im/awesome-rss/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Puts an RSS/Atom subscribe button back in URL bar ![icon](./icons/rss-dark.svg)
 - - -
 ![screenshot](./screenshot.png)

@@ -1,4 +1,4 @@
-browser.runtime.onMessage.addListener(tab => {
+function messageHandler(tab) {
 	const LINK_TYPES = ['application/rss+xml', 'application/atom+xml'];
 	const QUERY = 'link[rel="alternate"][type]';
 	const links = Array.from(document.querySelectorAll(QUERY));
@@ -9,4 +9,17 @@ browser.runtime.onMessage.addListener(tab => {
 		return {type: link.type, href: link.href};
 	});
 	browser.runtime.sendMessage(tab);
-});
+}
+
+function pingExt() {
+	browser.runtime.sendMessage('ready');
+	document.removeEventListener('DOMContentLoaded', pingExt);
+}
+
+browser.runtime.onMessage.addListener(messageHandler);
+
+if (document.readyState === 'complete') {
+	pingExt();
+} else {
+	document.addEventListener('DOMContentLoaded', pingExt);
+}

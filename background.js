@@ -1,14 +1,23 @@
 const TABS = {};
+
 function scanPage(tab) {
-	browser.runtime.onMessage.addListener(messageHandler);
-	browser.tabs.sendMessage(tab.id, {id: tab.id, title: tab.title, url: tab.url});
+	if (typeof tab === 'number') {
+		browser.tabs.get(tab).then(scanPage);
+	} else if (tab.status === 'complete') {
+		browser.tabs.sendMessage(tab.id, {id: tab.id, title: tab.title, url: tab.url});
+	}
 }
 
-function messageHandler(tab) {
-	TABS[tab.id] = tab;
-	if (tab.links.length !== 0) {
-		browser.pageAction.show(tab.id);
-		browser.pageAction.onClicked.addListener(clickHandler);
+function messageHandler(msg) {
+	if (msg === 'ready') {
+		browser.tabs.query({active: true}).then(tabs => {
+			tabs.forEach(scanPage);
+		}).catch(console.error);
+	} else if (typeof msg === 'object') {
+		if (msg.links.length !== 0) {
+			browser.pageAction.show(msg.id);
+			browser.pageAction.onClicked.addListener(clickHandler);
+		}
 	}
 }
 
@@ -18,19 +27,10 @@ function clickHandler(tab) {
 	});
 }
 
-function updateHandler(tabId) {
-	browser.tabs.get(tabId).then(tab => {
-		if (tab.status === 'complete') {
-			scanPage(tab);
-		}
-	});
-}
-
 function removeHandler(tabId) {
 	delete TABS[tabId];
 }
 
-// browser.tabs.onCreated.addListener(console.log);
-// browser.tabs.onActivated.addListener(scanPage);
-browser.tabs.onUpdated.addListener(updateHandler);
-browser.tabs.onDetached.addListener(removeHandler);
+browser.runtime.onMessage.addListener(messageHandler);
+browser.tabs.onUpdated.addListener(scanPage);
+browser.tabs.onRemoved.addListener(removeHandler);

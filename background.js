@@ -4,7 +4,11 @@ function scanPage(tab) {
 	if (typeof tab === 'number') {
 		browser.tabs.get(tab).then(scanPage);
 	} else if (tab.status === 'complete') {
-		browser.tabs.sendMessage(tab.id, {id: tab.id, title: tab.title, url: tab.url});
+		browser.tabs.sendMessage(tab.id, {
+			id: tab.id,
+			title: tab.title,
+			url: tab.url
+		});
 	}
 }
 
@@ -15,6 +19,7 @@ function messageHandler(msg) {
 		}).catch(console.error);
 	} else if (typeof msg === 'object') {
 		if (msg.links.length !== 0) {
+			TABS[msg.id] = msg;
 			browser.pageAction.show(msg.id);
 			browser.pageAction.onClicked.addListener(clickHandler);
 		}

@@ -5,7 +5,7 @@
     "name": "Chris Zuber",
     "url": "https://chriszuber.com"
   },
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Puts an RSS/Atom subscribe button back in URL bar",
   "homepage_url": "https://github.com/shgysk8zer0/awesome-rss",
   "icons": {

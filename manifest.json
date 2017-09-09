@@ -5,21 +5,18 @@
     "name": "Chris Zuber",
     "url": "https://chriszuber.com"
   },
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Puts an RSS/Atom subscribe button back in URL bar",
   "homepage_url": "https://github.com/shgysk8zer0/awesome-rss",
   "icons": {
-    "16": "icons/rss-dark.svg",
-    "24": "icons/rss-dark.svg",
-    "48": "icons/rss-dark.svg",
-    "96": "icons/rss-dark.svg"
+    "48": "icons/subscribe-16.svg"
   },
   "permissions": [
     "activeTab",
     "tabs"
   ],
   "page_action": {
-    "default_icon": "icons/rss-dark.svg",
+    "default_icon": "icons/subscribe-16.svg",
     "default_title": "Subscribe",
     "browser_style": true
   },

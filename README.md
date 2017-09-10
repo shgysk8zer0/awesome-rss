@@ -34,13 +34,32 @@ Puts an RSS/Atom subscribe button ![icon](./icons/subscribe-16.svg) back in URL 
 - [Code of Conduct](./docs/CODE_OF_CONDUCT.md)
 - [GitHub](https://github.com/shgysk8zer0/awesome-rss)
 
-> A long time ago (*especially in Internet time*), Firefox used to have an icon
-> that showed up in the Awesome Bar when a website had RSS or Atom feeds
-> available for subscribing. This add-on replaces the icon, so you don't have
-> to add a button that will be constantly visible and taking up space. It will
-> only be visible when there is a feed to subscribe to.
+A long time ago (*especially in Internet time*), Firefox used to have an icon
+that showed up in the Awesome Bar when a website had RSS or Atom feeds
+available for subscribing. This add-on replaces the icon, so you don't have
+to add a button that will be constantly visible and taking up space. It will
+only be visible when there is a feed to subscribe to.
 
-## Donate via..
+> RSS is a way to consume a LOT of information very quickly, and STORE it in nice
+> categories if you miss it. So I can catch up with a small blog's output at the
+> end of the week and, if I so choose, read EVERY article easily in one sitting.
+> You think on Friday I'm gonna go browse that same site's Twitter feed on their
+> page (digging through all the messy @ replies) and see what they did that week?!
+> Or go to their Facebook page that is littered with contests? No way dude, I'm
+> too busy for that!
+>
+> I feel like small blogs cut their own throat by taking away the RSS capability.
+> I give this analogy a lot, but social media outlets are INFO COLANDERS! 5% of
+> your followers will see anything you post, and that's probably only within 20
+> minutes of posting. That's the way it is and it's gonna only get worse. Apart
+> from email lists, RSS is the best way you can collect stuff across the internet
+> to read quickly, and I am so irritated when that choice is taken from me.
+>
+> */rant*
+>
+> [**- Felicia Day**](https://plus.google.com/+FeliciaDay/posts/DsSLwxjojmj)
+
+## Donate via...
 
 **Bitcoin**
 

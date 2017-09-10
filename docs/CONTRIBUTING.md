@@ -43,3 +43,4 @@ configured, which may be run using `npm run $script`.
 
 ## Dev dependencies
 - [ESLint](http://eslint.org/)
+- [web-ext](https://www.npmjs.com/package/web-ext)

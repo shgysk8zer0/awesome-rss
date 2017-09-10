@@ -1,7 +1,7 @@
 # Awesome RSS
 
 - - -
-Puts an RSS/Atom subscribe button back in URL bar ![icon](./icons/rss-dark.svg)
+Puts an RSS/Atom subscribe button ![icon](./icons/subscribe-16.svg) back in URL bar
 
 ![screenshot](./screenshot.png)
 
@@ -33,5 +33,11 @@ Puts an RSS/Atom subscribe button back in URL bar ![icon](./icons/rss-dark.svg)
 - [Contributing](./docs/CONTRIBUTING.md)
 - [Code of Conduct](./docs/CODE_OF_CONDUCT.md)
 - [GitHub](https://github.com/shgysk8zer0/awesome-rss)
-- [Issues](https://github.com/shgysk8zer0/awesome-rss/issues)
-- [Firefox Add-on](https://addons.mozilla.org/en-US/firefox/addon/awesome-rss/)
+
+> A long time ago (*especially in Internet time*), Firefox used to have an icon
+> that showed up in the Awesome Bar when a website had RSS or Atom feeds
+> available for subscribing. This add-on replaces the icon, so you don't have
+> to add a button that will be constantly visible and taking up space. It will.
+> only be visible when there is a feed to subscribe to.
+
+[![bitcoin:1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8](./img/bitcoin.svg)](bitcoin:1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8)

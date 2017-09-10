@@ -14,7 +14,7 @@ Puts an RSS/Atom subscribe button ![icon](./icons/subscribe-16.svg) back in URL 
 
 [![Mozilla Add-on](https://img.shields.io/amo/v/awesome-rss.svg)](https://addons.mozilla.org/en-US/firefox/addon/awesome-rss/)
 [![Mozilla Add-on](https://img.shields.io/amo/users/awesome-rss.svg)](https://addons.mozilla.org/en-US/firefox/addon/awesome-rss/)
-[![Mozilla Add-on](https://img.shields.io/amo/stars/awesome-rss.svg)](https://addons.mozilla.org/en-US/firefox/addon/awesome-rss/)
+[![Mozilla Add-on](https://img.shields.io/amo/stars/awesome-rss.svg)](https://addons.mozilla.org/en-US/firefox/addon/awesome-rss/reviews/)
 
 <!--
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/nimelepbpejjlbmoobocpfnjhihnpked.svg)]()

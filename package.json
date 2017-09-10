@@ -34,7 +34,11 @@
   "scripts": {
     "lint:js": "eslint .",
     "lint:ext": "web-ext lint",
-    "build": "web-ext build -i .git/ screenshot.png node_modules/ docs/ -o",
+    "browser": "npm run browser:stable",
+    "browser:stable": "web-ext run",
+    "browser:beta": "web-ext run -f beta",
+    "browser:nightly": "web-ext run -f nightly",
+    "build": "web-ext build -i .git/ screenshot.png node_modules/ docs/ img/ -o",
     "test": "npm run lint:js && npm run lint:ext && npm build"
   }
 }

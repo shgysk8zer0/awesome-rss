@@ -6,7 +6,11 @@ function messageHandler(tab) {
 	tab.links = links.filter(link => {
 		return LINK_TYPES.includes(link.type);
 	}).map(link => {
-		return {type: link.type, href: link.href};
+		return {
+			type: link.type,
+			href: link.href,
+			title: link.title || link.href
+		};
 	});
 	browser.runtime.sendMessage(tab);
 }

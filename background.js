@@ -27,8 +27,20 @@ function messageHandler(msg) {
 }
 
 function clickHandler(tab) {
-	browser.tabs.create({
-		url: TABS[tab.id].links[0].href
+	if (TABS[tab.id].links.length === 1) {
+		browser.tabs.create({
+			url: TABS[tab.id].links[0].href
+		});
+	} else {
+		showPopup(TABS[tab.id]);
+	}
+}
+
+function showPopup(tab) {
+	console.log(tab);
+	browser.pageAction.setPopup({
+		tabId: tab.id,
+		popup: `popup.html`
 	});
 }
 

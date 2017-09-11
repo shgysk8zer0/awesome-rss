@@ -37,10 +37,11 @@ function clickHandler(tab) {
 }
 
 function showPopup(tab) {
-	console.log(tab);
+	const url = new URL('popup.html', location.href);
+	url.searchParams.set('links', JSON.stringify(tab.links));
 	browser.pageAction.setPopup({
 		tabId: tab.id,
-		popup: `popup.html`
+		popup: url.toString()
 	});
 }
 

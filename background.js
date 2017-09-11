@@ -18,10 +18,18 @@ function messageHandler(msg) {
 			tabs.forEach(scanPage);
 		}).catch(console.error);
 	} else if (typeof msg === 'object') {
-		if (msg.links.length !== 0) {
+		if (msg.links.length === 1) {
 			TABS[msg.id] = msg;
 			browser.pageAction.show(msg.id);
 			browser.pageAction.onClicked.addListener(clickHandler);
+		} else if (msg.links.length > 1) {
+			const url = new URL('popup.html', location.href);
+			url.searchParams.set('links', JSON.stringify(msg.links));
+			browser.pageAction.setPopup({
+				tabId: msg.id,
+				popup: url.toString()
+			});
+			browser.pageAction.show(msg.id);
 		}
 	}
 }
@@ -31,18 +39,7 @@ function clickHandler(tab) {
 		browser.tabs.create({
 			url: TABS[tab.id].links[0].href
 		});
-	} else {
-		showPopup(TABS[tab.id]);
 	}
-}
-
-function showPopup(tab) {
-	const url = new URL('popup.html', location.href);
-	url.searchParams.set('links', JSON.stringify(tab.links));
-	browser.pageAction.setPopup({
-		tabId: tab.id,
-		popup: url.toString()
-	});
 }
 
 function removeHandler(tabId) {

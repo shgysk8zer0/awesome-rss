@@ -1,17 +1,21 @@
-function messageHandler(tab) {
+function filterLink(link) {
 	const LINK_TYPES = ['application/rss+xml', 'application/atom+xml'];
-	const QUERY = 'link[rel="alternate"][type]';
-	const links = Array.from(document.querySelectorAll(QUERY));
+	return LINK_TYPES.includes(link.type);
+}
 
-	tab.links = links.filter(link => {
-		return LINK_TYPES.includes(link.type);
-	}).map(link => {
-		return {
-			type: link.type,
-			href: link.href,
-			title: link.title || link.href
-		};
-	});
+function mapLink(link) {
+	return {
+		type: link.type,
+		href: link.href,
+		title: link.title || link.href
+	};
+}
+
+function messageHandler(tab) {
+	const QUERY = 'link[rel="alternate"][type]';
+	const LINKS = Array.from(document.querySelectorAll(QUERY));
+
+	tab.links = LINKS.filter(filterLink).map(mapLink);
 	browser.runtime.sendMessage(tab);
 }
 

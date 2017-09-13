@@ -1,14 +1,8 @@
-if (document.readyState === 'complete') {
-	init();
-} else {
-	document.addEventListener('load', init);
-}
-init();
 function init() {
 	const url = new URL(location.href);
 	const links = JSON.parse(url.searchParams.get('links'));
 	const container = document.createElement('div');
-	document.removeEventListener('load', init);
+
 	try {
 		links.forEach(link => {
 			let feed = document.createElement('a');
@@ -24,3 +18,12 @@ function init() {
 	}
 
 }
+if (['interactive', 'complete'].includes(document.readyState)) {
+	init();
+} else {
+	document.addEventListener('DOMContentLoaded', init, {
+		once: true,
+		passive: true
+	});
+}
+init();

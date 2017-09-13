@@ -13,7 +13,7 @@ Puts an RSS/Atom subscribe button ![icon](./icons/subscribe-16.svg) back in URL 
 [![Join the chat at https://gitter.im/awesome-rss/Lobby](https://badges.gitter.im/awesome-rss/Lobby.svg)](https://gitter.im/awesome-rss/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [![Mozilla Add-on](https://img.shields.io/amo/v/awesome-rss.svg)](https://addons.mozilla.org/en-US/firefox/addon/awesome-rss/)
-[![Mozilla Add-on](https://img.shields.io/amo/users/awesome-rss.svg)](https://addons.mozilla.org/en-US/firefox/addon/awesome-rss/)
+[![Mozilla Add-on](https://img.shields.io/amo/users/awesome-rss.svg)](https://addons.mozilla.org/en-US/firefox/addon/awesome-rss/statistics/)
 [![Mozilla Add-on](https://img.shields.io/amo/stars/awesome-rss.svg)](https://addons.mozilla.org/en-US/firefox/addon/awesome-rss/reviews/)
 
 <!--

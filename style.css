@@ -1,0 +1,9 @@
+.feed {
+	display: block;
+	color: #222;
+	padding: 8px;
+	text-decoration: none;
+}
+.feed:hover {
+	background-image: linear-gradient(whitesmoke, gainsboro, whitesmoke);
+}

@@ -21,9 +21,6 @@ function init() {
 if (['interactive', 'complete'].includes(document.readyState)) {
 	init();
 } else {
-	document.addEventListener('DOMContentLoaded', init, {
-		once: true,
-		passive: true
-	});
+	document.addEventListener('DOMContentLoaded', init, {once: true});
 }
 init();

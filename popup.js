@@ -8,11 +8,10 @@ function init() {
 			let feed = document.createElement('a');
 			feed.href = link.href;
 			feed.textContent = link.title;
+			feed.title = link.title;
+			feed.classList.add('feed');
 			feed.target = '_blank';
 			container.appendChild(feed);
-			if (links.length - 1 > index) {
-				container.appendChild(document.createElement('br'));
-			}
 		});
 	} catch (error) {
 		console.error(error);
@@ -24,4 +23,3 @@ if (['interactive', 'complete'].includes(document.readyState)) {
 } else {
 	document.addEventListener('DOMContentLoaded', init, {once: true});
 }
-init();

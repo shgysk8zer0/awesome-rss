@@ -4,7 +4,7 @@ function init() {
 	const container = document.body;
 
 	try {
-		links.forEach((link, index) => {
+		links.forEach(link => {
 			let feed = document.createElement('a');
 			feed.href = link.href;
 			feed.textContent = link.title;

@@ -21,7 +21,6 @@ function messageHandler(tab) {
 
 function pingExt() {
 	browser.runtime.sendMessage('ready');
-	document.removeEventListener('DOMContentLoaded', pingExt);
 }
 
 browser.runtime.onMessage.addListener(messageHandler);
@@ -29,5 +28,5 @@ browser.runtime.onMessage.addListener(messageHandler);
 if (document.readyState === 'complete') {
 	pingExt();
 } else {
-	document.addEventListener('DOMContentLoaded', pingExt);
+	document.addEventListener('DOMContentLoaded', pingExt, {once: true});
 }

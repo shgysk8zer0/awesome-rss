@@ -1,7 +1,7 @@
 function init() {
 	const url = new URL(location.href);
 	const links = JSON.parse(url.searchParams.get('links'));
-	const container = document.body;
+	const container = document.getElementById('feeds-container');
 
 	try {
 		links.forEach(link => {
@@ -9,7 +9,7 @@ function init() {
 			feed.href = link.href;
 			feed.textContent = link.title;
 			feed.title = link.title;
-			feed.classList.add('feed');
+			feed.classList.add('panel-list-item');
 			feed.target = '_blank';
 			container.appendChild(feed);
 		});

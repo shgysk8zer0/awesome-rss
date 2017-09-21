@@ -11,22 +11,26 @@ function mapLink(link) {
 	};
 }
 
-function messageHandler(tab) {
+function scanThisPage() {
 	const QUERY = 'link[rel="alternate"][type]';
 	const LINKS = Array.from(document.querySelectorAll(QUERY));
 
-	tab.links = LINKS.filter(filterLink).map(mapLink);
-	browser.runtime.sendMessage(tab);
+	const feedLinks = LINKS.filter(filterLink).map(mapLink);
+	if (feedLinks.length > 0) {
+		browser.runtime.sendMessage({
+			type: 'feeds',
+			links: feedLinks,
+		});
+	}
 }
 
-function pingExt() {
-	browser.runtime.sendMessage('ready');
+function messageHandler(msg) {
+	switch (msg.type) {
+	case 'scan':
+		scanThisPage();
+		break;
+	}
 }
 
 browser.runtime.onMessage.addListener(messageHandler);
-
-if (document.readyState === 'complete') {
-	pingExt();
-} else {
-	document.addEventListener('DOMContentLoaded', pingExt, {once: true});
-}
+scanThisPage();

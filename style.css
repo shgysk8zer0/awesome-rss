@@ -1,7 +1,7 @@
 a {
-	color: #222;
-	text-decoration: none;
-	animation: fade-in 800ms;
+	color: inherit;
+	text-decoration: inherit;
+	animation: fade-in 400ms;
 }
 @keyframes fade-in {
 	from {

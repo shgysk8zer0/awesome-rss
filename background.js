@@ -49,6 +49,11 @@ function scanPage(tab) {
 	}
 }
 
+function refreshAllTabsPageAction() {
+	browser.tabs.query({}).then(scanTabs).catch(console.error);
+}
+
 browser.runtime.onMessage.addListener(messageHandler);
 browser.tabs.onUpdated.addListener(scanPage);
 browser.tabs.onRemoved.addListener(removeHandler);
+refreshAllTabsPageAction();

@@ -1,6 +1,6 @@
 {
   "name": "awesome-rss",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Puts an RSS/Atom subscribe button back in URL bar",
   "keywords": [
     "WebExtension",
@@ -38,7 +38,7 @@
     "browser:stable": "web-ext run",
     "browser:beta": "web-ext run -f beta",
     "browser:nightly": "web-ext run -f nightly",
-    "build": "web-ext build -i .git/ screenshot.png package.json node_modules/ docs/ img/ '*.log*' -o",
+    "build": "web-ext build -i .git/ screenshot.png package.json node_modules/ docs/ img/ web-ext-artifacts/ '*.log*' -o",
     "test": "npm run lint:js && npm run lint:ext"
   }
 }

@@ -1,5 +1,11 @@
 a {
 	color: #222;
 	text-decoration: none;
+	animation: fade-in 800ms;
 }
-
+@keyframes fade-in {
+	from {
+		opacity: 0;
+		transform: translateX(-3em);
+	}
+}

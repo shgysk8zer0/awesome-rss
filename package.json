@@ -13,7 +13,10 @@
     "email": "chris@chriszuber.com",
     "url": "https://chriszuber.com"
   },
-  "contributors": [],
+  "contributors": [{
+    "name": "Michal Stanke",
+    "url": "https://michal.stanke.cz/"
+  }],
   "homepage": "https://chriszuber.com/",
   "license": "GPL-3.0",
   "repository": {

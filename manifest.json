@@ -1,23 +1,24 @@
 {
   "manifest_version": 2,
-  "name": "Awesome RSS",
+  "name": "__MSG_extensionName__",
   "developer": {
     "name": "Chris Zuber",
     "url": "https://chriszuber.com"
   },
   "version": "0.3.0",
-  "description": "Puts an RSS/Atom subscribe button back in URL bar",
+  "description": "__MSG_extensionDescription__",
   "homepage_url": "https://github.com/shgysk8zer0/awesome-rss",
   "icons": {
     "48": "icons/subscribe-16.svg"
   },
+  "default_locale": "en",
   "permissions": [
     "activeTab",
     "tabs"
   ],
   "page_action": {
     "default_icon": "icons/subscribe-16.svg",
-    "default_title": "Subscribe",
+    "default_title": "__MSG_pageActionTooltip__",
     "browser_style": true
   },
   "background": {

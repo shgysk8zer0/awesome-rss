@@ -1,0 +1,17 @@
+{
+  "extensionName": {
+    "message": "Awesome RSS",
+    "description": "Name of the extension."
+  },
+
+  "extensionDescription": {
+    "message": "Puts an RSS/Atom subscribe button back in URL bar",
+    "description": "Description of the extension displayed in the add-ons manager."
+  },
+
+  "pageActionTooltip": {
+    "message": "Subscribe to this page",
+    "description": "Tooltip displayed on moused hover over the page action. Should be the same as is Firefox https://transvision.mozfr.org/string/?entity=browser/chrome/browser/customizableui/customizableWidgets.properties:feed-button.tooltiptext2&repo=central"
+  }
+}
+

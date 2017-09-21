@@ -26,9 +26,9 @@ function scanThisPage() {
 
 function messageHandler(msg) {
 	switch (msg.type) {
-		case 'scan':
-			scanThisPage();
-			break;
+	case 'scan':
+		scanThisPage();
+		break;
 	}
 }
 

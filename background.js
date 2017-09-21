@@ -29,9 +29,9 @@ function updatePageAction(tab, links) {
 
 function messageHandler(msg, sender) {
 	switch (msg.type) {
-		case 'feeds':
-			updatePageAction(sender.tab, msg.links);
-			break;
+	case 'feeds':
+		updatePageAction(sender.tab, msg.links);
+		break;
 	}
 }
 

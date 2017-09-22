@@ -13,6 +13,12 @@ function removeHandler(tabId) {
 function updatePageAction(tab, links) {
 	if (links.length > 0) {
 		TABS[tab.id] = links;
+		browser.storage.local.get('icon').then(icon => {
+			browser.pageAction.setIcon({
+				tabId: tab.id,
+				path: icon.icon || 'icons/subscribe-16.svg'
+			});
+		});
 		browser.pageAction.show(tab.id);
 	}
 	if (links.length === 1) {

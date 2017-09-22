@@ -20,11 +20,29 @@ function init() {
 	}
 }
 
-function openFeed(click) {
+async function openFeed(click) {
 	click.preventDefault();
-	browser.tabs.create({
-		url: this.href,
-	});
+	const opts = await browser.storage.local.get();
+	if (opts.hasOwnProperty('openFeed')) {
+		switch (opts.openFeed) {
+		case 'window':
+			browser.windows.create({url: this.href});
+			break;
+		case 'tab':
+			browser.tabs.create({
+				url: this.href,
+			});
+			break;
+		case 'current':
+			browser.tabs.update(null, {url: this.href});
+			break;
+		default:
+			throw new Error(`Unsupported open feed method: ${opts.openFeed}`);
+		}
+	} else {
+		browser.tabs.update(null, {url: this.href});
+	}
+
 }
 
 if (['interactive', 'complete'].includes(document.readyState)) {

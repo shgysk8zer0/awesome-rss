@@ -22,7 +22,7 @@ function init() {
 
 async function openFeed(click) {
 	click.preventDefault();
-	const opts = await browser.storage.local.get();
+	const opts = await browser.storage.local.get('openFeed');
 	if (opts.hasOwnProperty('openFeed')) {
 		switch (opts.openFeed) {
 		case 'window':

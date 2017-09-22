@@ -12,12 +12,21 @@ function init() {
 			a.title = link.title;
 			a.type = link.type;
 			feed.querySelector('[data-prop="title"]').textContent = link.title;
+			a.addEventListener('click', openFeed);
 			container.appendChild(feed);
 		});
 	} catch (error) {
 		console.error(error);
 	}
 }
+
+function openFeed(click) {
+	click.preventDefault();
+	browser.tabs.create({
+		url: this.href,
+	});
+}
+
 if (['interactive', 'complete'].includes(document.readyState)) {
 	init();
 } else {

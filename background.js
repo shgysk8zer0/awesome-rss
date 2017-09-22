@@ -45,6 +45,8 @@ function scanPage(tab) {
 	// transitionType will be set on `HistoryStateUpdated` & status will not
 	if (tab.hasOwnProperty('transitionType') || tab.status === 'complete') {
 		browser.tabs.sendMessage(tab.id || tab.tabId, {type: 'scan'});
+	} else if (typeof(tab) === 'number') {
+		browser.tabs.sendMessage(tab, {type: 'scan'});
 	}
 }
 
@@ -54,5 +56,5 @@ function refreshAllTabsPageAction() {
 
 browser.runtime.onMessage.addListener(messageHandler);
 browser.tabs.onRemoved.addListener(removeHandler);
-browser.webNavigation.onHistoryStateUpdated.addListener(scanPage);
+browser.tabs.onUpdated.addListener(scanPage);
 refreshAllTabsPageAction();

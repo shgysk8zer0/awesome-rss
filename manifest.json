@@ -14,11 +14,16 @@
   "default_locale": "en",
   "permissions": [
     "tabs",
-    "webNavigation"
+    "webNavigation",
+    "storage"
   ],
   "page_action": {
     "default_icon": "icons/subscribe-16.svg",
     "default_title": "__MSG_pageActionTooltip__",
+    "browser_style": true
+  },
+  "options_ui": {
+    "page": "options.html",
     "browser_style": true
   },
   "background": {

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Awesome RSS Options</title>
+		<meta charset="UTF-8" />
+		<script src="options.js" async=""></script>
+	</head>
+	<body>
+		<!-- https://developer.mozilla.org/en-US/Add-ons/WebExtensions/user_interface/Options_pages -->
+		<form name="options">
+			<fieldset>
+				<legend>Theme Options</legend>
+				<label for="icon"></label>
+				<select name="icon" id="icon" required="">
+					<option value="icons/subscribe-16.svg">Light theme icon</option>
+					<option value="icons/subscribe-dark-16.svg">Dark theme icon</option>
+				</select>
+			</fieldset>
+			<!--<fieldset>
+				<legend>Popup Options</legend>
+				<label for="bold">Use bold text</label>
+				<input type="checkbox" name="bold" id="bold" />
+			</fieldset>-->
+			<button type="submit">Save</button>
+			<button type="reset">Reset all to defaults</button>
+		</form>
+	</body>
+</html>

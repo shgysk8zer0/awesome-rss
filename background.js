@@ -10,14 +10,13 @@ function removeHandler(tabId) {
 	delete TABS[tabId];
 }
 
-function updatePageAction(tab, links) {
+async function updatePageAction(tab, links) {
 	if (links.length > 0) {
 		TABS[tab.id] = links;
-		browser.storage.local.get('icon').then(icon => {
-			browser.pageAction.setIcon({
-				tabId: tab.id,
-				path: icon.icon || 'icons/subscribe-16.svg'
-			});
+		const opts = await browser.storage.local.get('icon');
+		browser.pageAction.setIcon({
+			tabId: tab.id,
+			path: opts.icon || 'icons/subscribe-16.svg'
 		});
 		browser.pageAction.show(tab.id);
 	}
@@ -50,8 +49,10 @@ function scanPage(tab) {
 	}
 }
 
-function refreshAllTabsPageAction() {
-	browser.tabs.query({}).then(tabs => tabs.forEach(scanPage)).catch(console.error);
+async function refreshAllTabsPageAction() {
+	const tabs = await browser.tabs.query();
+	tabs.forEach(scanPage);
+	// browser.tabs.query({}).then(tabs => tabs.forEach(scanPage)).catch(console.error);
 }
 
 browser.runtime.onMessage.addListener(messageHandler);

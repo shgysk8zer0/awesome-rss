@@ -13,8 +13,8 @@
   },
   "default_locale": "en",
   "permissions": [
-    "activeTab",
-    "tabs"
+    "tabs",
+    "webNavigation"
   ],
   "page_action": {
     "default_icon": "icons/subscribe-16.svg",

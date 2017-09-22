@@ -29,9 +29,7 @@ async function openFeed(click) {
 			browser.windows.create({url: this.href});
 			break;
 		case 'tab':
-			browser.tabs.create({
-				url: this.href,
-			});
+			browser.tabs.create({url: this.href});
 			break;
 		case 'current':
 			browser.tabs.update(null, {url: this.href});

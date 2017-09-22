@@ -17,11 +17,15 @@
 					<option value="icons/subscribe-orange-16.svg">Orange icon</option>
 				</select>
 			</fieldset>
-			<!--<fieldset>
+			<fieldset>
 				<legend>Popup Options</legend>
-				<label for="bold">Use bold text</label>
-				<input type="checkbox" name="bold" id="bold" />
-			</fieldset>-->
+				<label for="openFeed">Use bold text</label>
+				<select name="openFeed" id="openFeed" required="">
+					<option value="current">Current tab</option>
+					<option value="tab">New tab</option>
+					<option value="window">New window</option>
+				</select>
+			</fieldset>
 			<button type="submit">Save</button>
 			<button type="reset">Reset all to defaults</button>
 			<hr />

@@ -1,0 +1,17 @@
+{
+  "extensionName": {
+    "message": "Awesome RSS",
+    "description": "Name of the extension."
+  },
+
+  "extensionDescription": {
+    "message": "Помещает кнопку подписки RSS / Atom обратно в строку URL-адреса",
+    "description": "Description of the extension displayed in the add-ons manager."
+  },
+
+  "pageActionTooltip": {
+    "message": "Подписаться на эту страницу",
+    "description": "Tooltip displayed on moused hover over the page action. Should be the same as is Firefox https://transvision.mozfr.org/string/?entity=browser/chrome/browser/customizableui/customizableWidgets.properties:feed-button.tooltiptext2&repo=central"
+  }
+}
+

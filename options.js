@@ -5,7 +5,8 @@ window.addEventListener('DOMContentLoaded', async () => {
 
 	const storage = browser.storage.local;
 	const opts = await storage.get();
-	const inputs = $('[name]', document.forms.options);
+	const form = document.forms.options;
+	const inputs = $('[name]', form);
 
 	Object.keys(opts).forEach(key => {
 		const input = inputs.find(el => el.name === key);
@@ -24,20 +25,26 @@ window.addEventListener('DOMContentLoaded', async () => {
 		}
 	});
 
-	document.forms.options.addEventListener('submit', async (submit) => {
-		submit.preventDefault();
-		const form = new FormData(submit.target);
-
-		[...form.keys()].forEach(key => opts[key] = form.get(key));
-
-		$('input[type="checkbox"]:not(:checked)', submit.target).forEach(input => {
-			delete opts[input.name];
-			storage.remove(input.name);
+	inputs.forEach(input => {
+		input.addEventListener('change', change => {
+			if (change.target instanceof HTMLInputElement) {
+				switch (change.target.type) {
+				case 'checkbox':
+					opts[change.target.name] = change.target.checked;
+					break;
+				default:
+					opts[change.target.name] = change.target.value;
+				}
+			} else if (change.target instanceof HTMLSelectElement) {
+				opts[change.target.name] = change.target.value;
+			}
+			storage.set(opts);
 		});
-		storage.set(opts);
 	});
 
-	$('[type="reset"]').forEach(btn => {
+	form.addEventListener('submit', s => s.preventDefault());
+
+	$('[type="reset"]', form).forEach(btn => {
 		btn.addEventListener('click', click => {
 			click.preventDefault();
 			if (confirm('This will clear your settings')) {
@@ -46,5 +53,5 @@ window.addEventListener('DOMContentLoaded', async () => {
 			}
 		});
 	});
-	document.forms.options.hidden = false;
+	form.hidden = false;
 }, {once: true});

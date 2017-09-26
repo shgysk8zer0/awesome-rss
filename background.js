@@ -102,13 +102,12 @@ async function optChange(opts) {
 
 async function updateHandler(update) {
 	if (update.temporary) {
-		console.log(update);
+		storage.get().then(opts => console.log(update, opts));
 	}
 	if (update.reason === 'install') {
 		storage.set(defaultOpts);
 	} else if (update.reason === 'update') {
 		const opts = await storage.get();
-		console.info(opts);
 		switch (update.previousVersion) {
 		case '1.0.0':
 		case '1.0.1':
@@ -116,7 +115,6 @@ async function updateHandler(update) {
 				const key = Object.keys(ICONS).find(icon => {
 					return ICONS[icon] === opts.icon.replace('16', '64');
 				});
-				console.log(key);
 				opts.icon = ICONS.hasOwnProperty(key) ? key : defaultOpts.icon;
 			} else {
 				opts.icon = defaultOpts.icon;
@@ -124,7 +122,6 @@ async function updateHandler(update) {
 			if (! opts.hasOwnProperty('openFeed')) {
 				opts.openFeed = defaultOpts.openFeed;
 			}
-			console.info(opts);
 			storage.set(opts);
 		}
 	}

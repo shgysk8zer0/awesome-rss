@@ -42,16 +42,13 @@ window.addEventListener('DOMContentLoaded', async () => {
 		});
 	});
 
-	form.addEventListener('submit', s => s.preventDefault());
-
-	$('[type="reset"]', form).forEach(btn => {
-		btn.addEventListener('click', click => {
-			click.preventDefault();
-			if (confirm('This will clear your settings')) {
-				btn.closest('form').reset();
-				storage.clear();
-			}
-		});
+	form.addEventListener('submit', submit => submit.preventDefault());
+	form.addEventListener('reset', reset => {
+		if (confirm('This will clear your settings')) {
+			storage.clear();
+		} else {
+			reset.preventDefault();
+		}
 	});
 	form.hidden = false;
 }, {once: true});

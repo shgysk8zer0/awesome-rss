@@ -108,6 +108,7 @@ async function updateHandler(update) {
 		storage.set(defaultOpts);
 	} else if (update.reason === 'update') {
 		const opts = await storage.get();
+		console.info(opts);
 		switch (update.previousVersion) {
 		case '1.0.0':
 		case '1.0.1':
@@ -122,6 +123,7 @@ async function updateHandler(update) {
 			if (! opts.hasOwnProperty('openFeed')) {
 				opts.openFeed = defaultOpts.openFeed;
 			}
+			console.info(opts);
 			storage.set(opts);
 			break;
 		}

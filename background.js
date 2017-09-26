@@ -1,5 +1,7 @@
 const TABS = {};
 
+const defaultIcon = 'icons/subscribe-16.svg';
+
 async function clickHandler(tab) {
 	const opts = await browser.storage.local.get('openFeed');
 	if (opts.hasOwnProperty('openFeed')) {
@@ -31,7 +33,7 @@ async function updatePageAction(tab, links) {
 		const opts = await browser.storage.local.get('icon');
 		browser.pageAction.setIcon({
 			tabId: tab.id,
-			path: opts.icon || 'icons/subscribe-16.svg'
+			path: opts.icon || defaultIcon
 		});
 		browser.pageAction.show(tab.id);
 	}
@@ -71,4 +73,13 @@ async function refreshAllTabsPageAction() {
 browser.runtime.onMessage.addListener(messageHandler);
 browser.tabs.onRemoved.addListener(removeHandler);
 browser.tabs.onUpdated.addListener(scanPage);
+browser.storage.onChanged.addListener(async (opts) => {
+	if (opts.hasOwnProperty('icon') && opts.icon.newValue !== opts.icon.oldValue) {
+		const tabs = await browser.tabs.query({status: 'complete'});
+		tabs.forEach(tab => browser.pageAction.setIcon({
+			tabId: tab.id,
+			path: opts.icon.newValue || defaultIcon
+		}));
+	}
+});
 refreshAllTabsPageAction();

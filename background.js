@@ -116,7 +116,7 @@ async function updateHandler(update) {
 				const key = Object.keys(ICONS).find(icon => {
 					return ICONS[icon] === opts.icon.replace('16', '64');
 				});
-				opts.icon = key instanceof String ? key : defaultOpts.icon;
+				opts.icon =ICONS.hasOwnProperty(key) ? key : defaultOpts.icon;
 			} else {
 				opts.icon = defaultOpts.icon;
 			}

@@ -1,7 +1,7 @@
 # Awesome RSS
 
 - - -
-Puts an RSS/Atom subscribe button ![icon](./icons/subscribe-16.svg) back in URL bar
+Puts an RSS/Atom subscribe button ![icon](./icons/subscribe-64.svg) back in URL bar
 
 ![screenshot](./screenshot.png)
 

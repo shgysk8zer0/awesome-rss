@@ -1,6 +1,6 @@
 const TABS = {};
 const defaultOpts = {
-	icons: 'light',
+	icon: 'light',
 	openFeed: 'currennt',
 };
 

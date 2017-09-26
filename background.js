@@ -1,11 +1,15 @@
 const TABS = {};
-const defaultIcon = 'icons/subscribe-64.svg';
+const defaultOpts = {
+	icons: 'light',
+	openFeed: 'currennt',
+};
+
 const storage = browser.storage.local;
 
 const ICONS = {
-	light: "icons/subscribe-64.svg",
-	dark: "icons/subscribe-64.svg",
-	dark: "icons/subscribe-64-orange.svg",
+	light: 'icons/subscribe-64.svg',
+	dark: 'icons/subscribe-dark-64.svg',
+	orange: 'icons/subscribe-orange-64.svg',
 };
 
 async function clickHandler(tab) {
@@ -38,7 +42,7 @@ async function updatePageAction(tab, links) {
 		TABS[tab.id] = links;
 		const opts = await storage.get('icon');
 		if (! ICONS.hasOwnProperty(opts.icon)) {
-			opts.icon = 'light';
+			opts.icon = defaultOpts.icon;
 		}
 		browser.pageAction.setIcon({
 			tabId: tab.id,
@@ -85,7 +89,7 @@ async function optChange(opts) {
 		const tabs = await browser.tabs.query({status: 'complete'});
 		let icon = opts.icon.newValue;
 		if (! ICONS.hasOwnProperty(icon)) {
-			icon = ICONS.light;
+			icon = ICONS[defaultOpts.icon];
 		} else {
 			icon = ICONS[icon];
 		}
@@ -96,8 +100,37 @@ async function optChange(opts) {
 	}
 }
 
+async function updateHandler(update) {
+	if (update.temporary) {
+		console.log(update);
+	}
+	if (update.reason === 'install') {
+		storage.set(defaultOpts);
+	} else if (update.reason === 'update') {
+		const opts = await storage.get();
+		switch (update.previousVersion) {
+		case '1.0.0':
+		case '1.0.1':
+			if (opts.hasOwnProperty('icon')) {
+				const key = Object.keys(ICONS).find(icon => {
+					return ICONS[icon] === opts.icon.replace('16', '64');
+				});
+				opts.icon = key || defaultOpts.icon;
+			} else {
+				opts.icon = defaultOpts.icon;
+			}
+			if (! opts.hasOwnProperty('openFeed')) {
+				opts.openFeed = defaultOpts.openFeed;
+			}
+			storage.set(opts);
+			break;
+		}
+	}
+}
+
 browser.runtime.onMessage.addListener(messageHandler);
 browser.tabs.onRemoved.addListener(removeHandler);
 browser.tabs.onUpdated.addListener(scanPage);
 browser.storage.onChanged.addListener(optChange);
+browser.runtime.onInstalled.addListener(updateHandler);
 refreshAllTabsPageAction();

@@ -1,6 +1,6 @@
 {
   "name": "awesome-rss",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Puts an RSS/Atom subscribe button back in URL bar",
   "keywords": [
     "WebExtension",

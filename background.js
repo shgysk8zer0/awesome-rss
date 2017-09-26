@@ -1,6 +1,6 @@
 const TABS = {};
 
-const defaultIcon = 'icons/subscribe-16.svg';
+const defaultIcon = 'icons/subscribe-64.svg';
 
 async function clickHandler(tab) {
 	const opts = await browser.storage.local.get('openFeed');

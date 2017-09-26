@@ -9,7 +9,7 @@
   "description": "__MSG_extensionDescription__",
   "homepage_url": "https://github.com/shgysk8zer0/awesome-rss",
   "icons": {
-    "48": "icons/subscribe-16.svg"
+    "48": "icons/subscribe-64.svg"
   },
   "default_locale": "en",
   "permissions": [
@@ -17,7 +17,7 @@
     "storage"
   ],
   "page_action": {
-    "default_icon": "icons/subscribe-16.svg",
+    "default_icon": "icons/subscribe-64.svg",
     "default_title": "__MSG_pageActionTooltip__",
     "browser_style": true
   },

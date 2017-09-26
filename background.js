@@ -71,4 +71,13 @@ async function refreshAllTabsPageAction() {
 browser.runtime.onMessage.addListener(messageHandler);
 browser.tabs.onRemoved.addListener(removeHandler);
 browser.tabs.onUpdated.addListener(scanPage);
+browser.storage.onChanged.addListener(async (opts) => {
+	if (opts.hasOwnProperty('icon') && opts.icon.newValue !== opts.icon.oldValue) {
+		const tabs = await browser.tabs.query({status: 'complete'});
+		tabs.forEach(tab => browser.pageAction.setIcon({
+			tabId: tab.id,
+			path: opts.icon.newValue
+		}));
+	}
+});
 refreshAllTabsPageAction();

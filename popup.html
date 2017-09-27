@@ -2,15 +2,32 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
-		<script src="popup.js" async=""></script>
-		<link rel="stylesheet" href="style.css" />
+		<script src="js/popup.js" async=""></script>
+		<link rel="stylesheet" href="css/popup.css" />
 	</head>
 	<body>
 		<div class="panel">
 			<div class="panel-section panel-section-list" id="feeds-container"></div>
 		</div>
-		<template id="feed-template">
-			<a href="" target="_blank" rel="alternate" title="" class="panel-list-item" data-prop="title"></a>
+		<template id="regular-template">
+			<a href="" title="" class="panel-list-item fade-in">
+				<span data-prop="title"></span>
+			</a>
+		</template>
+		<template id="bold-template">
+			<a href="" title="" class="panel-list-item fade-in">
+				<b data-prop="title"></b>
+			</a>
+		</template>
+		<template id="underline-template">
+			<a href="" title="" class="panel-list-item fade-in">
+				<u data-prop="title"></u>
+			</a>
+		</template>
+		<template id="italic-template">
+			<a href="" title="" class="panel-list-item fade-in">
+				<i data-prop="title"></i>
+			</a>
 		</template>
 	</body>
 </html>

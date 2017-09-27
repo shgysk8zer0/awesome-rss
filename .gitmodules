@@ -1,0 +1,6 @@
+[submodule "img/octicons"]
+	path = img/octicons
+	url = git://github.com/primer/octicons.git
+[submodule "img/adwaita-icons"]
+	path = img/adwaita-icons
+	url = git://github.com/shgysk8zer0/adwaita-icons.git

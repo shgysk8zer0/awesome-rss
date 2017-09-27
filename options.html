@@ -3,15 +3,20 @@
 	<head>
 		<title>Awesome RSS Options</title>
 		<meta charset="UTF-8" />
-		<script src="options.js" async=""></script>
+		<script src="js/options.js" async=""></script>
+		<link rel="stylesheet" href="css/options.css" media="all" />
 	</head>
 	<body>
 		<!-- https://developer.mozilla.org/en-US/Add-ons/WebExtensions/user_interface/Options_pages -->
 		<form name="options">
 			<fieldset>
 				<legend>Theme Options</legend>
-				<label for="icon"></label>
-				<select name="icon" id="icon" required="">
+				<label for="icon" class="browser-style-label" title="Select icon">
+					<svg class="icon" width="32" height="32">
+						<use xlink:href="icons.svg#star" />
+					</svg>
+				</label>
+				<select name="icon" id="icon" class="browser-style" required="">
 					<option value="light">Light theme icon</option>
 					<option value="dark">Dark theme icon</option>
 					<option value="orange">Orange icon</option>
@@ -19,14 +24,122 @@
 			</fieldset>
 			<fieldset>
 				<legend>Popup Options</legend>
-				<label for="openFeed">Open feed using</label>
-				<select name="openFeed" id="openFeed" required="">
-					<option value="current">Current tab</option>
+				<label for="openFeed" class="browser-style-label" title="Open feeds using...">
+					<svg class="icon" width="32" height="32">
+						<use xlink:href="icons.svg#new-tab" />
+					</svg>
+				</label>
+				<select name="openFeed" id="openFeed" class="browser-style" required="">
+					<option value="current" selected="">Current tab</option>
 					<option value="tab">New tab</option>
 					<option value="window">New window</option>
 				</select>
+				<br />
+				<label for="template" class="browser-style-label" title="Template theme">
+					<svg class="icon" width="32" height="32">
+						<use xlink:href="icons.svg#template" />
+					</svg>
+				</label>
+				<select name="template" id="template" class="browser-style" required="">
+					<option value="regular-template" selected="">Regular</option>
+					<option value="bold-template">Bold</option>
+					<option value="italic-template">Italic</option>
+					<option value="underline-template">Underline</option>
+				</select>
 			</fieldset>
-			<button type="reset">Reset all to defaults</button>
+			<fieldset>
+				<legend>Text options</legend>
+				<label for="color" class="browser-style-label" title="Select text color">
+					<svg class="icon" width="32" height="32">
+						<use xlink:href="icons.svg#color-select" />
+					</svg>
+				</label>
+				<input type="color" id="color" name="color" class="browser-style" required="" />
+				<br />
+				<label for="font-family" class="browser-style-label" title="Select font-family">
+					<svg class="icon" width="32" height="32">
+						<use xlink:href="icons.svg#font-select" />
+					</svg>
+				</label>
+				<select name="fontFamily" id="font-family" class="browser-style" required="">
+					<optgroup label="Serif">
+						<option value="Times, serif">Times New Roman</option>
+						<option value="Georgia, serif">Georgia</option>
+					</optgroup>
+					<optgroup label="Sans Serif">
+						<option value="Arial, Helvetica, sans-serif" selected="">Arial</option>
+						<option value="cursive, sans-serif">Cursive</option>
+						<option value="Impact, Charcoal, sans-serif">Impact</option>
+						<option value="Tahoma, Geneva, sans-serif">Tahoma</option>
+					</optgroup>
+					<optgroup label="Monospace">
+						<option value="Courier, monospace">Courier</option>
+						<option value="Monaco, monospace">Monaco</option>
+					</optgroup>
+				</select>
+				<br />
+				<label for="font-size" class="browser-style-label" title="Select font-size">
+					<svg class="icon" width="32" height="32">
+						<use xlink:href="icons.svg#text-size" />
+					</svg>
+				</label>
+				<input type="range" min="8" max="20" id="font-size" name="fontSize" value="14" class="browser-style" />
+				<output for="font-size"></output>
+				<br />
+				<label for="margins" class="browser-style-label" title="Margins">
+					<svg width="32" height="32" class="icon">
+						<use xlink:href="icons.svg#margins" />
+					</svg>
+				</label>
+				<input type="range" id="margins" min="0" max="10" name="feedMargin" value="1" class="browser-style" />
+				<output for="margins"></output>
+				<br />
+				<label for="padding" class="browser-style-label" title="Padding">
+					<svg width="32" height="32" class="icon">
+						<use xlink:href="icons.svg#padding" />
+					</svg>
+				</label>
+				<input type="range" id="padding" min="5" max="25" name="feedPadding" value="7" class="browser-style" />
+				<output for="padding"></output>
+			</fieldset>
+			<fieldset>
+				<legend>Popup Background</legend>
+				<label for="bg-color" class="browser-style-label" title="Select background-color">
+					<svg class="icon" width="32" height="32">
+						<use xlink:href="icons.svg#color-select" />
+					</svg>
+				</label>
+				<input type="color" id="bg-color" name="bgColor" />
+				<br />
+				<label for="bg-image" class="browser-style-label" title="Select background-image">
+					<svg class="icon" width="32" height="32">
+						<use xlink:href="icons.svg#image" />
+					</svg>
+				</label>
+				<input type="url" id="bg-image" name="bgImage" placeholder="Image URL" />
+			</fieldset>
+			<button type="reset" class="browser-style" title="Reset all preferences">
+				<svg class="icon" width="32" height="32">
+					<use xlink:href="icons.svg#edit-clear-all" />
+				</svg>
+			</button>
 		</form>
+		<footer>
+			<a href="https://github.com/shgysk8zer0" target="_blank" title="My GitHub profile">
+				<svg width="48" height="48" class="icon">
+					<use xlink:href="icons.svg#mark-github" />
+				</svg>
+			</a>
+			<a href="https://github.com/shgysk8zer0/awesome-rss" target="_blank" title="View code on GitHub">
+				<svg width="48" height="48" class="icon">
+					<use xlink:href="icons.svg#repo" />
+				</svg>
+			</a>
+			<a href="https://github.com/shgysk8zer0/awesome-rss/issues" target="_blank" title="Report a bug on GitHub">
+				<svg width="48" height="48" class="icon">
+					<use xlink:href="icons.svg#issues" />
+				</svg>
+			</a>
+		</footer>
 	</body>
 </html>

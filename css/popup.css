@@ -1,0 +1,31 @@
+body {
+	background-color: var(--feed-bg-color, none);
+	background-image: var(--feed-bg-image, none);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+a, [data-link], a:hover, [data-link]:hover {
+	box-sizing: border-box;
+	font-family: var(--feed-font, inherit);
+	font-size: var(--feed-size, inherit);
+	text-decoration: inherit;
+	margin-top: var(--feed-margin, inherit);
+	margin-bottom: var(--feed-margin, inherit);
+	padding-top: var(--feed-padding, inherit);
+	padding-bottom: var(--feed-padding, inherit);
+	cursor: pointer;
+
+}
+a, [data-link] {
+	color: var(--feed-color, inherit);
+}
+.fade-in {
+	animation: fade-in 400ms;
+}
+@keyframes fade-in {
+	from {
+		opacity: 0;
+		transform: translateX(-3em);
+	}
+}

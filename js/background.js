@@ -1,7 +1,14 @@
 const TABS = {};
 const defaultOpts = {
-	icon: 'light',
-	openFeed: 'currennt',
+	icon:        'light',
+	openFeed:    'current',
+	template:    'regular-template',
+	color:       '#101010',
+	fontFamily:  'Arial, Helvetica, sans-serif',
+	fontSize:    14,
+	feedMargin:  0,
+	feedPadding: 7,
+	bgColor:     '#ffffff',
 };
 
 const storage = browser.storage.local;
@@ -102,11 +109,12 @@ async function optChange(opts) {
 
 async function updateHandler(update) {
 	if (update.temporary) {
-		storage.get().then(opts => console.log(update, opts));
+		storage.get().then(opts => console.log({update, opts}));
 	}
 	if (update.reason === 'install') {
 		storage.set(defaultOpts);
 	} else if (update.reason === 'update') {
+		/*eslint no-fallthrough: "off"*/
 		const opts = await storage.get();
 		switch (update.previousVersion) {
 		case '1.0.0':
@@ -122,6 +130,14 @@ async function updateHandler(update) {
 			if (! opts.hasOwnProperty('openFeed')) {
 				opts.openFeed = defaultOpts.openFeed;
 			}
+			storage.set(opts);
+		case '1.0.2':
+			opts.template = defaultOpts.template;
+			opts.fontFamily = defaultOpts.fontFamily;
+			opts.fontSize = defaultOpts.fontSize;
+			opts.feedMargin = defaultOpts.feedMargin;
+			opts.feedPadding = defaultOpts.feedPadding;
+			opts.bgColor = defaultOpts.bgColor;
 			storage.set(opts);
 		}
 	}

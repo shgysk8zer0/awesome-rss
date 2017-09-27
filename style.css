@@ -5,9 +5,8 @@ body {
 	background-repeat: no-repeat;
 	background-position: center;
 }
-a, [data-link] {
+a, [data-link], a:hover, [data-link]:hover {
 	box-sizing: border-box;
-	color: var(--feed-color, inherit);
 	font-family: var(--feed-font, inherit);
 	font-size: var(--feed-size, inherit);
 	text-decoration: inherit;
@@ -16,8 +15,10 @@ a, [data-link] {
 	padding-top: var(--feed-padding, inherit);
 	padding-bottom: var(--feed-padding, inherit);
 	cursor: pointer;
-	min-height: 1.5em;
-	height: auto;
+
+}
+a, [data-link] {
+	color: var(--feed-color, inherit);
 }
 .fade-in {
 	animation: fade-in 400ms;

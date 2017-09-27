@@ -6,8 +6,8 @@ const defaultOpts = {
 	color:       '#101010',
 	fontFamily:  'Arial, Helvetica, sans-serif',
 	fontSize:    14,
-	feedMargin:  1,
-	feedPadding: 10,
+	feedMargin:  0,
+	feedPadding: 7,
 	bgColor:     '#ffffff',
 };
 
@@ -135,6 +135,9 @@ async function updateHandler(update) {
 			opts.template = defaultOpts.template;
 			opts.fontFamily = defaultOpts.fontFamily;
 			opts.fontSize = defaultOpts.fontSize;
+			opts.feedMargin = defaultOpts.feedMargin;
+			opts.feedPadding = defaultOpts.feedPadding;
+			opts.bgColor = defaultOpts.bgColor;
 			storage.set(opts);
 		}
 	}

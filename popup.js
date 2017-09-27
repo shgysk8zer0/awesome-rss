@@ -7,7 +7,16 @@ function $(query, base = document) {
 	return [...base.querySelectorAll(query)];
 }
 async function init() {
-	const opts = await storage.get(['template', 'color', 'fontFamily', 'fontSize']);
+	const opts = await storage.get([
+		'template',
+		'color',
+		'fontFamily',
+		'fontSize',
+		'feedMargin',
+		'feedPadding',
+		'bgColor',
+		'bgImage',
+	]);
 	const url = new URL(location.href);
 	const links = JSON.parse(url.searchParams.get('links'));
 	const container = document.getElementById('feeds-container');
@@ -15,6 +24,15 @@ async function init() {
 	document.documentElement.style.setProperty('--feed-color', opts.color);
 	document.documentElement.style.setProperty('--feed-font', opts.fontFamily);
 	document.documentElement.style.setProperty('--feed-size', `${opts.fontSize}px`);
+	document.documentElement.style.setProperty('--feed-margin', `${opts.feedMargin}px`);
+	document.documentElement.style.setProperty('--feed-padding', `${opts.feedPadding}px`);
+	if (opts.hasOwnProperty('bgColor')) {
+		document.documentElement.style.setProperty('--feed-bg-color', opts.bgColor);
+	}
+	if (opts.hasOwnProperty('bgImage')) {
+		document.documentElement.style.setProperty('--feed-bg-image', `url(${opts.bgImage})`);
+	}
+	console.log(document.documentElement.style);
 
 	try {
 		links.forEach(link => {

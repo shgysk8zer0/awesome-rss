@@ -23,6 +23,12 @@ window.addEventListener('DOMContentLoaded', async () => {
 		} else {
 			storage.remove(key);
 		}
+
+		$('output[for]', form).forEach(output => {
+			const input = document.getElementById(output.getAttribute('for'));
+			input.addEventListener('input', change => output.textContent = change.target.value);
+			output.textContent = input.value;
+		});
 	});
 
 	inputs.forEach(input => {

@@ -32,5 +32,5 @@
     "matches": ["<all_urls>"],
     "js": ["document.js"]
   }],
-  "content_security_policy": "default-src 'self'"
+  "content_security_policy": "default-src 'self'; img-src *"
 }

@@ -1,8 +1,20 @@
+body {
+	background-color: var(--feed-bg-color, none);
+	background-image: var(--feed-bg-image, none);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
 a, [data-link] {
 	color: var(--feed-color, inherit);
 	font-family: var(--feed-font, inherit);
 	font-size: var(--feed-size, inherit);
 	text-decoration: inherit;
+	margin-top: var(--feed-margin, inherit);
+	margin-bottom: var(--feed-margin, inherit);
+	padding-top: var(--feed-padding, inherit);
+	padding-bottom: var(--feed-padding, inherit);
+	display: block;
 	cursor: pointer;
 }
 .fade-in {

@@ -1,11 +1,13 @@
 const TABS = {};
 const defaultOpts = {
-	icon:       'light',
-	openFeed:   'current',
-	template:   'regular-template',
-	color:      '#101010',
-	fontFamily: 'Impact, Charcoal, sans-serif',
-	fontSize:   16,
+	icon:        'light',
+	openFeed:    'current',
+	template:    'regular-template',
+	color:       '#101010',
+	fontFamily:  'Impact, Charcoal, sans-serif',
+	fontSize:    16,
+	feedMargin:  1,
+	feedPadding: 2,
 };
 
 const storage = browser.storage.local;

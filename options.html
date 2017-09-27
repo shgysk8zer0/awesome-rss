@@ -58,8 +58,25 @@
 				</select>
 				<br />
 				<label for="font-size" class="browser-style-label">Font Size</label>
-				<input type="number" min="8" max="20" name="fontSize" value="12" id="font-size" class="browser-style" />
-			</fiedlset>
+				<input type="range" min="8" max="20" id="font-size" name="fontSize" value="12" id="font-size" class="browser-style" />
+				<output for="font-size"></output>
+				<br />
+				<label for="margins" class="browser-style-label">Margins</label>
+				<input type="range" id="margins" min="0" max="10" name="feedMargin" value="2" id="margins" class="browser-style" />
+				<output for="margins"></output>
+				<br />
+				<label for="padding" class="browser-style-label">Padding</label>
+				<input type="range" id="padding" min="0" max="10" name="feedPadding" value="2" id="margins" class="browser-style" />
+				<output for="padding"></output>
+			</fieldset>
+			<fieldset>
+				<legend>Popup Background</legend>
+				<label for="bg-color" class="browser-style-label">Color</label>
+				<input type="color" id="bg-color" name="bgColor" />
+				<br />
+				<label for="bg-image" class="browser-style-label">Image</label>
+				<input type="url" id="bg-image" name="bgImage" placeholder="Image URL" />
+			</fieldset>
 			<button type="reset" class="browser-style">Reset all to defaults</button>
 		</form>
 	</body>

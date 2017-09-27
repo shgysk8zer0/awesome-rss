@@ -22,7 +22,7 @@
     "browser_style": true
   },
   "options_ui": {
-    "page": "html/options.html",
+    "page": "options.html",
     "browser_style": true
   },
   "background": {
@@ -32,5 +32,11 @@
     "matches": ["<all_urls>"],
     "js": ["js/document.js"]
   }],
-  "content_security_policy": "default-src 'self'; img-src *"
+  "content_security_policy": "default-src 'self'; img-src *",
+  "applications": {
+    "gecko": {
+        "id": "{97d566da-42c5-4ef4-a03b-5a2e5f7cbcb2}",
+        "strict_min_version": "52.0"
+    }
+  }
 }

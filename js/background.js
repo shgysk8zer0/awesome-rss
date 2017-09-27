@@ -11,7 +11,7 @@ const defaultOpts = {
 	bgColor:     '#ffffff',
 };
 
-const storage = browser.storage.local;
+const storage = browser.storage.sync;
 
 const ICONS = {
 	light: 'icons/subscribe-64.svg',
@@ -115,6 +115,7 @@ async function updateHandler(update) {
 		storage.set(defaultOpts);
 	} else if (update.reason === 'update') {
 		/*eslint no-fallthrough: "off"*/
+		/*eslint no-case-declarations: "off"*/
 		const opts = await storage.get();
 		switch (update.previousVersion) {
 		case '1.0.0':
@@ -131,6 +132,7 @@ async function updateHandler(update) {
 				opts.openFeed = defaultOpts.openFeed;
 			}
 			storage.set(opts);
+
 		case '1.0.2':
 			opts.template = defaultOpts.template;
 			opts.fontFamily = defaultOpts.fontFamily;
@@ -139,6 +141,11 @@ async function updateHandler(update) {
 			opts.feedPadding = defaultOpts.feedPadding;
 			opts.bgColor = defaultOpts.bgColor;
 			storage.set(opts);
+
+		case '1.1.0':
+			let oldOpts = await browser.storage.local.get();
+			storage.set(oldOpts);
+			browser.storage.local.clear();
 		}
 	}
 }

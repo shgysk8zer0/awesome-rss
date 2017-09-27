@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 		return [...base.querySelectorAll(selector)];
 	}
 
-	const storage = browser.storage.local;
+	const storage = browser.storage.sync;
 	const opts = await storage.get();
 	const form = document.forms.options;
 	const inputs = $('[name]', form);

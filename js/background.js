@@ -116,35 +116,35 @@ async function updateHandler(update) {
 	} else if (update.reason === 'update') {
 		/*eslint no-fallthrough: "off"*/
 		/*eslint no-case-declarations: "off"*/
-		const opts = await storage.get();
+		let opts = await storage.get();
+		const localOpts = await browser.storage.local.get();
+
 		switch (update.previousVersion) {
 		case '1.0.0':
 		case '1.0.1':
-			if (opts.hasOwnProperty('icon')) {
+			if (localOpts.hasOwnProperty('icon')) {
 				const key = Object.keys(ICONS).find(icon => {
 					return ICONS[icon] === opts.icon.replace('16', '64');
 				});
-				opts.icon = ICONS.hasOwnProperty(key) ? key : defaultOpts.icon;
+				localOpts.icon = ICONS.hasOwnProperty(key) ? key : defaultOpts.icon;
 			} else {
-				opts.icon = defaultOpts.icon;
+				localOpts.icon = defaultOpts.icon;
 			}
 			if (! opts.hasOwnProperty('openFeed')) {
 				opts.openFeed = defaultOpts.openFeed;
 			}
-			storage.set(opts);
 
 		case '1.0.2':
-			opts.template = defaultOpts.template;
-			opts.fontFamily = defaultOpts.fontFamily;
-			opts.fontSize = defaultOpts.fontSize;
-			opts.feedMargin = defaultOpts.feedMargin;
-			opts.feedPadding = defaultOpts.feedPadding;
-			opts.bgColor = defaultOpts.bgColor;
-			storage.set(opts);
+			localOpts.template = defaultOpts.template;
+			localOpts.fontFamily = defaultOpts.fontFamily;
+			localOpts.fontSize = defaultOpts.fontSize;
+			localOpts.feedMargin = defaultOpts.feedMargin;
+			localOpts.feedPadding = defaultOpts.feedPadding;
+			localOpts.bgColor = defaultOpts.bgColor;
 
 		case '1.1.0':
-			let oldOpts = await browser.storage.local.get();
-			storage.set(oldOpts);
+			Object.keys(opts).forEach(key => localOpts[key] = opts[key]);
+			storage.set(localOpts);
 			browser.storage.local.clear();
 		}
 	}

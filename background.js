@@ -8,6 +8,7 @@ const defaultOpts = {
 	fontSize:    14,
 	feedMargin:  1,
 	feedPadding: 10,
+	bgColor:     '#ffffff',
 };
 
 const storage = browser.storage.local;
@@ -108,7 +109,7 @@ async function optChange(opts) {
 
 async function updateHandler(update) {
 	if (update.temporary) {
-		storage.get().then(opts => console.log(update, opts));
+		storage.get().then(opts => console.log({update, opts}));
 	}
 	if (update.reason === 'install') {
 		storage.set(defaultOpts);

@@ -53,7 +53,7 @@
     "build:icons": "svg-sprite-generate -c img/icons.csv -o icons.svg",
     "build:ext": "web-ext build -i .git/ node_modules/ screenshot.png package.json img/ docs/ web-ext-artifacts/ '*.log*' -o",
     "lint:js": "eslint .",
-    "lint:ext": "web-ext lint",
+    "lint:ext": "web-ext lint -i node_modules/ img/ rollup.config.js",
     "browser": "npm run browser:stable",
     "browser:stable": "web-ext run",
     "browser:beta": "web-ext run -f beta",

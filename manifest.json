@@ -22,15 +22,15 @@
     "browser_style": true
   },
   "options_ui": {
-    "page": "options.html",
+    "page": "html/options.html",
     "browser_style": true
   },
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["js/background.js"]
   },
   "content_scripts": [{
     "matches": ["<all_urls>"],
-    "js": ["document.js"]
+    "js": ["js/document.js"]
   }],
   "content_security_policy": "default-src 'self'; img-src *"
 }

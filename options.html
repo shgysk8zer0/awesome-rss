@@ -12,14 +12,14 @@
 				<legend>Theme Options</legend>
 				<label for="icon"></label>
 				<select name="icon" id="icon" required="">
-					<option value="icons/subscribe-64.svg">Light theme icon</option>
-					<option value="icons/subscribe-dark-64.svg">Dark theme icon</option>
-					<option value="icons/subscribe-orange-64.svg">Orange icon</option>
+					<option value="light">Light theme icon</option>
+					<option value="dark">Dark theme icon</option>
+					<option value="orange">Orange icon</option>
 				</select>
 			</fieldset>
 			<fieldset>
 				<legend>Popup Options</legend>
-				<label for="openFeed">Use bold text</label>
+				<label for="openFeed">Open feed using</label>
 				<select name="openFeed" id="openFeed" required="">
 					<option value="current">Current tab</option>
 					<option value="tab">New tab</option>
@@ -27,8 +27,6 @@
 				</select>
 			</fieldset>
 			<button type="reset">Reset all to defaults</button>
-			<hr />
-			<em><b>Note: </b> Any open tabs will need to be refreshed for changes to take effect</em>
 		</form>
 	</body>
 </html>

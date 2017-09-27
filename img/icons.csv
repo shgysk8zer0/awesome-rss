@@ -9,3 +9,7 @@ font-select,img/adwaita-icons/mimetypes/font-x-generic.svg
 repo,img/octicons/lib/svg/repo.svg
 mark-github,img/octicons/lib/svg/mark-github.svg
 issues,img/octicons/lib/svg/issue-opened.svg
+template,img/adwaita-icons/places/folder-templates.svg
+star,img/adwaita-icons/places/user-bookmarks.svg
+margins,img/margins.svg
+padding,img/padding.svg

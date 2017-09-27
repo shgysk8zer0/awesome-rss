@@ -11,7 +11,11 @@
 		<form name="options">
 			<fieldset>
 				<legend>Theme Options</legend>
-				<label for="icon" class="browser-style-label" title="Select icon">Icon</label>
+				<label for="icon" class="browser-style-label" title="Select icon">
+					<svg class="icon" width="32" height="32">
+						<use xlink:href="icons.svg#star" />
+					</svg>
+				</label>
 				<select name="icon" id="icon" class="browser-style" required="">
 					<option value="light">Light theme icon</option>
 					<option value="dark">Dark theme icon</option>
@@ -31,7 +35,11 @@
 					<option value="window">New window</option>
 				</select>
 				<br />
-				<label for="template" class="browser-style-label" title="Template theme">Template Theme</label>
+				<label for="template" class="browser-style-label" title="Template theme">
+					<svg class="icon" width="32" height="32">
+						<use xlink:href="icons.svg#template" />
+					</svg>
+				</label>
 				<select name="template" id="template" class="browser-style" required="">
 					<option value="regular-template" selected="">Regular</option>
 					<option value="bold-template">Bold</option>
@@ -78,11 +86,19 @@
 				<input type="range" min="8" max="20" id="font-size" name="fontSize" value="14" class="browser-style" />
 				<output for="font-size"></output>
 				<br />
-				<label for="margins" class="browser-style-label" title="Margins">Margins</label>
+				<label for="margins" class="browser-style-label" title="Margins">
+					<svg width="32" height="32" class="icon">
+						<use xlink:href="icons.svg#margins" />
+					</svg>
+				</label>
 				<input type="range" id="margins" min="0" max="10" name="feedMargin" value="1" class="browser-style" />
 				<output for="margins"></output>
 				<br />
-				<label for="padding" class="browser-style-label" title="Padding">Padding</label>
+				<label for="padding" class="browser-style-label" title="Padding">
+					<svg width="32" height="32" class="icon">
+						<use xlink:href="icons.svg#padding" />
+					</svg>
+				</label>
 				<input type="range" id="padding" min="5" max="25" name="feedPadding" value="10" class="browser-style" />
 				<output for="padding"></output>
 			</fieldset>

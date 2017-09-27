@@ -1,0 +1,21 @@
+<svg version="1.1" viewBox="0 0 16 16" viewport="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<rect x=".88672" y=".88894" width="14.227" height="14.22" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2"/>
+<rect x="4.689" y="4.6889" width="6.622" height="6.6202" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".79035"/>
+<ellipse cx="8" cy="7.9989" rx="1.1837" ry="1.1532" stroke-width=".88896"/>
+<g transform="matrix(.40555 0 0 .40555 4.6705 4.9842)" stroke-width="2.4309">
+<rect transform="matrix(0,1,1,0,0,0)" x="6.8017" y="-7.3396" width="1.2642" height="3.1337"/>
+<path d="m-4.2059 8.649 2.4315-1.2072-2.4315-1.2232z"/>
+</g>
+<g transform="matrix(-.40555 0 0 .40555 11.252 4.8414)" stroke-width="2.4309">
+<rect transform="matrix(0,1,1,0,0,0)" x="6.8017" y="-7.3396" width="1.2642" height="3.1337"/>
+<path d="m-4.2059 8.649 2.4315-1.2072-2.4315-1.2232z"/>
+</g>
+<g transform="matrix(0 -.40555 -.40555 0 10.978 11.267)" stroke-width="2.4309">
+<rect transform="matrix(0,1,1,0,0,0)" x="6.8017" y="-7.3396" width="1.2642" height="3.1337"/>
+<path d="m-4.2059 8.649 2.4315-1.2072-2.4315-1.2232z"/>
+</g>
+<g transform="matrix(0 .40555 -.40555 0 10.965 4.7065)" stroke-width="2.4309">
+<rect transform="matrix(0,1,1,0,0,0)" x="6.8017" y="-7.3396" width="1.2642" height="3.1337"/>
+<path d="m-4.2059 8.649 2.4315-1.2072-2.4315-1.2232z"/>
+</g>
+</svg>

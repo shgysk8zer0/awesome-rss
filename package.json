@@ -13,10 +13,12 @@
     "email": "chris@chriszuber.com",
     "url": "https://chriszuber.com"
   },
-  "contributors": [{
-    "name": "Michal Stanke",
-    "url": "https://michal.stanke.cz/"
-  }],
+  "contributors": [
+    {
+      "name": "Michal Stanke",
+      "url": "https://michal.stanke.cz/"
+    }
+  ],
   "homepage": "https://chriszuber.com/",
   "license": "GPL-3.0",
   "repository": {
@@ -30,18 +32,33 @@
     "npm": ">=3.10"
   },
   "devDependencies": {
+    "cssnano": "^3.10.0",
     "eslint": "^4.6.1",
     "eslint-plugin-async-await": "0.0.0",
+    "postcss": "^6.0.12",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^11.0.0",
+    "postcss-url": "^7.1.2",
+    "rollup": "^0.50.0",
+    "svg-sprite-generator": "0.0.7",
     "web-ext": "^2.0.0"
   },
   "scripts": {
+    "git:fetch": "git fetch --prune --tags",
+    "git:submodules": "git submodule update --init --recursive",
+    "build": "npm run build:all && npm run build:ext",
+    "build:all": "npm run build:icons",
+    "build:css": "postcss css/styles/index.css -o css/styles/index.min.css -u postcss-import postcss-cssnext cssnano -m",
+    "build:js": "rollup -c",
+    "build:icons": "svg-sprite-generate -c img/icons.csv -o icons.svg",
+    "build:ext": "web-ext build -i .git/ node_modules/ screenshot.png package.json img/ docs/ web-ext-artifacts/ '*.log*' -o",
     "lint:js": "eslint .",
     "lint:ext": "web-ext lint",
     "browser": "npm run browser:stable",
     "browser:stable": "web-ext run",
     "browser:beta": "web-ext run -f beta",
     "browser:nightly": "web-ext run -f nightly",
-    "build": "web-ext build -i .git/ screenshot.png package.json node_modules/ docs/ img/ web-ext-artifacts/ '*.log*' -o",
-    "test": "npm run lint:js && npm run lint:ext"
+    "test": "npm run lint:js && npm run lint:ext",
+    "postinstall": "npm run git:fetch && npm run git:submodules && npm run build:all"
   }
 }

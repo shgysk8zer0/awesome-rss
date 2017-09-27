@@ -21,11 +21,21 @@ async function init() {
 	const links = JSON.parse(url.searchParams.get('links'));
 	const container = document.getElementById('feeds-container');
 	const template = document.getElementById(opts.template || 'regular-template');
-	document.documentElement.style.setProperty('--feed-color', opts.color);
-	document.documentElement.style.setProperty('--feed-font', opts.fontFamily);
-	document.documentElement.style.setProperty('--feed-size', `${opts.fontSize}px`);
-	document.documentElement.style.setProperty('--feed-margin', `${opts.feedMargin}px`);
-	document.documentElement.style.setProperty('--feed-padding', `${opts.feedPadding}px`);
+	if (opts.hasOwnProperty('bgColor')) {
+		document.documentElement.style.setProperty('--feed-color', opts.color);
+	}
+	if (opts.hasOwnProperty('fontFamily')) {
+		document.documentElement.style.setProperty('--feed-font', opts.fontFamily);
+	}
+	if (opts.hasOwnProperty('fontSize')) {
+		document.documentElement.style.setProperty('--feed-size', `${opts.fontSize}px`);
+	}
+	if (opts.hasOwnProperty('feedMargin')) {
+		document.documentElement.style.setProperty('--feed-margin', `${opts.feedMargin}px`);
+	}
+	if (opts.hasOwnProperty('feedPadding')) {
+		document.documentElement.style.setProperty('--feed-padding', `${opts.feedPadding}px`);
+	}
 	if (opts.hasOwnProperty('bgColor')) {
 		document.documentElement.style.setProperty('--feed-bg-color', opts.bgColor);
 	}

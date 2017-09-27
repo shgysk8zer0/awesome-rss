@@ -6,6 +6,7 @@ body {
 	background-position: center;
 }
 a, [data-link] {
+	box-sizing: border-box;
 	color: var(--feed-color, inherit);
 	font-family: var(--feed-font, inherit);
 	font-size: var(--feed-size, inherit);
@@ -14,8 +15,9 @@ a, [data-link] {
 	margin-bottom: var(--feed-margin, inherit);
 	padding-top: var(--feed-padding, inherit);
 	padding-bottom: var(--feed-padding, inherit);
-	display: block;
 	cursor: pointer;
+	min-height: 1.5em;
+	height: auto;
 }
 .fade-in {
 	animation: fade-in 400ms;

@@ -10,8 +10,8 @@
 		<form name="options">
 			<fieldset>
 				<legend>Theme Options</legend>
-				<label for="icon"></label>
-				<select name="icon" id="icon" required="">
+				<label for="icon" class="browser-style-label">Icon</label>
+				<select name="icon" id="icon" class="browser-style" required="">
 					<option value="light">Light theme icon</option>
 					<option value="dark">Dark theme icon</option>
 					<option value="orange">Orange icon</option>
@@ -19,14 +19,47 @@
 			</fieldset>
 			<fieldset>
 				<legend>Popup Options</legend>
-				<label for="openFeed">Open feed using</label>
-				<select name="openFeed" id="openFeed" required="">
-					<option value="current">Current tab</option>
+				<label for="openFeed" class="browser-style-label">Open feed using</label>
+				<select name="openFeed" id="openFeed" class="browser-style" required="">
+					<option value="current" selected="">Current tab</option>
 					<option value="tab">New tab</option>
 					<option value="window">New window</option>
 				</select>
+				<br />
+				<label for="template" class="browser-style-label">Template Theme</label>
+				<select name="template" id="template" class="browser-style" required="">
+					<option value="regular-template" selected="">Regular</option>
+					<option value="bold-template">Bold</option>
+					<option value="underline-template">Underline</option>
+				</select>
 			</fieldset>
-			<button type="reset">Reset all to defaults</button>
+			<fieldset>
+				<legend>Text options</legend>
+				<label for="color" class="browser-style-label">Color</label>
+				<input type="color" name="color" class="browser-style" required="" />
+				<br />
+				<label for="font" class="browser-style-label">Font Family</label>
+				<select name="fontFamily" class="browser-style" required="">
+					<optgroup label="Serif">
+						<option value="Times, serif">Times New Roman</option>
+						<option value="Georgia, serif">Georgia</option>
+					</optgroup>
+					<optgroup label="Sans Serif">
+						<option value="Arial, Helvetica, sans-serif">Arial</option>
+						<option value="cursive, sans-serif">Cursive</option>
+						<option value="Impact, Charcoal, sans-serif" selected="">Impact</option>
+						<option value="Tahoma, Geneva, sans-serif">Tahoma</option>
+					</optgroup>
+					<optgroup label="Monospace">
+						<option value="Courier, monospace">Courier</option>
+						<option value="Monaco, monospace">Monaco</option>
+					</optgroup>
+				</select>
+				<br />
+				<label for="font-size" class="browser-style-label">Font Size</label>
+				<input type="number" min="8" max="20" name="fontSize" value="12" id="font-size" class="browser-style" />
+			</fiedlset>
+			<button type="reset" class="browser-style">Reset all to defaults</button>
 		</form>
 	</body>
 </html>

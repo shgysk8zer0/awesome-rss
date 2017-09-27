@@ -1,7 +1,11 @@
 const TABS = {};
 const defaultOpts = {
-	icon: 'light',
-	openFeed: 'currennt',
+	icon:       'light',
+	openFeed:   'current',
+	template:   'regular-template',
+	color:      '#101010',
+	fontFamily: 'Impact, Charcoal, sans-serif',
+	fontSize:   16,
 };
 
 const storage = browser.storage.local;
@@ -107,6 +111,7 @@ async function updateHandler(update) {
 	if (update.reason === 'install') {
 		storage.set(defaultOpts);
 	} else if (update.reason === 'update') {
+		/*eslint no-fallthrough: "off"*/
 		const opts = await storage.get();
 		switch (update.previousVersion) {
 		case '1.0.0':
@@ -122,6 +127,11 @@ async function updateHandler(update) {
 			if (! opts.hasOwnProperty('openFeed')) {
 				opts.openFeed = defaultOpts.openFeed;
 			}
+			storage.set(opts);
+		case '1.0.2':
+			opts.template = defaultOpts.template;
+			opts.fontFamily = defaultOpts.fontFamily;
+			opts.fontSize = defaultOpts.fontSize;
 			storage.set(opts);
 		}
 	}

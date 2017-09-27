@@ -1,6 +1,11 @@
-a {
-	color: inherit;
+a, [data-link] {
+	color: var(--feed-color, inherit);
+	font-family: var(--feed-font, inherit);
+	font-size: var(--feed-size, inherit);
 	text-decoration: inherit;
+	cursor: pointer;
+}
+.fade-in {
 	animation: fade-in 400ms;
 }
 @keyframes fade-in {

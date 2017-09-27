@@ -1,18 +1,33 @@
-function init() {
+const storage = browser.storage.local;
+const types = {
+	RSS: 'application/rss+xml',
+	Atom: 'application/atom+xml',
+};
+function $(query, base = document) {
+	return [...base.querySelectorAll(query)];
+}
+async function init() {
+	const opts = await storage.get(['template', 'color', 'fontFamily', 'fontSize']);
 	const url = new URL(location.href);
 	const links = JSON.parse(url.searchParams.get('links'));
 	const container = document.getElementById('feeds-container');
-	const template = document.getElementById('feed-template');
+	const template = document.getElementById(opts.template || 'regular-template');
+	document.documentElement.style.setProperty('--feed-color', opts.color);
+	document.documentElement.style.setProperty('--feed-font', opts.fontFamily);
+	document.documentElement.style.setProperty('--feed-size', `${opts.fontSize}px`);
 
 	try {
 		links.forEach(link => {
 			let feed = template.content.cloneNode(true);
-			let a = feed.querySelector('a');
-			a.href = link.href;
-			a.title = link.title;
-			a.type = link.type;
-			feed.querySelector('[data-prop="title"]').textContent = link.title;
-			a.addEventListener('click', openFeed);
+			$('[href]', feed).forEach(node => {
+				node.href = link.href;
+				node.addEventListener('click', openFeed);
+			});
+			$('[title]').forEach(node => node.title = link.title);
+			$('[data-prop="title"]', feed).forEach(node => node.textContent = link.title);
+			$('[data-prop="type"]', feed).forEach(node => {
+				node.textContent = Object.keys(types).find(type => link.type === types[type]);
+			});
 			container.appendChild(feed);
 		});
 	} catch (error) {
@@ -22,7 +37,7 @@ function init() {
 
 async function openFeed(click) {
 	click.preventDefault();
-	const opts = await browser.storage.local.get('openFeed');
+	const opts = await storage.get('openFeed');
 	if (opts.hasOwnProperty('openFeed')) {
 		switch (opts.openFeed) {
 		case 'window':
@@ -40,7 +55,6 @@ async function openFeed(click) {
 	} else {
 		browser.tabs.update(null, {url: this.href});
 	}
-
 }
 
 if (['interactive', 'complete'].includes(document.readyState)) {

@@ -1,4 +1,4 @@
-const storage = browser.storage.local;
+const storage = browser.storage.sync;
 const types = {
 	RSS: 'application/rss+xml',
 	Atom: 'application/atom+xml',

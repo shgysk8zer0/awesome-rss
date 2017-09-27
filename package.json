@@ -59,6 +59,7 @@
     "browser:beta": "web-ext run -f beta",
     "browser:nightly": "web-ext run -f nightly",
     "test": "npm run lint:js && npm run lint:ext",
+    "upload": "web-ext sign -i node_modules/ img/ rollup.config.js screenshot.png web-ext-artifacts/",
     "postinstall": "npm run git:fetch && npm run git:submodules && npm run build:all"
   }
 }

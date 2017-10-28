@@ -54,7 +54,7 @@
     "build:css": "postcss css/styles/index.css -o css/styles/index.min.css -u postcss-import postcss-cssnext cssnano -m",
     "build:js": "rollup -c",
     "build:icons": "svg-sprite-generate -c img/icons.csv -o icons.svg",
-    "build:ext": "web-ext build -i .git/ node_modules/ screenshot.png package.json img/ docs/ web-ext-artifacts/ '*.log*' -o",
+    "build:ext": "web-ext build -i .git/ node_modules/ screenshot.png package.json rollup.config.js img/ docs/ web-ext-artifacts/ '*.log*' -o",
     "lint:js": "eslint .",
 	"lint:css": "stylelint 'css/*.css'",
     "lint:ext": "web-ext lint -i node_modules/ img/ rollup.config.js",

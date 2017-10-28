@@ -2,20 +2,25 @@ a {
 	color: inherit;
 	text-decoration: none;
 }
+
 form svg.icon {
 	height: 1.5em;
 	width: auto;
 }
+
 svg.icon {
 	color: inherit;
 	fill: currentColor !important;
 }
+
 footer {
 	padding: 2em;
 }
+
 footer svg {
 	transition: transform 800ms;
 }
+
 footer svg:hover {
 	transform: rotateY(360deg) scale(1.2);
 }

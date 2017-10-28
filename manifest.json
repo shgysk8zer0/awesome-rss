@@ -5,7 +5,7 @@
     "name": "Chris Zuber",
     "url": "https://chriszuber.com"
   },
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "__MSG_extensionDescription__",
   "homepage_url": "https://github.com/shgysk8zer0/awesome-rss",
   "icons": {
@@ -32,7 +32,6 @@
     "matches": ["<all_urls>"],
     "js": ["js/document.js"]
   }],
-  "content_security_policy": "default-src 'self'; img-src *",
   "applications": {
     "gecko": {
         "id": "{97d566da-42c5-4ef4-a03b-5a2e5f7cbcb2}",

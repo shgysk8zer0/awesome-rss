@@ -22,12 +22,3 @@ a, [data-link], a:hover, [data-link]:hover {
 a, [data-link] {
 	color: var(--feed-color, inherit);
 }
-.fade-in {
-	animation: fade-in 400ms;
-}
-@keyframes fade-in {
-	from {
-		opacity: 0;
-		transform: translateX(-3em);
-	}
-}

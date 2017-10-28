@@ -32,7 +32,6 @@
     "matches": ["<all_urls>"],
     "js": ["js/document.js"]
   }],
-  "content_security_policy": "default-src 'self'; img-src *",
   "applications": {
     "gecko": {
         "id": "{97d566da-42c5-4ef4-a03b-5a2e5f7cbcb2}",

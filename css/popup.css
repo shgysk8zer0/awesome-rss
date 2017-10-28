@@ -5,6 +5,7 @@ body {
 	background-repeat: no-repeat;
 	background-position: center;
 }
+
 a, [data-link], a:hover, [data-link]:hover {
 	box-sizing: border-box;
 	font-family: var(--feed-font, inherit);
@@ -17,6 +18,7 @@ a, [data-link], a:hover, [data-link]:hover {
 	cursor: pointer;
 
 }
+
 a, [data-link] {
 	color: var(--feed-color, inherit);
 }

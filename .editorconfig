@@ -1,0 +1,33 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+
+[*.{html,xml,svg,js,css,php}]
+indent_style = tab
+trim_trailing_whitespace = true
+max_line_length = 80
+
+[*.{md,markdown,yml,json}]
+indent_style = space
+indent_size = 2
+
+[*.{yml,json}]
+trim_trailing_whitespace = true
+
+[*.{md,markdown}]
+trim_trailing_whitespace = false
+
+[*.{js,php}]
+quote_type = single
+spaces_around_operators = true
+spaces_around_brackets = true
+
+[*.{html,xml,svg,css}]
+quote_type = double

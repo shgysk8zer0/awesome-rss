@@ -18,7 +18,6 @@
   ],
   "page_action": {
     "default_icon": "icons/subscribe-64.svg",
-    "default_title": "__MSG_pageActionTooltip__",
     "browser_style": true
   },
   "options_ui": {

@@ -44,6 +44,7 @@ function removeHandler(tabId) {
 	delete TABS[tabId];
 }
 
+// https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/pageAction/setTitle
 async function updatePageAction(tab, links) {
 	if (links.length > 0) {
 		TABS[tab.id] = links;
@@ -55,6 +56,10 @@ async function updatePageAction(tab, links) {
 			tabId: tab.id,
 			path: ICONS[opts.icon]
 		});
+		browser.pageAction.setTitle({
+			tabId: tab.id,
+			title: browser.i18n.getMessage('pageActionTooltip'),
+		});
 		browser.pageAction.show(tab.id);
 	}
 	if (links.length === 1) {
@@ -65,6 +70,11 @@ async function updatePageAction(tab, links) {
 		browser.pageAction.setPopup({
 			tabId: tab.id,
 			popup: url.toString()
+		});
+	} else {
+		browser.pageAction.setTitle({
+			tabId: tab.id,
+			title: browser.i18n.getMessage('extensionNA'),
 		});
 	}
 }
@@ -81,6 +91,11 @@ function scanPage(tab) {
 	// transitionType will be set on `HistoryStateUpdated` & status will not
 	if (tab.hasOwnProperty('transitionType') || tab.status === 'complete') {
 		browser.tabs.sendMessage(tab.id || tab.tabId, {type: 'scan'});
+		browser.pageAction.setTitle({
+			title: browser.i18n.getMessage('extensionNA'),
+			tabId: tab.id || tab.tabId,
+		});
+		window.dne = console.log;
 	} else if (typeof(tab) === 'number') {
 		browser.tabs.sendMessage(tab, {type: 'scan'});
 	}

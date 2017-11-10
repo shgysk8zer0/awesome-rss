@@ -12,6 +12,10 @@
   "pageActionTooltip": {
     "message": "Subscribe to this page",
     "description": "Tooltip displayed on moused hover over the page action. Should be the same as is Firefox https://transvision.mozfr.org/string/?entity=browser/chrome/browser/customizableui/customizableWidgets.properties:feed-button.tooltiptext2&repo=central"
+  },
+  "extensionNA": {
+    "message": "Unavailable",
+    "description": "Message to show when page is secure or there are no feeds"
   }
 }
 

@@ -44,7 +44,7 @@
     "stylelint-config-standard": "^17.0.0",
     "rollup": "^0.50.0",
     "svg-sprite-generator": "0.0.7",
-    "web-ext": "^2.0.0"
+    "web-ext": "^2.2.2"
   },
   "scripts": {
     "git:fetch": "git fetch --prune --tags",

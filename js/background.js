@@ -92,26 +92,18 @@ function messageHandler(msg, sender) {
 }
 
 function scanPage(tab) {
+	const tabId = typeof(tab) === 'number' ? tab : tab.id || tab.tabId;
 	browser.pageAction.setIcon({
-		tabId: tab.id || tab.tabId,
+		tabId: tabId,
 		path: ICONS.disabled,
 	});
 
 	browser.pageAction.setTitle({
-		tabId: tab.id || tab.tabId,
+		tabId: tabId,
 		title: browser.i18n.getMessage('extensionNA'),
 	});
 
-	// transitionType will be set on `HistoryStateUpdated` & status will not
-	if (tab.hasOwnProperty('transitionType') || tab.status === 'complete') {
-		browser.tabs.sendMessage(tab.id || tab.tabId, {type: 'scan'});
-		browser.pageAction.setTitle({
-			title: browser.i18n.getMessage('extensionNA'),
-			tabId: tab.id || tab.tabId,
-		});
-	} else if (typeof(tab) === 'number') {
-		browser.tabs.sendMessage(tab, {type: 'scan'});
-	}
+	browser.tabs.sendMessage(tabId, {type: 'scan'});
 }
 
 async function refreshAllTabsPageAction() {

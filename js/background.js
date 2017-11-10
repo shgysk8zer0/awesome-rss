@@ -14,9 +14,10 @@ const defaultOpts = {
 const storage = browser.storage.sync;
 
 const ICONS = {
-	light: 'icons/subscribe-64.svg',
-	dark: 'icons/subscribe-dark-64.svg',
-	orange: 'icons/subscribe-orange-64.svg',
+	light:    'icons/subscribe-64.svg',
+	dark:     'icons/subscribe-dark-64.svg',
+	orange:   'icons/subscribe-orange-64.svg',
+	disabled: 'icons/subscribe-disabled.svg',
 };
 
 async function clickHandler(tab) {
@@ -26,12 +27,15 @@ async function clickHandler(tab) {
 		case 'window':
 			browser.windows.create({url: TABS[tab.id][0].href});
 			break;
+
 		case 'tab':
 			browser.tabs.create({url: TABS[tab.id][0].href});
 			break;
+
 		case 'current':
 			browser.tabs.update(null, {url: TABS[tab.id][0].href});
 			break;
+
 		default:
 			throw new Error(`Unsupported open feed method: ${opts.openFeed}`);
 		}
@@ -44,37 +48,37 @@ function removeHandler(tabId) {
 	delete TABS[tabId];
 }
 
-// https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/pageAction/setTitle
 async function updatePageAction(tab, links) {
 	if (links.length > 0) {
-		TABS[tab.id] = links;
 		const opts = await storage.get('icon');
+		TABS[tab.id] = links;
+
 		if (! ICONS.hasOwnProperty(opts.icon)) {
 			opts.icon = defaultOpts.icon;
 		}
+
 		browser.pageAction.setIcon({
 			tabId: tab.id,
 			path: ICONS[opts.icon]
 		});
+
 		browser.pageAction.setTitle({
 			tabId: tab.id,
 			title: browser.i18n.getMessage('pageActionTooltip'),
 		});
+
 		browser.pageAction.show(tab.id);
 	}
+
 	if (links.length === 1) {
 		browser.pageAction.onClicked.addListener(clickHandler);
 	} else if (links.length > 1) {
 		const url = new URL(browser.runtime.getURL('popup.html'));
+
 		url.searchParams.set('links', JSON.stringify(links));
 		browser.pageAction.setPopup({
 			tabId: tab.id,
 			popup: url.toString()
-		});
-	} else {
-		browser.pageAction.setTitle({
-			tabId: tab.id,
-			title: browser.i18n.getMessage('extensionNA'),
 		});
 	}
 }
@@ -88,6 +92,16 @@ function messageHandler(msg, sender) {
 }
 
 function scanPage(tab) {
+	browser.pageAction.setIcon({
+		tabId: tab.id || tab.tabId,
+		path: ICONS.disabled,
+	});
+
+	browser.pageAction.setTitle({
+		tabId: tab.id || tab.tabId,
+		title: browser.i18n.getMessage('extensionNA'),
+	});
+
 	// transitionType will be set on `HistoryStateUpdated` & status will not
 	if (tab.hasOwnProperty('transitionType') || tab.status === 'complete') {
 		browser.tabs.sendMessage(tab.id || tab.tabId, {type: 'scan'});
@@ -95,7 +109,6 @@ function scanPage(tab) {
 			title: browser.i18n.getMessage('extensionNA'),
 			tabId: tab.id || tab.tabId,
 		});
-		window.dne = console.log;
 	} else if (typeof(tab) === 'number') {
 		browser.tabs.sendMessage(tab, {type: 'scan'});
 	}
@@ -110,15 +123,29 @@ async function optChange(opts) {
 	if (opts.hasOwnProperty('icon') && opts.icon.newValue !== opts.icon.oldValue) {
 		const tabs = await browser.tabs.query({status: 'complete'});
 		let icon = opts.icon.newValue;
+
 		if (! ICONS.hasOwnProperty(icon)) {
 			icon = ICONS[defaultOpts.icon];
 		} else {
 			icon = ICONS[icon];
 		}
-		tabs.forEach(tab => browser.pageAction.setIcon({
-			tabId: tab.id,
-			path: icon
-		}));
+
+		tabs.forEach(async tab => {
+			/**
+			 * Since we do not want to rescan the page to know if there are feeds
+			 * and there is no `getIcon` method, check the title to know if we
+			 * can update the icon without implying that there is a feed to
+			 * subscribe to.
+			*/
+			const title = await browser.pageAction.getTitle({tabId: tab.id});
+
+			if (title !== browser.i18n.getMessage('extensionNA')) {
+				browser.pageAction.setIcon({
+					tabId: tab.id,
+					path: icon,
+				});
+			}
+		});
 	}
 }
 
@@ -126,6 +153,7 @@ async function updateHandler(update) {
 	if (update.temporary) {
 		storage.get().then(opts => console.log({update, opts}));
 	}
+
 	if (update.reason === 'install') {
 		storage.set(defaultOpts);
 	} else if (update.reason === 'update') {

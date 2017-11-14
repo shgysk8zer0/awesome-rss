@@ -65,24 +65,16 @@ async function init() {
 
 async function openFeed(click) {
 	click.preventDefault();
-	const opts = await storage.get('openFeed');
-	if (opts.hasOwnProperty('openFeed')) {
-		switch (opts.openFeed) {
-		case 'window':
-			browser.windows.create({url: this.href});
-			break;
-		case 'tab':
-			browser.tabs.create({url: this.href});
-			break;
-		case 'current':
-			browser.tabs.update(null, {url: this.href});
-			break;
-		default:
-			throw new Error(`Unsupported open feed method: ${opts.openFeed}`);
+
+	const opts = await storage.get(['openFeed', 'service']);
+	browser.runtime.sendMessage({
+		type: 'openFeed',
+		params: {
+			feed: this.href,
+			target: opts.openFeed,
+			service: opts.service,
 		}
-	} else {
-		browser.tabs.update(null, {url: this.href});
-	}
+	});
 }
 
 if (['interactive', 'complete'].includes(document.readyState)) {

@@ -20,7 +20,25 @@
 					<option value="light">Light theme icon</option>
 					<option value="dark">Dark theme icon</option>
 					<option value="orange">Orange icon</option>
+					<option value="green">Green icon</option>
 				</select>
+			</fieldset>
+			<fieldset>
+				<legend>Subscribe Using</legend>
+				<label for="subscribe-rss" class="browser-style-label" title="Select icon">
+					<svg class="icon" width="32" height="32">
+						<use xlink:href="icons.svg#rss" />
+					</svg>
+					<span>RSS</span>
+				</label>
+				<input type="radio" name="service" id="subscribe-rss" value="rss" checked="" />
+				<label for="subscribe-feedly" class="browser-style-label" title="Select icon">
+					<svg class="icon" width="32" height="32">
+						<use xlink:href="icons.svg#feedly" />
+					</svg>
+					<span>Feedly</span>
+				</label>
+				<input type="radio" name="service" value="feedly" id="subscribe-feedly" />
 			</fieldset>
 			<fieldset>
 				<legend>Popup Options</legend>

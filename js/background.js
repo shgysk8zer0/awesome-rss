@@ -2,6 +2,7 @@ const TABS = {};
 const defaultOpts = {
 	icon:        'light',
 	openFeed:    'current',
+	service:     'rss',
 	template:    'regular-template',
 	color:       '#101010',
 	fontFamily:  'Arial, Helvetica, sans-serif',
@@ -17,30 +18,50 @@ const ICONS = {
 	light:    'icons/subscribe-64.svg',
 	dark:     'icons/subscribe-dark-64.svg',
 	orange:   'icons/subscribe-orange-64.svg',
+	green:    'icons/subscribe-green-64.svg',
 	disabled: 'icons/subscribe-disabled.svg',
 };
 
+function openFeed({feed, target = 'current', service = 'rss'} = {}) {
+	let url = null;
+	switch (service) {
+	case 'feedly':
+		const feedly = new URL('https://feedly.com/i/subscription/feed/');
+		feedly.pathname += encodeURIComponent(feed);
+		url = feedly;
+		break;
+	default:
+		url = new URL(feed);
+	}
+
+	switch (target) {
+	case 'window':
+		browser.windows.create({url: url.toString()});
+		break;
+
+	case 'tab':
+		browser.tabs.create({url: url.toString()});
+		break;
+
+	case 'current':
+		browser.tabs.update(null, {url: url.toString()});
+		break;
+
+	default:
+		throw new Error(`Unsupported open feed method: ${target}`);
+	}
+}
+
 async function clickHandler(tab) {
-	const opts = await storage.get('openFeed');
-	if (opts.hasOwnProperty('openFeed')) {
-		switch (opts.openFeed) {
-		case 'window':
-			browser.windows.create({url: TABS[tab.id][0].href});
-			break;
-
-		case 'tab':
-			browser.tabs.create({url: TABS[tab.id][0].href});
-			break;
-
-		case 'current':
-			browser.tabs.update(null, {url: TABS[tab.id][0].href});
-			break;
-
-		default:
-			throw new Error(`Unsupported open feed method: ${opts.openFeed}`);
-		}
-	} else {
-		browser.tabs.update(null, {url: TABS[tab.id][0].href});
+	const opts = await storage.get(['openFeed', 'service']);
+	try {
+		openFeed({
+			feed: TABS[tab.id][0].href,
+			target: opts.openFeed,
+			service: opts.service,
+		});
+	} catch (err) {
+		console.error(err);
 	}
 }
 
@@ -87,6 +108,9 @@ function messageHandler(msg, sender) {
 	switch (msg.type) {
 	case 'feeds':
 		updatePageAction(sender.tab, msg.links);
+		break;
+	case 'openFeed':
+		openFeed(msg.params);
 		break;
 	}
 }
@@ -181,6 +205,9 @@ async function updateHandler(update) {
 			Object.keys(opts).forEach(key => localOpts[key] = opts[key]);
 			storage.set(localOpts);
 			browser.storage.local.clear();
+
+		case '1.1.3':
+			storage.set({service: defaultOpts.service});
 		}
 	}
 }

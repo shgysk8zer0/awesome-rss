@@ -8,21 +8,29 @@ window.addEventListener('DOMContentLoaded', async () => {
 	const form = document.forms.options;
 	const inputs = $('[name]', form);
 
-	Object.keys(opts).forEach(key => {
-		const input = inputs.find(el => el.name === key);
-		if (input instanceof HTMLInputElement) {
-			switch(input.type) {
-			case 'checkbox':
-				input.checked = true;
-				break;
-			default:
+	Object.entries(opts).forEach(([key, value]) => {
+		const matches = inputs.filter(el => el.name === key);
+		matches.forEach(input => {
+			if (input instanceof HTMLInputElement) {
+				switch(input.type) {
+				case 'checkbox':
+					input.checked = true;
+					break;
+				case 'radio':
+					if (input.value === value) {
+						input.checked = true;
+					}
+					break;
+				default:
+					input.value = opts[key];
+				}
+			} else if (input instanceof HTMLSelectElement) {
 				input.value = opts[key];
+			} else {
+				storage.remove(key);
 			}
-		} else if (input instanceof HTMLSelectElement) {
-			input.value = opts[key];
-		} else {
-			storage.remove(key);
-		}
+		});
+
 
 		$('output[for]', form).forEach(output => {
 			const input = document.getElementById(output.getAttribute('for'));
@@ -36,7 +44,8 @@ window.addEventListener('DOMContentLoaded', async () => {
 			if (change.target instanceof HTMLInputElement) {
 				switch (change.target.type) {
 				case 'checkbox':
-					opts[change.target.name] = change.target.checked;
+				case 'radio':
+					opts[change.target.name] = change.target.value;
 					break;
 				default:
 					opts[change.target.name] = change.target.value;

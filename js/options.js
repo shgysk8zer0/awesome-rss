@@ -3,10 +3,22 @@ window.addEventListener('DOMContentLoaded', async () => {
 		return [...base.querySelectorAll(selector)];
 	}
 
+	function id(strs, text) {
+		return `${strs[0]}${text.charAt(0)}${text.substr(1)}`;
+	}
+
 	const storage = browser.storage.sync;
 	const opts = await storage.get();
 	const form = document.forms.options;
 	const inputs = $('[name]', form);
+
+	$('[data-locale-text]', form).forEach(el => {
+		el.textContent = browser.i18n.getMessage(id`text${el.dataset.localeText}`);
+	});
+
+	$('[data-locale-title]', form).forEach(el => {
+		el.title = browser.i18n.getMessage(id`title${el.dataset.localeTitle}`);
+	});
 
 	Object.entries(opts).forEach(([key, value]) => {
 		const matches = inputs.filter(el => el.name === key);

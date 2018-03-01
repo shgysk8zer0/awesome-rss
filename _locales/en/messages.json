@@ -3,12 +3,10 @@
     "message": "Awesome RSS",
     "description": "Name of the extension."
   },
-
   "extensionDescription": {
     "message": "Puts an RSS/Atom subscribe button back in URL bar",
     "description": "Description of the extension displayed in the add-ons manager."
   },
-
   "pageActionTooltip": {
     "message": "Subscribe to this page",
     "description": "Tooltip displayed on moused hover over the page action. Should be the same as is Firefox https://transvision.mozfr.org/string/?entity=browser/chrome/browser/customizableui/customizableWidgets.properties:feed-button.tooltiptext2&repo=central"
@@ -16,6 +14,129 @@
   "extensionNA": {
     "message": "Unavailable",
     "description": "Message to show when page is secure or there are no feeds"
+  },
+  "optionsPageTitle": {
+    "message": "Awesome RSS Options",
+    "description": "Title for options / preferences page"
+  },
+  "themeLegend": {
+    "message": "Theme Options",
+    "description": "Text for general theming section `<legend>`"
+  },
+  "title@selectIcon": {
+    "message": "Select icon",
+    "description": "Title attr for icon picked"
+  },
+  "option_lightIcon": {
+    "message": "Light theme icon",
+    "description": "Text to display for light theme icon  `<option>`"
+  },
+  "option_darkIcon": {
+    "message": "Dark theme icon",
+    "description": "Text to display for dark theme icon `<option>`"
+  },
+  "option_orangeIcon": {
+    "message": "Orange theme icon",
+    "description": "Text to display for orange theme icon `<option>`"
+  },
+  "option_greenIcon": {
+    "message": "Green theme icon",
+    "description": "Text to display for green theme icon `<option>`"
+  },
+  "subscriptionLegend": {
+    "message": "Subscribe Using",
+    "description": "Text to display for browser action options legend"
+  },
+  "title@rssSubscribe": {
+    "message": "Subscribe using RSS (default)",
+    "description": "Title attribute input to select RSS as subscription option"
+  },
+  "title@feedlySubscribe": {
+    "message": "Subscribe using Feedly",
+    "description": "Title attribute for input to select Feedly as subscription option"
+  },
+  "popupOptionsLegend": {
+    "message": "Popup Options",
+    "description": "Text for popup options section `<legend>`"
+  },
+  "title@openUsingLabel": {
+    "message": "Open feeds using...",
+    "description": "Title attribute for input to select how feeds are opened"
+  },
+  "option_feedOpenCurrentTab": {
+    "message": "Current tab",
+    "description": "Text to display for current tab `<option>`"
+  },
+  "option_feedOpenNewTab": {
+    "message": "New Tab",
+    "description": "Text to display for new tab `<option>`"
+  },
+  "option_feedOpenNewWindow": {
+    "message": "New window",
+    "description": "Text to display for new window `<option>`"
+  },
+  "title@popupTemplateLabel": {
+    "message": "Template theme",
+    "description": "Text to display for popup template selection `<label>`"
+  },
+  "option_regularTemplate": {
+    "message": "Regular (default)",
+    "description": "Text to display for regular template `<option>`"
+  },
+  "option_boldTemplate": {
+    "message": "Bold",
+    "description": "Text to display for bold template `<option>`"
+  },
+  "option_italicTemplate": {
+    "message": "Italic",
+    "description": "Text to display for italic template `<option>`"
+  },
+  "option_underlineTemplate": {
+    "message": "Underline",
+    "description": "Text to display for underline template `<option>`"
+  },
+  "textOptionsLegend": {
+    "message": "Text options",
+    "description": "Text for text options section `<legend>`"
+  },
+  "title@textColorLabel": {
+    "message": "Select text color",
+    "description": "Text to display for color picker `<label>`"
+  },
+  "title@fontFamilyLabel": {
+    "message": "Select font-family",
+    "description": "Text to display for font-family selection `<label>`"
+  },
+  "title@fontSizeLabel": {
+    "message": "Select font-size",
+    "description": "Text to display for font-size selection `<label>`"
+  },
+  "title@marginLabel": {
+    "message": "Margins",
+    "description": "Text to display for margins `<label>`"
+  },
+  "title@paddingLabel": {
+    "message": "Padding",
+    "description": "Text to display for padding `<label>`"
+  },
+  "popupBackgroundLegend": {
+    "message": "Popup Background",
+    "description": "Text to display for popup background section `<legend>`"
+  },
+  "title@popupBackgroundColorLabel": {
+    "message": "Select background-color",
+    "description": "Text to display for popup background-color `<label>`"
+  },
+  "title@popupBackgroundImageLabel": {
+    "message": "Enter background-image URL",
+    "description": "Text to display for popup background-image `<label>`"
+  },
+  "placeholder@backgroundImageURL": {
+    "message": "https://example.com/image.jpg",
+    "description": "Placeholder text for background-image URL `<input>`"
+  },
+  "title@resetOptionsButton": {
+    "message": "Reset all preferences",
+    "description": "Text to display for title on reset `<button>`"
   }
 }
-

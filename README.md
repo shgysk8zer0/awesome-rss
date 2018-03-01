@@ -65,8 +65,8 @@ only be visible when there is a feed to subscribe to.
 
 [![paypal-qr](./img/paypal-qr.svg)](https://www.paypal.me/shgysk8zer0)
 
-[<img src="./img/logos/bitcoin.svg" alt="bitcoin:1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8" height="32" /> **Bitcoin**](bitcoin:1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8)
+[<img src="./img/logos/bitcoin.svg" alt="bitcoin" height="32" /> **Bitcoin**](bitcoin:1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8)
 
 [![bitcoin:1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8](./img/bitcoin-qr.svg)](bitcoin:1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8)
 
-bitcoin:1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8
+[bitcoin:1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8](bitcoin:1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8)

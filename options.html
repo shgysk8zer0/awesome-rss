@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Awesome RSS Options</title>
+		<title data-locale-text="optionsPageTitle">Awesome RSS Options</title>
 		<meta charset="UTF-8" />
 		<script src="js/options.js" async=""></script>
 		<link rel="stylesheet" href="css/options.css" media="all" />
@@ -10,29 +10,29 @@
 		<!-- https://developer.mozilla.org/en-US/Add-ons/WebExtensions/user_interface/Options_pages -->
 		<form name="options">
 			<fieldset>
-				<legend>Theme Options</legend>
-				<label for="icon" class="browser-style-label" title="Select icon">
+				<legend data-locale-text="themeLegend">Theme Options</legend>
+				<label for="icon" class="browser-style-label" title="Select icon" data-locale-title="selectIcon">
 					<svg class="icon" width="32" height="32">
 						<use xlink:href="icons.svg#star" />
 					</svg>
 				</label>
 				<select name="icon" id="icon" class="browser-style" required="">
-					<option value="light">Light theme icon</option>
-					<option value="dark">Dark theme icon</option>
-					<option value="orange">Orange icon</option>
-					<option value="green">Green icon</option>
+					<option value="light" data-locale-text="option_lightIcon">Light theme icon</option>
+					<option value="dark" data-locale-text="option_darkIcon">Dark theme icon</option>
+					<option value="orange" data-locale-text="option_orangeIcon">Orange icon</option>
+					<option value="green" data-locale-text="option_greenIcon">Green icon</option>
 				</select>
 			</fieldset>
 			<fieldset>
-				<legend>Subscribe Using</legend>
-				<label for="subscribe-rss" class="browser-style-label" title="Select icon">
+				<legend data-locale-text="subscriptionLegend">Subscribe Using</legend>
+				<label for="subscribe-rss" class="browser-style-label" title="Subscribe using RSS (default)" data-locale-title="rssSubscribe">
 					<svg class="icon" width="32" height="32">
 						<use xlink:href="icons.svg#rss" />
 					</svg>
 					<span>RSS</span>
 				</label>
 				<input type="radio" name="service" id="subscribe-rss" value="rss" checked="" />
-				<label for="subscribe-feedly" class="browser-style-label" title="Select icon">
+				<label for="subscribe-feedly" class="browser-style-label" title="Subscribe using Feedly" data-locale-title="feedlySubscribe">
 					<svg class="icon" width="32" height="32">
 						<use xlink:href="icons.svg#feedly" />
 					</svg>
@@ -41,40 +41,40 @@
 				<input type="radio" name="service" value="feedly" id="subscribe-feedly" />
 			</fieldset>
 			<fieldset>
-				<legend>Popup Options</legend>
-				<label for="openFeed" class="browser-style-label" title="Open feeds using...">
+				<legend data-locale-text="popupOptionsLegend">Popup Options</legend>
+				<label for="openFeed" class="browser-style-label" title="Open feeds using..." data-locale-title="openUsingLabel">
 					<svg class="icon" width="32" height="32">
 						<use xlink:href="icons.svg#new-tab" />
 					</svg>
 				</label>
 				<select name="openFeed" id="openFeed" class="browser-style" required="">
-					<option value="current" selected="">Current tab</option>
-					<option value="tab">New tab</option>
-					<option value="window">New window</option>
+					<option value="current" selected="" data-locale-text="option_feedOpenCurrentTab">Current tab</option>
+					<option value="tab" data-locale-text="option_feedOpenNewTab">New tab</option>
+					<option value="window" data-locale-text="option_feedOpenNewWindow">New window</option>
 				</select>
 				<br />
-				<label for="template" class="browser-style-label" title="Template theme">
+				<label for="template" class="browser-style-label" title="Template theme" data-locale-title="popupTemplateLabel">
 					<svg class="icon" width="32" height="32">
 						<use xlink:href="icons.svg#template" />
 					</svg>
 				</label>
 				<select name="template" id="template" class="browser-style" required="">
-					<option value="regular-template" selected="">Regular</option>
-					<option value="bold-template">Bold</option>
-					<option value="italic-template">Italic</option>
-					<option value="underline-template">Underline</option>
+					<option value="regular-template" selected="" data-locale-text="option_regularTemplate">Regular</option>
+					<option value="bold-template" data-locale-text="option_boldTemplate">Bold</option>
+					<option value="italic-template" data-locale-text="option_italicTemplate">Italic</option>
+					<option value="underline-template" data-locale-text="option_underlineTemplate">Underline</option>
 				</select>
 			</fieldset>
 			<fieldset>
-				<legend>Text options</legend>
-				<label for="color" class="browser-style-label" title="Select text color">
+				<legend data-locale-text="textOptionsLegend">Text options</legend>
+				<label for="color" class="browser-style-label" title="Select text color" data-locale-title="textColorLabel">
 					<svg class="icon" width="32" height="32">
 						<use xlink:href="icons.svg#color-select" />
 					</svg>
 				</label>
 				<input type="color" id="color" name="color" class="browser-style" required="" />
 				<br />
-				<label for="font-family" class="browser-style-label" title="Select font-family">
+				<label for="font-family" class="browser-style-label" title="Select font-family" data-locale-title="fontFamilyLabel">
 					<svg class="icon" width="32" height="32">
 						<use xlink:href="icons.svg#font-select" />
 					</svg>
@@ -96,7 +96,7 @@
 					</optgroup>
 				</select>
 				<br />
-				<label for="font-size" class="browser-style-label" title="Select font-size">
+				<label for="font-size" class="browser-style-label" title="Select font-size" data-locale-title="fontSizeLabel">
 					<svg class="icon" width="32" height="32">
 						<use xlink:href="icons.svg#text-size" />
 					</svg>
@@ -104,7 +104,7 @@
 				<input type="range" min="8" max="20" id="font-size" name="fontSize" value="14" class="browser-style" />
 				<output for="font-size"></output>
 				<br />
-				<label for="margins" class="browser-style-label" title="Margins">
+				<label for="margins" class="browser-style-label" title="Margins" data-locale-title="marginLabel">
 					<svg width="32" height="32" class="icon">
 						<use xlink:href="icons.svg#margins" />
 					</svg>
@@ -112,7 +112,7 @@
 				<input type="range" id="margins" min="0" max="10" name="feedMargin" value="1" class="browser-style" />
 				<output for="margins"></output>
 				<br />
-				<label for="padding" class="browser-style-label" title="Padding">
+				<label for="padding" class="browser-style-label" title="Padding" data-locale-title="paddingLabel">
 					<svg width="32" height="32" class="icon">
 						<use xlink:href="icons.svg#padding" />
 					</svg>
@@ -121,22 +121,22 @@
 				<output for="padding"></output>
 			</fieldset>
 			<fieldset>
-				<legend>Popup Background</legend>
-				<label for="bg-color" class="browser-style-label" title="Select background-color">
+				<legend data-locale-text="popupBackgroundLegend">Popup Background</legend>
+				<label for="bg-color" class="browser-style-label" title="Select background-color" data-locale-title="popupBackgroundColorLabel">
 					<svg class="icon" width="32" height="32">
 						<use xlink:href="icons.svg#color-select" />
 					</svg>
 				</label>
 				<input type="color" id="bg-color" name="bgColor" />
 				<br />
-				<label for="bg-image" class="browser-style-label" title="Select background-image">
+				<label for="bg-image" class="browser-style-label" title="Enter background-image URL" data-locale-title="popupBackgroundImageLabel">
 					<svg class="icon" width="32" height="32">
 						<use xlink:href="icons.svg#image" />
 					</svg>
 				</label>
-				<input type="url" id="bg-image" name="bgImage" placeholder="Image URL" />
+				<input type="url" id="bg-image" name="bgImage" data-locale-placeholder="backgroundImageURL" placeholder="https://example.com/bg-image.jpg" />
 			</fieldset>
-			<button type="reset" class="browser-style" title="Reset all preferences">
+			<button type="reset" class="browser-style" title="Reset all preferences" data-locale-title="resetOptionsButton">
 				<svg class="icon" width="32" height="32">
 					<use xlink:href="icons.svg#edit-clear-all" />
 				</svg>

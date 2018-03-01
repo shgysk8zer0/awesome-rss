@@ -1,6 +1,6 @@
 {
   "name": "awesome-rss",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Puts an RSS/Atom subscribe button back in URL bar",
   "keywords": [
     "WebExtension",
@@ -11,7 +11,7 @@
   "author": {
     "name": "Chris Zuber",
     "email": "chris@chriszuber.com",
-    "url": "https://chriszuber.com"
+    "url": "https://shgysk8zer0.github.io"
   },
   "contributors": [
     {
@@ -19,7 +19,7 @@
       "url": "https://michal.stanke.cz/"
     }
   ],
-  "homepage": "https://chriszuber.com/",
+  "homepage": "https://addons.mozilla.org/en-US/firefox/addon/awesome-rss/",
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
@@ -50,13 +50,9 @@
     "build:icons": "svg-sprite-generate -c img/icons.csv -o icons.svg",
     "build:ext": "web-ext build -i .git/ node_modules/ screenshot.png package.json rollup.config.js img/ docs/ web-ext-artifacts/ '*.log*' -o",
     "lint:js": "eslint .",
-	"lint:css": "stylelint 'css/*.css'",
+    "lint:css": "stylelint 'css/*.css'",
     "lint:ext": "web-ext lint -i node_modules/ img/ rollup.config.js",
-    "start": "npm run browser",
-    "browser": "npm run browser:stable",
-    "browser:stable": "web-ext run",
-    "browser:beta": "web-ext run -f beta",
-    "browser:nightly": "web-ext run -f nightly",
+    "start": "web-ext run",
     "test": "npm run lint:js && npm run lint:css && npm run lint:ext",
     "upload": "web-ext sign -i node_modules/ img/ rollup.config.js screenshot.png web-ext-artifacts/",
     "postinstall": "npm run git:fetch && npm run git:submodules && npm run build:all"

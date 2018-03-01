@@ -1,9 +1,8 @@
 # Awesome RSS
-
 - - -
-Puts an RSS/Atom subscribe button ![icon](./icons/subscribe-64.svg) back in URL bar
+Puts an RSS/Atom subscribe button <img src="./icons/subscribe-64.svg" height="16" width="16" alt="RSS icon"/> back in URL bar
 
-![screenshot](./screenshot.png)
+![screenshot](https://i.imgur.com/INswaGS.png)
 
 [![license](https://img.shields.io/github/license/shgysk8zer0/awesome-rss.svg)](./LICENSE)
 [![Build Status](https://travis-ci.org/shgysk8zer0/awesome-rss.svg?branch=master)](https://travis-ci.org/shgysk8zer0/awesome-rss)
@@ -23,16 +22,18 @@ Puts an RSS/Atom subscribe button ![icon](./icons/subscribe-64.svg) back in URL 
 -->
 - - -
 
-[![GitHub stars](https://img.shields.io/github/stars/shgysk8zer0/awesome-rss.svg?style=social&label=Star)](https://github.com/shgysk8zer0/awesome-rss#fork-destination-box)
-[![GitHub followers](https://img.shields.io/github/followers/shgysk8zer0.svg?style=social&label=Follow)](https://github.com/shgysk8zer0)
-[![Twitter Follow](https://img.shields.io/twitter/follow/shgysk8zer0.svg?style=social&label=Follow)](https://twitter.com/shgysk8zer0)
-[![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=shgysk8zer0%2Fawesome-rss%3A%20Puts%20an%20RSS%2FAtom%20subscribe%20button%20back%20in%20URL%20bar&url=https%3A%2F%2Fgithub.com%2Fshgysk8zer0%2Fawesome-rss&original_referer=)
+[![GitHub stars](https://img.shields.io/github/stars/shgysk8zer0/awesome-rss.svg?style=social&label=Star&logo=github)](https://github.com/shgysk8zer0/awesome-rss#fork-destination-box)
+[![GitHub followers](https://img.shields.io/github/followers/shgysk8zer0.svg?style=social&label=Follow&logo=github)](https://github.com/shgysk8zer0)
+
+[![Twitter Follow](https://img.shields.io/twitter/follow/shgysk8zer0.svg?style=social&label=Follow&logo=twitter)](https://twitter.com/shgysk8zer0)
+[![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?text=shgysk8zer0%2Fawesome-rss%3A%20Puts%20an%20RSS%2FAtom%20subscribe%20button%20back%20in%20URL%20bar&url=https%3A%2F%2Fgithub.com%2Fshgysk8zer0%2Fawesome-rss&original_referer=)
 
 
 ## Quick Links
 - [Contributing](./docs/CONTRIBUTING.md)
 - [Code of Conduct](./docs/CODE_OF_CONDUCT.md)
 - [GitHub](https://github.com/shgysk8zer0/awesome-rss)
+- [Issues](https://github.com/awesome-rss/issues)
 
 A long time ago (*especially in Internet time*), Firefox used to have an icon
 that showed up in the Awesome Bar when a website had RSS or Atom feeds
@@ -60,7 +61,10 @@ only be visible when there is a feed to subscribe to.
 > [**- Felicia Day**](https://plus.google.com/+FeliciaDay/posts/DsSLwxjojmj)
 
 ## Donate via...
+[<img src="./img/logos/paypal.svg" alt="https://www.paypal.me/shgysk8zer0" height="32" /> **PayPal**](https://paypal.me/shgysk8zer0)
 
-**Bitcoin**
+[![paypal-qr](./img/paypal-qr.svg)](https://www.paypal.me/shgysk8zer0)
 
-[![bitcoin:1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8](./img/bitcoin.svg)](bitcoin:1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8)
+[<img src="./img/logos/bitcoin.svg" alt="bitcoin:1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8" height="32" /> **Bitcoin**](bitcoin:1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8)
+
+[![bitcoin:1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8](./img/bitcoin-qr.svg)](bitcoin:1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8)

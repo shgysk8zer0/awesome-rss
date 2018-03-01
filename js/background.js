@@ -109,8 +109,13 @@ function messageHandler(msg, sender) {
 	case 'feeds':
 		updatePageAction(sender.tab, msg.links);
 		break;
+
 	case 'openFeed':
 		openFeed(msg.params);
+		break;
+
+	case 'resetOpts':
+		storage.set(defaultOpts);
 		break;
 	}
 }

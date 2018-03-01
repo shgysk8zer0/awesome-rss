@@ -3,20 +3,18 @@ window.addEventListener('DOMContentLoaded', async () => {
 		return [...base.querySelectorAll(selector)];
 	}
 
-	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
-	// https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/i18n/getMessage
-	function i18n(strings, el) {
-		let prefix = strings[0];
-		let id = '';
-		switch (prefix) {
-		case 'title':
-			id = el.dataset.localeTitle;
-			break;
-		default:
-			id = el.dataset.localeText;
-			break;
+	function getText(el) {
+		const msg = browser.i18n.getMessage(`text_${el.dataset.localeText}`);
+		if (msg !== '') {
+			el.textContent = msg;
 		}
-		return browser.i18n.getMessage(`${prefix}${id.charAt(0).toUpperCase()}${id.substr(1)}`);
+	}
+
+	function getTitle(el) {
+		const msg = browser.i18n.getMessage(`title_${el.dataset.localeTitle}`);
+		if (msg !== '') {
+			el.title = msg;
+		}
 	}
 
 	const storage = browser.storage.sync;
@@ -24,8 +22,8 @@ window.addEventListener('DOMContentLoaded', async () => {
 	const form = document.forms.options;
 	const inputs = $('[name]', form);
 
-	$('[data-locale-text]', form).forEach(el => el.textContent = i18n`text${el}`);
-	$('[data-locale-title]', form).forEach(el => el.title = i18n`title${el}`);
+	$('[data-locale-text]', form).forEach(getText);
+	$('[data-locale-title]', form).forEach(getTitle);
 
 	Object.entries(opts).forEach(([key, value]) => {
 		const matches = inputs.filter(el => el.name === key);

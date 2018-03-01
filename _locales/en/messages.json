@@ -16,6 +16,8 @@
   "extensionNA": {
     "message": "Unavailable",
     "description": "Message to show when page is secure or there are no feeds"
+  },
+  "text_ThemeOptions": {
+    "message": "Theme Options"
   }
 }
-

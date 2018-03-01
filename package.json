@@ -32,6 +32,7 @@
     "npm": ">=3.10"
   },
   "devDependencies": {
+    "addons-linter": "^0.37.0",
     "eslint": "^4.6.1",
     "eslint-plugin-async-await": "0.0.0",
     "stylelint": "^8.1.1",

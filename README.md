@@ -68,12 +68,10 @@ only be visible when there is a feed to subscribe to.
 - [![](https://github.com/turisap.png?size=24) @turisap](https://github.com/turisap)
 
 ## Donate via...
-[<img src="./img/logos/paypal.svg" alt="https://www.paypal.me/shgysk8zer0" height="32" /> **PayPal**](https://paypal.me/shgysk8zer0)
+[![PayPal](./img/paypal.svg) **paypal.me/shgysk8zer0**](https://paypal.me/shgysk8zer0)
 
 [![paypal-qr](./img/paypal-qr.svg)](https://www.paypal.me/shgysk8zer0)
 
-[<img src="./img/logos/bitcoin.svg" alt="bitcoin" height="32" /> **Bitcoin**](bitcoin:1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8)
+[![BitCoin](./img/bitcoin.svg) **1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8**](bitcoin:1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8)
 
 [![bitcoin:1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8](./img/bitcoin-qr.svg)](bitcoin:1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8)
-
-[bitcoin:1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8](bitcoin:1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8)

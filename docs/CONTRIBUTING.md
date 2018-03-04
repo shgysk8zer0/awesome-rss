@@ -14,6 +14,12 @@ and create a pull request.
 
 **Always pull from `upstream master` prior to sending pull-requests.**
 
+If you are looking for [open issues](https://github.com/shgysk8zer0/awesome-rss/issues),
+check out the following labels:
+- [help wanted](https://github.com/shgysk8zer0/awesome-rss/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
+- [good first issue](https://github.com/shgysk8zer0/awesome-rss/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+- [Translations](https://github.com/shgysk8zer0/awesome-rss/issues?q=is%3Aissue+is%3Aopen+label%3ATranslations)
+
 Web extensions documentation may be found on [MDN](https://developer.mozilla.org/en-US/Add-ons/WebExtensions).
 
 In order for any pull request to be merged into master, it **MUST** pass `npm test`.

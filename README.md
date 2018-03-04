@@ -34,6 +34,8 @@ Puts an RSS/Atom subscribe button <img src="./icons/subscribe-64.svg" height="16
 - [Code of Conduct](./docs/CODE_OF_CONDUCT.md)
 - [GitHub](https://github.com/shgysk8zer0/awesome-rss)
 - [Issues](https://github.com/awesome-rss/issues)
+- [Contributors](https://github.com/shgysk8zer0/awesome-rss/graphs/contributors)
+- [Translators](#translators)
 
 A long time ago (*especially in Internet time*), Firefox used to have an icon
 that showed up in the Awesome Bar when a website had RSS or Atom feeds
@@ -60,13 +62,16 @@ only be visible when there is a feed to subscribe to.
 >
 > [**- Felicia Day**](https://plus.google.com/+FeliciaDay/posts/DsSLwxjojmj)
 
+## Translators
+- [![](https://github.com/MikkCZ.png?size=24) @MikkCZ](https://github.com/MikkCZ)
+- [![](https://github.com/xyrolaith.png?size=24) @xyrolaith](https://github.com/xyrolaith)
+- [![](https://github.com/turisap.png?size=24) @turisap](https://github.com/turisap)
+
 ## Donate via...
-[<img src="./img/logos/paypal.svg" alt="https://www.paypal.me/shgysk8zer0" height="32" /> **PayPal**](https://paypal.me/shgysk8zer0)
+[![PayPal](./img/paypal.svg) **paypal.me/shgysk8zer0**](https://paypal.me/shgysk8zer0)
 
 [![paypal-qr](./img/paypal-qr.svg)](https://www.paypal.me/shgysk8zer0)
 
-[<img src="./img/logos/bitcoin.svg" alt="bitcoin" height="32" /> **Bitcoin**](bitcoin:1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8)
+[![BitCoin](./img/bitcoin.svg) **1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8**](bitcoin:1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8)
 
 [![bitcoin:1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8](./img/bitcoin-qr.svg)](bitcoin:1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8)
-
-[bitcoin:1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8](bitcoin:1NpeeCN35dQZv1pJLZcASFWvkBzJszH9q8)

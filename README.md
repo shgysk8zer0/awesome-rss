@@ -34,7 +34,7 @@ Puts an RSS/Atom subscribe button <img src="./icons/subscribe-64.svg" height="16
 - [Code of Conduct](./docs/CODE_OF_CONDUCT.md)
 - [GitHub](https://github.com/shgysk8zer0/awesome-rss)
 - [Issues](https://github.com/awesome-rss/issues)
-- [Contributors](https://github.com/awesome-rss/contributors)
+- [Contributors](https://github.com/shgysk8zer0/awesome-rss/graphs/contributors)
 - [Translators](#translators)
 
 A long time ago (*especially in Internet time*), Firefox used to have an icon

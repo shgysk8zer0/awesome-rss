@@ -16,6 +16,12 @@ and create a pull request.
 
 Web extensions documentation may be found on [MDN](https://developer.mozilla.org/en-US/Add-ons/WebExtensions).
 
+In order for any pull request to be merged into master, it **MUST** pass `npm test`.
+When you open a pull request, you will see its status reported. If your branch is
+behind master, you may have the ability to update it from there.
+
+![pull request status](https://i.imgur.com/9gmNwhQ.png)
+
 ## Requirements
 - [Firefox](https://www.mozilla.org/en-US/firefox/)
 - [Node.js/NPM](https://nodejs.org/en/)

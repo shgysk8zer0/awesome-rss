@@ -20,7 +20,9 @@ In order for any pull request to be merged into master, it **MUST** pass `npm te
 When you open a pull request, you will see its status reported. If your branch is
 behind master, you may have the ability to update it from there.
 
-![pull request status](https://i.imgur.com/9gmNwhQ.png)
+![checks not completed](https://i.imgur.com/ZyeZdLx.png)
+
+![checks passed](https://i.imgur.com/9gmNwhQ.png)
 
 ## Requirements
 - [Firefox](https://www.mozilla.org/en-US/firefox/)

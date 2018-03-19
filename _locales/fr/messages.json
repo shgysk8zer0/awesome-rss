@@ -16,6 +16,130 @@
   "extensionNA": {
     "message": "Indisponible",
     "description": "Message to show when page is secure or there are no feeds"
+  },
+  "optionsPageTitle": {
+    "message": "Options de Awesome RSS",
+    "description": "Title for options / preferences page"
+  },
+  "themeLegend": {
+    "message": "Options de thème",
+    "description": "Text for general theming section `<legend>`"
+  },
+  "title@selectIcon": {
+    "message": "Icône de sélection",
+    "description": "Title attr for icon picked"
+  },
+  "option_lightIcon": {
+    "message": "Icône thème clair",
+    "description": "Text to display for light theme icon  `<option>`"
+  },
+  "option_darkIcon": {
+    "message": "Icône thème sombre",
+    "description": "Text to display for dark theme icon `<option>`"
+  },
+  "option_orangeIcon": {
+    "message": "Icône thème orange",
+    "description": "Text to display for orange theme icon `<option>`"
+  },
+  "option_greenIcon": {
+    "message": "Icône thème vert",
+    "description": "Text to display for green theme icon `<option>`"
+  },
+  "subscriptionLegend": {
+    "message": "S'abonner à ce flux en utilisant",
+    "description": "Text to display for browser action options legend"
+  },
+  "title@rssSubscribe": {
+    "message": "S'abonner au flux RSS (par défaut)",
+    "description": "Title attribute input to select RSS as subscription option"
+  },
+  "title@feedlySubscribe": {
+    "message": "S'abonner avec Feedly",
+    "description": "Title attribute for input to select Feedly as subscription option"
+  },
+  "popupOptionsLegend": {
+    "message": "Options de la fenêtre Popup",
+    "description": "Text for popup options section `<legend>`"
+  },
+  "title@openUsingLabel": {
+    "message": "Ouvrir les flux en utilisant...",
+    "description": "Title attribute for input to select how feeds are opened"
+  },
+  "option_feedOpenCurrentTab": {
+    "message": "Onglet courant",
+    "description": "Text to display for current tab `<option>`"
+  },
+  "option_feedOpenNewTab": {
+    "message": "Nouvel onglet",
+    "description": "Text to display for new tab `<option>`"
+  },
+  "option_feedOpenNewWindow": {
+    "message": "Nouvelle fenêtre",
+    "description": "Text to display for new window `<option>`"
+  },
+  "title@popupTemplateLabel": {
+    "message": "Nom du template",
+    "description": "Text to display for popup template selection `<label>`"
+  },
+  "option_regularTemplate": {
+    "message": "Normal (par défaut)",
+    "description": "Text to display for regular template `<option>`"
+  },
+  "option_boldTemplate": {
+    "message": "Gras",
+    "description": "Text to display for bold template `<option>`"
+  },
+  "option_italicTemplate": {
+    "message": "Italique",
+    "description": "Text to display for italic template `<option>`"
+  },
+  "option_underlineTemplate": {
+    "message": "Souligné",
+    "description": "Text to display for underline template `<option>`"
+  },
+  "textOptionsLegend": {
+    "message": "Options du texte",
+    "description": "Text for text options section `<legend>`"
+  },
+  "title@textColorLabel": {
+    "message": "Sélectionnez la couleur du texte",
+    "description": "Text to display for color picker `<label>`"
+  },
+  "title@fontFamilyLabel": {
+    "message": "Sélectionnez la police de caractères",
+    "description": "Text to display for font-family selection `<label>`"
+  },
+  "title@fontSizeLabel": {
+    "message": "Sélectionnez la taille de police",
+    "description": "Text to display for font-size selection `<label>`"
+  },
+  "title@marginLabel": {
+    "message": "Marges",
+    "description": "Text to display for margins `<label>`"
+  },
+  "title@paddingLabel": {
+    "message": "Padding",
+    "description": "Text to display for padding `<label>`"
+  },
+  "popupBackgroundLegend": {
+    "message": "Popup d'arrière-plan",
+    "description": "Text to display for popup background section `<legend>`"
+  },
+  "title@popupBackgroundColorLabel": {
+    "message": "Sélectionnez la couleur du fond",
+    "description": "Text to display for popup background-color `<label>`"
+  },
+  "title@popupBackgroundImageLabel": {
+    "message": "Entrez l'URL de l'image de fond",
+    "description": "Text to display for popup background-image `<label>`"
+  },
+  "placeholder@backgroundImageURL": {
+    "message": "https://exemple.fr/image.jpg",
+    "description": "Placeholder text for background-image URL `<input>`"
+  },
+  "title@resetOptionsButton": {
+    "message": "Réinitialisez les paramètres",
+    "description": "Text to display for title on reset `<button>`"
   }
 }
 

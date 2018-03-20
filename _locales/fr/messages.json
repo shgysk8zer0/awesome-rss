@@ -46,11 +46,11 @@
     "description": "Text to display for green theme icon `<option>`"
   },
   "subscriptionLegend": {
-    "message": "S'abonner à ce flux en utilisant",
+    "message": "S'abonner en utilisant",
     "description": "Text to display for browser action options legend"
   },
   "title@rssSubscribe": {
-    "message": "S'abonner au flux RSS (par défaut)",
+    "message": "Utiliser le flux RSS (par défaut)",
     "description": "Title attribute input to select RSS as subscription option"
   },
   "title@feedlySubscribe": {
@@ -62,7 +62,7 @@
     "description": "Text for popup options section `<legend>`"
   },
   "title@openUsingLabel": {
-    "message": "Ouvrir les flux en utilisant...",
+    "message": "Ouvrir les flux dans...",
     "description": "Title attribute for input to select how feeds are opened"
   },
   "option_feedOpenCurrentTab": {

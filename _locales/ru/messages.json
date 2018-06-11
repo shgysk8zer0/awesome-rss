@@ -55,6 +55,10 @@
     "message": "Пописаться с помощью Feedly",
     "description": "Title attribute for input to select Feedly as subscription option"
   },
+  "title@inoreaderSubscribe": {
+    "message": "Пописаться с помощью Inoreader",
+    "description": "Title attribute for input to select Inoreader as subscription option"
+  },
   "popupOptionsLegend": {
     "message": "Настройки всплывающего окна",
     "description": "Text for popup options section `<legend>`"
@@ -140,4 +144,3 @@
     "description": "Text to display for title on reset `<button>`"
   }
 }
-

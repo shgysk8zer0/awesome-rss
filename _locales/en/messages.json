@@ -55,6 +55,10 @@
     "message": "Subscribe using Feedly",
     "description": "Title attribute for input to select Feedly as subscription option"
   },
+  "title@inoreaderSubscribe": {
+    "message": "Subscribe using Inoreader",
+    "description": "Title attribute for input to select Inoreader as subscription option"
+  },
   "popupOptionsLegend": {
     "message": "Popup Options",
     "description": "Text for popup options section `<legend>`"

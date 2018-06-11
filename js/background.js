@@ -30,6 +30,10 @@ function openFeed({feed, target = 'current', service = 'rss'} = {}) {
 		feedly.pathname += encodeURIComponent(feed);
 		url = feedly;
 		break;
+	case 'inoreader':
+		url = new URL('https://www.inoreader.com');
+		url.searchParams.set('add_feed', feed);
+		break;
 	default:
 		url = new URL(feed);
 	}

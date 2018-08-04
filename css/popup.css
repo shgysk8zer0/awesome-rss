@@ -1,13 +1,18 @@
+* {
+	box-sizing: inherit;
+	max-width: 100%;
+}
+
 body {
 	background-color: var(--feed-bg-color, none);
 	background-image: var(--feed-bg-image, none);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
+	box-sizing: border-box;
 }
 
 a, [data-link], a:hover, [data-link]:hover {
-	box-sizing: border-box;
 	font-family: var(--feed-font, inherit);
 	font-size: var(--feed-size, inherit);
 	text-decoration: inherit;
@@ -20,5 +25,8 @@ a, [data-link], a:hover, [data-link]:hover {
 }
 
 a, [data-link] {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 	color: var(--feed-color, inherit);
 }

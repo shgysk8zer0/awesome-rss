@@ -6,6 +6,7 @@ const types = {
 function $(query, base = document) {
 	return [...base.querySelectorAll(query)];
 }
+
 async function init() {
 	const opts = await storage.get([
 		'template',
@@ -42,7 +43,6 @@ async function init() {
 	if (opts.hasOwnProperty('bgImage')) {
 		document.documentElement.style.setProperty('--feed-bg-image', `url(${opts.bgImage})`);
 	}
-	console.log(document.documentElement.style);
 
 	try {
 		links.forEach(link => {
@@ -59,6 +59,7 @@ async function init() {
 			container.appendChild(feed);
 		});
 	} catch (error) {
+		/* eslint no-console: 0 */
 		console.error(error);
 	}
 }
@@ -67,6 +68,7 @@ async function openFeed(click) {
 	click.preventDefault();
 
 	const opts = await storage.get(['openFeed', 'service']);
+
 	browser.runtime.sendMessage({
 		type: 'openFeed',
 		params: {

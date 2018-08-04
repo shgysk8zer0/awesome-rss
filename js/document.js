@@ -4,11 +4,8 @@ function filterLink(link) {
 }
 
 function mapLink(link) {
-	return {
-		type: link.type,
-		href: link.href,
-		title: link.title || link.href
-	};
+	const {type, href, title = link.href} = link;
+	return {type, href, title};
 }
 
 function scanThisPage() {
@@ -20,7 +17,7 @@ function scanThisPage() {
 		browser.runtime.sendMessage({
 			type: 'feeds',
 			links: feedLinks,
-		});
+		}).catch(() => {});
 	}
 }
 

@@ -25,27 +25,27 @@
 			</fieldset>
 			<fieldset>
 				<legend data-locale-text="subscriptionLegend">Subscribe Using</legend>
+				<input type="radio" name="service" id="subscribe-rss" value="rss" checked="" />
 				<label for="subscribe-rss" class="browser-style-label" title="Subscribe using RSS (default)" data-locale-title="rssSubscribe">
 					<svg class="icon" width="32" height="32">
 						<use xlink:href="icons.svg#rss" />
 					</svg>
 					<span>RSS</span>
 				</label>
-				<input type="radio" name="service" id="subscribe-rss" value="rss" checked="" />
+				<input type="radio" name="service" value="feedly" id="subscribe-feedly" />
 				<label for="subscribe-feedly" class="browser-style-label" title="Subscribe using Feedly" data-locale-title="feedlySubscribe">
 					<svg class="icon" width="32" height="32">
 						<use xlink:href="icons.svg#feedly" />
 					</svg>
 					<span>Feedly</span>
 				</label>
-				<input type="radio" name="service" value="feedly" id="subscribe-feedly" />
+				<input type="radio" name="service" id="subscribe-inoreader" value="inoreader" />
 				<label for="subscribe-inoreader" class="browser-style-label" title="Subscribe using Inoreader" data-locale-title="inoreaderSubscribe">
 					<svg class="icon" width="32" height="32">
 						<use xlink:href="icons.svg#inoreader" />
 					</svg>
 					<span>Inoreader</span>
 				</label>
-				<input type="radio" name="service" id="subscribe-inoreader" value="inoreader" />
 			</fieldset>
 			<fieldset>
 				<legend data-locale-text="popupOptionsLegend">Popup Options</legend>
@@ -56,6 +56,7 @@
 				</label>
 				<select name="openFeed" id="openFeed" class="browser-style" required="">
 					<option value="current" selected="" data-locale-text="option_feedOpenCurrentTab">Current tab</option>
+					<option value="next" data-locale-text="option_feedOpenAdjacentTab">Adjacent tab</option>
 					<option value="tab" data-locale-text="option_feedOpenNewTab">New tab</option>
 					<option value="window" data-locale-text="option_feedOpenNewWindow">New window</option>
 				</select>

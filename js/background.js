@@ -22,7 +22,7 @@ const ICONS = {
 	disabled: 'icons/subscribe-disabled.svg',
 };
 
-function openFeed({feed, target = 'current', service = 'rss'} = {}) {
+function openFeed({feed, target = 'current', service = 'rss', index = undefined} = {}) {
 	let url = null;
 	switch (service) {
 	case 'feedly':
@@ -44,7 +44,16 @@ function openFeed({feed, target = 'current', service = 'rss'} = {}) {
 		break;
 
 	case 'tab':
-		browser.tabs.create({url: url.toString()});
+		browser.tabs.create({
+			url: url.toString(),
+		});
+		break;
+
+	case 'next':
+		browser.tabs.create({
+			url: url.toString(),
+			index,
+		});
 		break;
 
 	case 'current':
@@ -58,13 +67,17 @@ function openFeed({feed, target = 'current', service = 'rss'} = {}) {
 
 async function clickHandler(tab) {
 	const opts = await storage.get(['openFeed', 'service']);
+	const index = opts.openFeed === 'next' ? tab.index + 1 : null;
+
 	try {
 		openFeed({
 			feed: TABS[tab.id][0].href,
 			target: opts.openFeed,
 			service: opts.service,
+			index,
 		});
 	} catch (err) {
+		/* eslint no-console: 0 */
 		console.error(err);
 	}
 }
@@ -76,7 +89,10 @@ function removeHandler(tabId) {
 async function updatePageAction(tab, links) {
 	if (links.length > 0) {
 		const opts = await storage.get('icon');
-		TABS[tab.id] = links;
+		TABS[tab.id] = links.map(link => {
+			link.tabId = tab.id;
+			return link;
+		});
 
 		if (! ICONS.hasOwnProperty(opts.icon)) {
 			opts.icon = defaultOpts.icon;
@@ -108,13 +124,20 @@ async function updatePageAction(tab, links) {
 	}
 }
 
-function messageHandler(msg, sender) {
+async function messageHandler(msg, sender) {
 	switch (msg.type) {
 	case 'feeds':
 		updatePageAction(sender.tab, msg.links);
 		break;
 
 	case 'openFeed':
+		if (msg.params.target === 'next') {
+			const tabs = await browser.tabs.query({active: true, currentWindow: true});
+			if (tabs.length === 1) {
+				const tab = tabs[0];
+				msg.params.index = tab.index + 1;
+			}
+		}
 		openFeed(msg.params);
 		break;
 
@@ -136,7 +159,7 @@ function scanPage(tab) {
 		title: browser.i18n.getMessage('extensionNA'),
 	});
 
-	browser.tabs.sendMessage(tabId, {type: 'scan'});
+	browser.tabs.sendMessage(tabId, {type: 'scan'}).catch(() => {});
 }
 
 async function refreshAllTabsPageAction() {
@@ -176,7 +199,9 @@ async function optChange(opts) {
 
 async function updateHandler(update) {
 	if (update.temporary) {
-		storage.get().then(opts => console.log({update, opts}));
+		/* eslint no-console: 0 */
+		const opts = await storage.get();
+		console.log({update, opts});
 	}
 
 	if (update.reason === 'install') {

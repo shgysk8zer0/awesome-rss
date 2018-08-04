@@ -11,6 +11,11 @@ form svg.icon {
 svg.icon {
 	color: inherit;
 	fill: currentColor !important;
+	vertical-align: middle;
+}
+
+input {
+	vertical-align: middle;
 }
 
 footer {

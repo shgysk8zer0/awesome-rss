@@ -75,6 +75,10 @@
     "message": "New Tab",
     "description": "Text to display for new tab `<option>`"
   },
+  "option_feedOpenAdjacentTab": {
+    "message": "Adjacent Tab",
+    "description": "Text to display for new tab `<option>`"
+  },
   "option_feedOpenNewWindow": {
     "message": "New window",
     "description": "Text to display for new window `<option>`"

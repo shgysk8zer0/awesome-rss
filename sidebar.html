@@ -12,12 +12,17 @@
 			.block {
 				display: block;
 			}
+
+			.loading {
+				color: lightgray;
+				pointer-events: none;
+			}
 		</style>
 	</head>
 	<body>
 		<div id="container"></div>
 		<template id="feed-template">
-			<details>
+			<details data-feed-url="">
 				<summary>
 					<b class="center" data-field="title">No Title</b>
 				</summary>

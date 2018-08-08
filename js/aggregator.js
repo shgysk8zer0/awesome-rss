@@ -102,13 +102,16 @@ function $(selector, base = document) {
 	return [...base.querySelectorAll(selector)];
 }
 
-window.addEventListener('DOMContentLoaded', async () => {
-	const list = await FeedList.init();
-	list.add({
-		title: 'Chris Zuber RSS',
-		url: 'https://shgysk8zer0.github.io/feed.rss',
-	});
+async function ready() {
+	if (document.readyState === 'loading') {
+		await new Promise(resolve => {
+			document.addEventListener('DOMContentLoaded', () => resolve(), {once: true});
+		});
+	}
+}
 
+ready().then(async () => {
+	const list = await FeedList.init();
 	const feeds = await list.parse();
 
 	document.getElementById('container').append(...feeds);

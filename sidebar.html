@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8" />
+		<title>Sidebar</title>
+		<script src="js/aggregator.js" async=""></script>
+		<style>
+			.center {
+				text-align: center;
+			}
+
+			.block {
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+		<template id="feed-template">
+			<details>
+				<summary>
+					<b class="center" data-field="title">No Title</b>
+				</summary>
+				<div>
+					<a href="" target="_blank" rel="noopener external">Open Site</a>
+				</div>
+				<ul data-field="items"></ul>
+				</details>
+		</template>
+		<template id="feed-item-template">
+			<li class="feed">
+				<a href="" target="_blank" rel="noopener external">
+					<b data-field="title"></b>
+				</a>
+			</li>
+		</template>
+	</body>
+</html>

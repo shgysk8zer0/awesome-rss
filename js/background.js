@@ -10,6 +10,7 @@ const defaultOpts = {
 	feedMargin:  0,
 	feedPadding: 7,
 	bgColor:     '#ffffff',
+	feeds:       [],
 };
 
 const storage = browser.storage.sync;
@@ -242,6 +243,9 @@ async function updateHandler(update) {
 
 		case '1.1.3':
 			storage.set({service: defaultOpts.service});
+
+		case '2.0.0':
+			storage.set({feeds: []});
 		}
 	}
 }

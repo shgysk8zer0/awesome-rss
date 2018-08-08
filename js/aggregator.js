@@ -60,7 +60,6 @@ class FeedList {
 					const doc = parser.parseFromString(xml, 'application/xml');
 
 					$('item', doc).forEach(item => {
-						// item.dataset.feedUrl = feed.url;
 						const tmp = feedItemTemplate.cloneNode(true);
 						const title = item.querySelector('title');
 						const link = item.querySelector('link');
@@ -78,7 +77,7 @@ class FeedList {
 			}
 		}
 
-		return Promise.all(this.feeds.map(async feed => {
+		return this.feeds.map(feed => {
 			try {
 				const feedTmp = feedTemplate.cloneNode(true);
 				$('[data-field="title"]', feedTmp).forEach(el => el.textContent = feed.title);
@@ -91,7 +90,7 @@ class FeedList {
 				console.error(err);
 				return '';
 			}
-		}));
+		});
 	}
 
 	async save() {

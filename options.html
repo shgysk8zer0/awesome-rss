@@ -34,7 +34,7 @@
 				</label>
 				<input type="radio" name="service" value="feedly" id="subscribe-feedly" />
 				<label for="subscribe-feedly" class="browser-style-label" title="Subscribe using Feedly" data-locale-title="feedlySubscribe">
-					<svg class="icon" width="32" height="32">
+					<svg class="icon" width="60" height="32">
 						<use xlink:href="icons.svg#feedly" />
 					</svg>
 					<span>Feedly</span>
@@ -46,6 +46,33 @@
 					</svg>
 					<span>Inoreader</span>
 				</label>
+				<input type="radio" name="service" id="subscribe-nextcloud" value="nextcloud" data-enables="nextcloudUrl">
+				<label for="subscribe-nextcloud" class="browser-style-label">
+					<svg class="icon" height="32" width="60">
+						<use xlink:href="icons.svg#nextcloud" />
+					</svg>
+					<span>NextCloud</span>
+				</label>
+				<input type="radio" name="service" id="subscribe-tiny-tiny-rss" value="tinyTinyRss" data-enables="tinyTinyRssUrl">
+				<label for="subscribe-tiny-tiny-rss" class="browser-style-label">
+					<svg class="icon" width="32" height="32">
+						<use xlink:href="icons.svg#tiny-tiny-rss" />
+					</svg>
+					<span>TinyTinyRSS</span>
+				</label>
+				<br />
+				<label for="nextcloud-url" hidden="">
+					<svg class="icon" width="32">
+						<use xlink:href="icons.svg#link" />
+					</svg>
+				</label>
+				<input name="nextcloudUrl" id="nextcloud-url" type="url" placeholder="https://nextcloud-server.com" disabled="" hidden="" />
+				<label for="tiny-tiny-rss-url" hidden="">
+					<svg class="icon" width="32">
+						<use xlink:href="icons.svg#link" />
+					</svg>
+				</label>
+				<input name="tinyTinyRssUrl" id="tiny-tiny-rss-url" type="url" placeholder="https://ttrss-server.com" disabled="" hidden="" />
 			</fieldset>
 			<fieldset>
 				<legend data-locale-text="popupOptionsLegend">Popup Options</legend>

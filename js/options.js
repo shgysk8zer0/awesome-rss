@@ -24,6 +24,28 @@ window.addEventListener('DOMContentLoaded', async () => {
 		}
 	}
 
+	function proxyEvent(target) {
+		return (event) => {
+			if (! event.target.classList.contains('proxied-event')) {
+				event.target.classList.add('proxied-event');
+				target.dispatchEvent(new Event(event.type));
+				setTimeout(() => event.target.classList.remove('proxied-event'), 100);
+			}
+		};
+	}
+
+	async function inputToggle(field) {
+		if (field instanceof Event) {
+			field = field.target;
+		}
+		$(`[name="${field.dataset.enables}"]`, field.closest('form')).forEach(input => {
+			input.disabled = ! field.checked;
+			input.hidden = ! field.checked;
+			input.required = field.checked;
+			Array.from(input.labels).forEach(label => label.hidden = ! field.checked);
+		});
+	}
+
 	async function setValuesFromStorage({
 		storage = browser.storage.sync,
 		form = document.forms.options,
@@ -42,6 +64,9 @@ window.addEventListener('DOMContentLoaded', async () => {
 					case 'radio':
 						if (input.value === value) {
 							input.checked = true;
+						}
+						if (input.dataset.hasOwnProperty('enables')) {
+							inputToggle(input);
 						}
 						break;
 					default:
@@ -83,6 +108,15 @@ window.addEventListener('DOMContentLoaded', async () => {
 				opts[change.target.name] = change.target.value;
 			}
 			storage.set(opts);
+		});
+	});
+
+	$('[data-enables]', form).forEach(field => {
+		const proxChangeHandler = proxyEvent(field);
+		field.addEventListener('change', inputToggle);
+		const proxies = $(`[name="${field.name}"]:not([data-enables="${field.dataset.enables}"])`, form);
+		proxies.forEach(proxy => {
+			proxy.addEventListener('change', proxChangeHandler);
 		});
 	});
 

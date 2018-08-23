@@ -10,6 +10,8 @@ const defaultOpts = {
 	feedMargin:  0,
 	feedPadding: 7,
 	bgColor:     '#ffffff',
+	nextcloudUrl: '',
+	tinyTinyRssUrl: '',
 };
 
 const storage = browser.storage.sync;
@@ -22,8 +24,11 @@ const ICONS = {
 	disabled: 'icons/subscribe-disabled.svg',
 };
 
-function openFeed({feed, target = 'current', service = 'rss', index = undefined} = {}) {
+async function openFeed({feed, target = 'current', service = 'rss', index = undefined} = {}) {
 	let url = null;
+	const opts = await storage.get(['nextcloudUrl','tinyTinyRssUrl']);
+	console.info(opts);
+
 	switch (service) {
 	case 'feedly':
 		const feedly = new URL('https://feedly.com/i/subscription/feed/');
@@ -34,9 +39,20 @@ function openFeed({feed, target = 'current', service = 'rss', index = undefined}
 		url = new URL('https://www.inoreader.com');
 		url.searchParams.set('add_feed', feed);
 		break;
+	case 'tinyTinyRss':
+		url = new URL('/tt-rss/public.php', opts.tinyTinyRssUrl);
+		url.searchParams.set('op', 'subscribe');
+		url.searchParams.set('feed_url', feed);
+		break;
+	case 'nextcloud':
+		url = new URL('/index.php/apps/news', opts.nextcloudUrl);
+		url.searchParams.set('subscribe_to', feed);
+		break;
 	default:
 		url = new URL(feed);
 	}
+
+	console.info(url);
 
 	switch (target) {
 	case 'window':
@@ -242,6 +258,11 @@ async function updateHandler(update) {
 
 		case '1.1.3':
 			storage.set({service: defaultOpts.service});
+		case '1.3.0':
+			storage.set({
+				nextcloudUrl: '',
+				tinyTinyRssUrl: '',
+			});
 		}
 	}
 }

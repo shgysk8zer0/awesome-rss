@@ -40,12 +40,12 @@ async function openFeed({feed, target = 'current', service = 'rss', index = unde
 		url.searchParams.set('add_feed', feed);
 		break;
 	case 'tinyTinyRss':
-		url = new URL('/tt-rss/public.php', opts.tinyTinyRssUrl);
+		url = new URL('public.php', opts.tinyTinyRssUrl);
 		url.searchParams.set('op', 'subscribe');
 		url.searchParams.set('feed_url', feed);
 		break;
 	case 'nextcloud':
-		url = new URL('/index.php/apps/news', opts.nextcloudUrl);
+		url = new URL('apps/news', opts.nextcloudUrl);
 		url.searchParams.set('subscribe_to', feed);
 		break;
 	default:

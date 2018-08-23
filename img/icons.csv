@@ -11,8 +11,11 @@ mark-github,img/octicons/lib/svg/mark-github.svg
 issues,img/octicons/lib/svg/issue-opened.svg
 template,img/adwaita-icons/places/folder-templates.svg
 star,img/adwaita-icons/places/user-bookmarks.svg
+link,img/octicons/lib/svg/link.svg
 margins,img/margins.svg
 padding,img/padding.svg
 rss,img/adwaita-icons/mimetypes/application-rss+xml.svg
 feedly,img/logos/feedly.svg
 inoreader,img/logos/inoreader.svg
+tiny-tiny-rss,img/logos/tiny-tiny-rss.svg
+nextcloud,img/logos/nextcloud.svg

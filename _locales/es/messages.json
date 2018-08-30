@@ -3,19 +3,148 @@
     "message": "Awesome RSS",
     "description": "Name of the extension."
   },
-
   "extensionDescription": {
-    "message": "Pone un botón de suscripción de RSS / Atom de nuevo en la barra de URL",
+    "message": "Vuelve a poner un botón para suscribirse a las fuentes RSS/ATOM en la barra de direcciones",
     "description": "Description of the extension displayed in the add-ons manager."
   },
-
   "pageActionTooltip": {
     "message": "Suscribirse a esta página",
     "description": "Tooltip displayed on moused hover over the page action. Should be the same as is Firefox https://transvision.mozfr.org/string/?entity=browser/chrome/browser/customizableui/customizableWidgets.properties:feed-button.tooltiptext2&repo=central"
   },
   "extensionNA": {
-    "message": "Indisponible",
+    "message": "No disponible",
     "description": "Message to show when page is secure or there are no feeds"
+  },
+  "optionsPageTitle": {
+    "message": "Opciones de Awesome RSS",
+    "description": "Title for options / preferences page"
+  },
+  "themeLegend": {
+    "message": "Opciones del tema",
+    "description": "Text for general theming section `<legend>`"
+  },
+  "title@selectIcon": {
+    "message": "Seleccionar íconos",
+    "description": "Title attr for icon picked"
+  },
+  "option_lightIcon": {
+    "message": "Tema de íconos claro",
+    "description": "Text to display for light theme icon  `<option>`"
+  },
+  "option_darkIcon": {
+    "message": "Tema de íconos oscuros",
+    "description": "Text to display for dark theme icon `<option>`"
+  },
+  "option_orangeIcon": {
+    "message": "Tema de íconos naranja",
+    "description": "Text to display for orange theme icon `<option>`"
+  },
+  "option_greenIcon": {
+    "message": "Tema de íconos verde",
+    "description": "Text to display for green theme icon `<option>`"
+  },
+  "subscriptionLegend": {
+    "message": "Suscribirse usando",
+    "description": "Text to display for browser action options legend"
+  },
+  "title@rssSubscribe": {
+    "message": "Suscribirse usando RSS (predeterminado)",
+    "description": "Title attribute input to select RSS as subscription option"
+  },
+  "title@feedlySubscribe": {
+    "message": "Suscribirse usando Feedly",
+    "description": "Title attribute for input to select Feedly as subscription option"
+  },
+  "title@inoreaderSubscribe": {
+    "message": "Suscribirse usando Inoreader",
+    "description": "Title attribute for input to select Inoreader as subscription option"
+  },
+  "popupOptionsLegend": {
+    "message": "Opciones para ventanas emergentes",
+    "description": "Text for popup options section `<legend>`"
+  },
+  "title@openUsingLabel": {
+    "message": "Abrir fuente utilizando...",
+    "description": "Title attribute for input to select how feeds are opened"
+  },
+  "option_feedOpenCurrentTab": {
+    "message": "Esta pestaña",
+    "description": "Text to display for current tab `<option>`"
+  },
+  "option_feedOpenNewTab": {
+    "message": "Nueva pestaña",
+    "description": "Text to display for new tab `<option>`"
+  },
+  "option_feedOpenAdjacentTab": {
+    "message": "Pestaña adyacente",
+    "description": "Text to display for new tab `<option>`"
+  },
+  "option_feedOpenNewWindow": {
+    "message": "Nueva ventana",
+    "description": "Text to display for new window `<option>`"
+  },
+  "title@popupTemplateLabel": {
+    "message": "Tema de plantilla",
+    "description": "Text to display for popup template selection `<label>`"
+  },
+  "option_regularTemplate": {
+    "message": "Normal (predeterminada)",
+    "description": "Text to display for regular template `<option>`"
+  },
+  "option_boldTemplate": {
+    "message": "Negrita",
+    "description": "Text to display for bold template `<option>`"
+  },
+  "option_italicTemplate": {
+    "message": "Itálica",
+    "description": "Text to display for italic template `<option>`"
+  },
+  "option_underlineTemplate": {
+    "message": "Subrayada",
+    "description": "Text to display for underline template `<option>`"
+  },
+  "textOptionsLegend": {
+    "message": "Opciones de texto",
+    "description": "Text for text options section `<legend>`"
+  },
+  "title@textColorLabel": {
+    "message": "Seleccione el color del texto",
+    "description": "Text to display for color picker `<label>`"
+  },
+  "title@fontFamilyLabel": {
+    "message": "Seleccione la tipografía",
+    "description": "Text to display for font-family selection `<label>`"
+  },
+  "title@fontSizeLabel": {
+    "message": "Seleccione el tamaño de letra",
+    "description": "Text to display for font-size selection `<label>`"
+  },
+  "title@marginLabel": {
+    "message": "Márgenes",
+    "description": "Text to display for margins `<label>`"
+  },
+  "title@paddingLabel": {
+    "message": "Espaciado",
+    "description": "Text to display for padding `<label>`"
+  },
+  "popupBackgroundLegend": {
+    "message": "Fondo de la ventana emergente",
+    "description": "Text to display for popup background section `<legend>`"
+  },
+  "title@popupBackgroundColorLabel": {
+    "message": "Seleccione el color de fondo",
+    "description": "Text to display for popup background-color `<label>`"
+  },
+  "title@popupBackgroundImageLabel": {
+    "message": "Ingrese la URL para la imagen de fondo",
+    "description": "Text to display for popup background-image `<label>`"
+  },
+  "placeholder@backgroundImageURL": {
+    "message": "https://ejemplo.com/imagen.jpg",
+    "description": "Placeholder text for background-image URL `<input>`"
+  },
+  "title@resetOptionsButton": {
+    "message": "Restaurar todas las preferencias",
+    "description": "Text to display for title on reset `<button>`"
   }
 }
-

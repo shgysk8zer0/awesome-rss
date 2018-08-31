@@ -67,6 +67,7 @@ only be visible when there is a feed to subscribe to.
 - [![](https://github.com/xyrolaith.png?size=24) @xyrolaith](https://github.com/xyrolaith)
 - [![](https://github.com/turisap.png?size=24) @turisap](https://github.com/turisap)
 - [![](https://github.com/vindarel.png?size=24) @turisap](https://github.com/vindarel)
+- [![](https://github.com/lisandrodemarchi.png?size=24) @lisandrodemarchi](https://github.com/lisandrodemarchi)
 - Pauline Emily
 
 ## Donate via...

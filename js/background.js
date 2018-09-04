@@ -28,6 +28,7 @@ async function openFeed({feed, target = 'current', service = 'rss', index = unde
 	let url = null;
 	const opts = await storage.get(['nextcloudUrl','tinyTinyRssUrl']);
 	console.info(opts);
+	console.info(service);
 
 	switch (service) {
 	case 'feedly':
@@ -43,6 +44,10 @@ async function openFeed({feed, target = 'current', service = 'rss', index = unde
 		url = new URL('public.php', opts.tinyTinyRssUrl);
 		url.searchParams.set('op', 'subscribe');
 		url.searchParams.set('feed_url', feed);
+		break;
+	case 'newsblur':
+		url = new URL('https://www.newsblur.com');
+		url.searchParams.set('url', feed);
 		break;
 	case 'nextcloud':
 		url = new URL('apps/news', opts.nextcloudUrl);

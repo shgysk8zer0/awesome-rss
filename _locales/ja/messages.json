@@ -16,7 +16,7 @@
       "description": "Message to show when page is secure or there are no feeds"
     },
     "optionsPageTitle": {
-      "message": "Awesome RSSのオプション",
+      "message": "Awesome RSS オプション",
       "description": "Title for options / preferences page"
     },
     "themeLegend": {
@@ -44,7 +44,7 @@
       "description": "Text to display for green theme icon `<option>`"
     },
     "subscriptionLegend": {
-      "message": "利用するアプリケーションを選択",
+      "message": "使用する購読サービス",
       "description": "Text to display for browser action options legend"
     },
     "title@rssSubscribe": {
@@ -64,7 +64,7 @@
       "description": "Text for popup options section `<legend>`"
     },
     "title@openUsingLabel": {
-      "message": "利用するアプリを選択して下さい...",
+      "message": "フィードを開くには...",
       "description": "Title attribute for input to select how feeds are opened"
     },
     "option_feedOpenCurrentTab": {
@@ -76,11 +76,11 @@
       "description": "Text to display for new tab `<option>`"
     },
     "option_feedOpenAdjacentTab": {
-      "message": "タブの調整",
+      "message": "隣接タブ",
       "description": "Text to display for new tab `<option>`"
     },
     "option_feedOpenNewWindow": {
-      "message": "新規ウィンドウを開く",
+      "message": "新規ウィンドウ",
       "description": "Text to display for new window `<option>`"
     },
     "title@popupTemplateLabel": {
@@ -120,11 +120,11 @@
       "description": "Text to display for font-size selection `<label>`"
     },
     "title@marginLabel": {
-      "message": "余白(Margin)",
+      "message": "余白 (Margin)",
       "description": "Text to display for margins `<label>`"
     },
     "title@paddingLabel": {
-      "message": "余白(Padding)",
+      "message": "余白 (Padding)",
       "description": "Text to display for padding `<label>`"
     },
     "popupBackgroundLegend": {
@@ -136,7 +136,7 @@
       "description": "Text to display for popup background-color `<label>`"
     },
     "title@popupBackgroundImageLabel": {
-      "message": "background-image URLに移動",
+      "message": "background-imageに指定するURLを入力",
       "description": "Text to display for popup background-image `<label>`"
     },
     "placeholder@backgroundImageURL": {
@@ -144,7 +144,7 @@
       "description": "Placeholder text for background-image URL `<input>`"
     },
     "title@resetOptionsButton": {
-      "message": "設定の初期化",
+      "message": "設定を初期化する",
       "description": "Text to display for title on reset `<button>`"
     }
   }

@@ -1,0 +1,151 @@
+{
+    "extensionName": {
+      "message": "Awesome RSS",
+      "description": "Name of the extension."
+    },
+    "extensionDescription": {
+      "message": "URLバーにRSS/Atomの購読登録ボタンを追加します",
+      "description": "Description of the extension displayed in the add-ons manager."
+    },
+    "pageActionTooltip": {
+      "message": "このページを購読します",
+      "description": "Tooltip displayed on moused hover over the page action. Should be the same as is Firefox https://transvision.mozfr.org/string/?entity=browser/chrome/browser/customizableui/customizableWidgets.properties:feed-button.tooltiptext2&repo=central"
+    },
+    "extensionNA": {
+      "message": "利用できません",
+      "description": "Message to show when page is secure or there are no feeds"
+    },
+    "optionsPageTitle": {
+      "message": "Awesome RSS オプション",
+      "description": "Title for options / preferences page"
+    },
+    "themeLegend": {
+      "message": "テーマオプション",
+      "description": "Text for general theming section `<legend>`"
+    },
+    "title@selectIcon": {
+      "message": "iconを選択",
+      "description": "Title attr for icon picked"
+    },
+    "option_lightIcon": {
+      "message": "Light theme icon",
+      "description": "Text to display for light theme icon  `<option>`"
+    },
+    "option_darkIcon": {
+      "message": "Dark theme icon",
+      "description": "Text to display for dark theme icon `<option>`"
+    },
+    "option_orangeIcon": {
+      "message": "Orange theme icon",
+      "description": "Text to display for orange theme icon `<option>`"
+    },
+    "option_greenIcon": {
+      "message": "Green theme icon",
+      "description": "Text to display for green theme icon `<option>`"
+    },
+    "subscriptionLegend": {
+      "message": "使用する購読サービス",
+      "description": "Text to display for browser action options legend"
+    },
+    "title@rssSubscribe": {
+      "message": "RSSを使用して購読 (default)",
+      "description": "Title attribute input to select RSS as subscription option"
+    },
+    "title@feedlySubscribe": {
+      "message": "Feedlyを使用して購読",
+      "description": "Title attribute for input to select Feedly as subscription option"
+    },
+    "title@inoreaderSubscribe": {
+      "message": "Inoreaderを使用して購読",
+      "description": "Title attribute for input to select Inoreader as subscription option"
+    },
+    "popupOptionsLegend": {
+      "message": "ポップアップオプション",
+      "description": "Text for popup options section `<legend>`"
+    },
+    "title@openUsingLabel": {
+      "message": "フィードを開くには...",
+      "description": "Title attribute for input to select how feeds are opened"
+    },
+    "option_feedOpenCurrentTab": {
+      "message": "現在のタブ",
+      "description": "Text to display for current tab `<option>`"
+    },
+    "option_feedOpenNewTab": {
+      "message": "新規タブ",
+      "description": "Text to display for new tab `<option>`"
+    },
+    "option_feedOpenAdjacentTab": {
+      "message": "隣接タブ",
+      "description": "Text to display for new tab `<option>`"
+    },
+    "option_feedOpenNewWindow": {
+      "message": "新規ウィンドウ",
+      "description": "Text to display for new window `<option>`"
+    },
+    "title@popupTemplateLabel": {
+      "message": "テンプレートのテーマ",
+      "description": "Text to display for popup template selection `<label>`"
+    },
+    "option_regularTemplate": {
+      "message": "標準 (default)",
+      "description": "Text to display for regular template `<option>`"
+    },
+    "option_boldTemplate": {
+      "message": "太字",
+      "description": "Text to display for bold template `<option>`"
+    },
+    "option_italicTemplate": {
+      "message": "斜体",
+      "description": "Text to display for italic template `<option>`"
+    },
+    "option_underlineTemplate": {
+      "message": "下線",
+      "description": "Text to display for underline template `<option>`"
+    },
+    "textOptionsLegend": {
+      "message": "文字のオプション",
+      "description": "Text for text options section `<legend>`"
+    },
+    "title@textColorLabel": {
+      "message": "文字色の選択",
+      "description": "Text to display for color picker `<label>`"
+    },
+    "title@fontFamilyLabel": {
+      "message": "フォントの選択",
+      "description": "Text to display for font-family selection `<label>`"
+    },
+    "title@fontSizeLabel": {
+      "message": "フォントサイズの選択",
+      "description": "Text to display for font-size selection `<label>`"
+    },
+    "title@marginLabel": {
+      "message": "余白 (Margin)",
+      "description": "Text to display for margins `<label>`"
+    },
+    "title@paddingLabel": {
+      "message": "余白 (Padding)",
+      "description": "Text to display for padding `<label>`"
+    },
+    "popupBackgroundLegend": {
+      "message": "ポップアップの背景",
+      "description": "Text to display for popup background section `<legend>`"
+    },
+    "title@popupBackgroundColorLabel": {
+      "message": "背景色を選択",
+      "description": "Text to display for popup background-color `<label>`"
+    },
+    "title@popupBackgroundImageLabel": {
+      "message": "background-imageに指定するURLを入力",
+      "description": "Text to display for popup background-image `<label>`"
+    },
+    "placeholder@backgroundImageURL": {
+      "message": "https://example.com/image.jpg",
+      "description": "Placeholder text for background-image URL `<input>`"
+    },
+    "title@resetOptionsButton": {
+      "message": "設定を初期化する",
+      "description": "Text to display for title on reset `<button>`"
+    }
+  }
+  

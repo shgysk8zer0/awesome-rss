@@ -95,11 +95,16 @@ window.addEventListener('DOMContentLoaded', async () => {
 
 	$('[name]', form).forEach(input => {
 		input.addEventListener('change', change => {
+			let skip = false;
 			if (change.target instanceof HTMLInputElement) {
 				switch (change.target.type) {
 				case 'checkbox':
 				case 'radio':
-					opts[change.target.name] = change.target.value;
+					if (change.target.type === 'checkbox' || change.target.checked) {
+						opts[change.target.name] = change.target.value;
+					} else {
+						skip = true;
+					}
 					break;
 				default:
 					opts[change.target.name] = change.target.value;
@@ -107,7 +112,9 @@ window.addEventListener('DOMContentLoaded', async () => {
 			} else if (change.target instanceof HTMLSelectElement) {
 				opts[change.target.name] = change.target.value;
 			}
-			storage.set(opts);
+			if (! skip) {
+				storage.set(opts);
+			}
 		});
 	});
 

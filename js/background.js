@@ -24,10 +24,9 @@ const ICONS = {
 	disabled: 'icons/subscribe-disabled.svg',
 };
 
-async function openFeed({feed, target = 'current', service = 'rss', index = undefined} = {}) {
+async function openFeed({feed, target = 'current', service, index = undefined} = {}) {
 	let url = null;
 	const opts = await storage.get(['nextcloudUrl','tinyTinyRssUrl']);
-	console.info(opts);
 
 	switch (service) {
 	case 'feedly':

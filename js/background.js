@@ -12,6 +12,7 @@ const defaultOpts = {
 	bgColor:     '#ffffff',
 	nextcloudUrl: '',
 	tinyTinyRssUrl: '',
+	freshRssUrl: '',
 };
 
 const storage = browser.storage.sync;
@@ -26,7 +27,7 @@ const ICONS = {
 
 async function openFeed({feed, target = 'current', service = 'rss', index = undefined} = {}) {
 	let url = null;
-	const opts = await storage.get(['nextcloudUrl','tinyTinyRssUrl']);
+	const opts = await storage.get(['nextcloudUrl','tinyTinyRssUrl','freshRssUrl']);
 	console.info(opts);
 
 	switch (service) {
@@ -51,6 +52,12 @@ async function openFeed({feed, target = 'current', service = 'rss', index = unde
 	case 'nextcloud':
 		url = new URL('apps/news', opts.nextcloudUrl);
 		url.searchParams.set('subscribe_to', feed);
+		break;
+	case 'freshRss':
+		url = new URL('i', opts.freshRssUrl);
+		url.searchParams.set('c', 'feed');
+		url.searchParams.set('a', 'add');
+		url.searchParams.set('url_rss', feed);
 		break;
 	default:
 		url = new URL(feed);
@@ -267,6 +274,8 @@ async function updateHandler(update) {
 				nextcloudUrl: '',
 				tinyTinyRssUrl: '',
 			});
+		case '1.3.5':
+			storage.set({freshRssUrl: ''});
 		}
 	}
 }

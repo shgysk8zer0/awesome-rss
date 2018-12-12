@@ -3,32 +3,10 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<script src="js/popup.js" async=""></script>
+		<script type="module" src="js/popup.js" async=""></script>
 		<link rel="stylesheet" href="css/popup.css" />
 	</head>
 	<body>
-		<div class="panel">
-			<div class="panel-section panel-section-list" id="feeds-container"></div>
-		</div>
-		<template id="regular-template">
-			<a href="" title="" class="panel-list-item">
-				<span data-prop="title"></span>
-			</a>
-		</template>
-		<template id="bold-template">
-			<a href="" title="" class="panel-list-item">
-				<b data-prop="title"></b>
-			</a>
-		</template>
-		<template id="underline-template">
-			<a href="" title="" class="panel-list-item">
-				<u data-prop="title"></u>
-			</a>
-		</template>
-		<template id="italic-template">
-			<a href="" title="" class="panel-list-item">
-				<i data-prop="title"></i>
-			</a>
-		</template>
+		<div class="panel"></div>
 	</body>
 </html>

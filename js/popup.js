@@ -1,11 +1,6 @@
-const storage = browser.storage.sync;
-const types = {
-	RSS: 'application/rss+xml',
-	Atom: 'application/atom+xml',
-};
-function $(query, base = document) {
-	return [...base.querySelectorAll(query)];
-}
+import './feed-container.js';
+import {storage} from './consts.js';
+import {ready} from './functions.js';
 
 async function init() {
 	const opts = await storage.get([
@@ -18,10 +13,6 @@ async function init() {
 		'bgColor',
 		'bgImage',
 	]);
-	const url = new URL(location.href);
-	const links = JSON.parse(url.searchParams.get('links'));
-	const container = document.getElementById('feeds-container');
-	const template = document.getElementById(opts.template || 'regular-template');
 	if (opts.hasOwnProperty('bgColor')) {
 		document.documentElement.style.setProperty('--feed-color', opts.color);
 	}
@@ -44,43 +35,18 @@ async function init() {
 		document.documentElement.style.setProperty('--feed-bg-image', `url(${opts.bgImage})`);
 	}
 
-	try {
-		links.forEach(link => {
-			let feed = template.content.cloneNode(true);
-			$('[href]', feed).forEach(node => {
-				node.href = link.href;
-				node.addEventListener('click', openFeed);
-			});
-			$('[title]').forEach(node => node.title = link.title);
-			$('[data-prop="title"]', feed).forEach(node => node.textContent = link.title);
-			$('[data-prop="type"]', feed).forEach(node => {
-				node.textContent = Object.keys(types).find(type => link.type === types[type]);
-			});
-			container.appendChild(feed);
-		});
-	} catch (error) {
-		/* eslint no-console: 0 */
-		console.error(error);
-	}
+	const url = new URL(location.href);
+	const container = document.createElement('div', {is: 'feed-container'});
+	const panel = document.createElement('div');
+	panel.classList.add('panel');
+	container.feeds = JSON.parse(url.searchParams.get('links'));
+	container.classList.add('panel-section', 'panel-section-list');
+	container.id = 'feeds-container';
+	panel.append(container);
+	document.body.append(panel);
 }
 
-async function openFeed(click) {
-	click.preventDefault();
-
-	const opts = await storage.get(['openFeed', 'service']);
-
-	browser.runtime.sendMessage({
-		type: 'openFeed',
-		params: {
-			feed: this.href,
-			target: opts.openFeed,
-			service: opts.service,
-		}
-	});
-}
-
-if (['interactive', 'complete'].includes(document.readyState)) {
+ready().then(async () => {
+	await customElements.whenDefined('feed-container');
 	init();
-} else {
-	document.addEventListener('DOMContentLoaded', init, {once: true});
-}
+} );

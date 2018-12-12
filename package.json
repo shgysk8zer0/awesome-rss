@@ -1,6 +1,6 @@
 {
   "name": "awesome-rss",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "Puts an RSS/Atom subscribe button back in URL bar",
   "keywords": [
     "WebExtension",
@@ -32,13 +32,13 @@
     "npm": ">=3.10"
   },
   "devDependencies": {
-    "eslint": "^4.6.1",
+    "eslint": "^4.19.1",
     "eslint-plugin-async-await": "0.0.0",
     "stylelint": "^8.1.1",
     "stylelint-config-recommended": "^1.0.0",
     "stylelint-config-standard": "^17.0.0",
     "svg-sprite-generator": "0.0.7",
-    "web-ext": "^2.2.2"
+    "web-ext": "^2.9.1"
   },
   "scripts": {
     "git:fetch": "git fetch --prune --tags",
@@ -55,6 +55,7 @@
     "start": "web-ext run",
     "test": "npm run lint:js && npm run lint:css && npm run lint:ext",
     "upload": "web-ext sign -i node_modules/ img/ rollup.config.js screenshot.png web-ext-artifacts/",
-    "postinstall": "npm run git:fetch && npm run git:submodules && npm run build:all"
+    "preinstall": "git submodule update --init --recursive",
+    "postinstall": "npm run git:fetch && npm run build:all"
   }
 }

@@ -1,0 +1,150 @@
+{
+  "extensionName": {
+    "message": "Awesome RSS",
+    "description": "Name of the extension."
+  },
+  "extensionDescription": {
+    "message": "地址栏里的 RSS/Atom 订阅按钮",
+    "description": "Description of the extension displayed in the add-ons manager."
+  },
+  "pageActionTooltip": {
+    "message": "订阅此页",
+    "description": "Tooltip displayed on moused hover over the page action. Should be the same as is Firefox https://transvision.mozfr.org/string/?entity=browser/chrome/browser/customizableui/customizableWidgets.properties:feed-button.tooltiptext2&repo=central"
+  },
+  "extensionNA": {
+    "message": "不可用",
+    "description": "Message to show when page is secure or there are no feeds"
+  },
+  "optionsPageTitle": {
+    "message": "Awesome RSS 选项",
+    "description": "Title for options / preferences page"
+  },
+  "themeLegend": {
+    "message": "主题选项",
+    "description": "Text for general theming section `<legend>`"
+  },
+  "title@selectIcon": {
+    "message": "选择图标",
+    "description": "Title attr for icon picked"
+  },
+  "option_lightIcon": {
+    "message": "浅色主题图标",
+    "description": "Text to display for light theme icon  `<option>`"
+  },
+  "option_darkIcon": {
+    "message": "深色主题图标",
+    "description": "Text to display for dark theme icon `<option>`"
+  },
+  "option_orangeIcon": {
+    "message": "橙色主题图标",
+    "description": "Text to display for orange theme icon `<option>`"
+  },
+  "option_greenIcon": {
+    "message": "绿色主题图标",
+    "description": "Text to display for green theme icon `<option>`"
+  },
+  "subscriptionLegend": {
+    "message": "订阅工具",
+    "description": "Text to display for browser action options legend"
+  },
+  "title@rssSubscribe": {
+    "message": "使用 RSS 订阅（默认）",
+    "description": "Title attribute input to select RSS as subscription option"
+  },
+  "title@feedlySubscribe": {
+    "message": "使用 Feedly 订阅",
+    "description": "Title attribute for input to select Feedly as subscription option"
+  },
+  "title@inoreaderSubscribe": {
+    "message": "使用 Inoreader 订阅",
+    "description": "Title attribute for input to select Inoreader as subscription option"
+  },
+  "popupOptionsLegend": {
+    "message": "弹窗选项",
+    "description": "Text for popup options section `<legend>`"
+  },
+  "title@openUsingLabel": {
+    "message": "打开订阅页面方式",
+    "description": "Title attribute for input to select how feeds are opened"
+  },
+  "option_feedOpenCurrentTab": {
+    "message": "当前标签页",
+    "description": "Text to display for current tab `<option>`"
+  },
+  "option_feedOpenNewTab": {
+    "message": "新标签页",
+    "description": "Text to display for new tab `<option>`"
+  },
+  "option_feedOpenAdjacentTab": {
+    "message": "相邻的标签页",
+    "description": "Text to display for new tab `<option>`"
+  },
+  "option_feedOpenNewWindow": {
+    "message": "新窗口",
+    "description": "Text to display for new window `<option>`"
+  },
+  "title@popupTemplateLabel": {
+    "message": "模板主题",
+    "description": "Text to display for popup template selection `<label>`"
+  },
+  "option_regularTemplate": {
+    "message": "常规（默认）",
+    "description": "Text to display for regular template `<option>`"
+  },
+  "option_boldTemplate": {
+    "message": "粗体",
+    "description": "Text to display for bold template `<option>`"
+  },
+  "option_italicTemplate": {
+    "message": "斜体",
+    "description": "Text to display for italic template `<option>`"
+  },
+  "option_underlineTemplate": {
+    "message": "下划线",
+    "description": "Text to display for underline template `<option>`"
+  },
+  "textOptionsLegend": {
+    "message": "文本选项",
+    "description": "Text for text options section `<legend>`"
+  },
+  "title@textColorLabel": {
+    "message": "选择文本颜色",
+    "description": "Text to display for color picker `<label>`"
+  },
+  "title@fontFamilyLabel": {
+    "message": "选择字体",
+    "description": "Text to display for font-family selection `<label>`"
+  },
+  "title@fontSizeLabel": {
+    "message": "选择文本大小",
+    "description": "Text to display for font-size selection `<label>`"
+  },
+  "title@marginLabel": {
+    "message": "外边距",
+    "description": "Text to display for margins `<label>`"
+  },
+  "title@paddingLabel": {
+    "message": "内边距",
+    "description": "Text to display for padding `<label>`"
+  },
+  "popupBackgroundLegend": {
+    "message": "弹窗背景",
+    "description": "Text to display for popup background section `<legend>`"
+  },
+  "title@popupBackgroundColorLabel": {
+    "message": "选择背景颜色",
+    "description": "Text to display for popup background-color `<label>`"
+  },
+  "title@popupBackgroundImageLabel": {
+    "message": "输入背景图片 URL",
+    "description": "Text to display for popup background-image `<label>`"
+  },
+  "placeholder@backgroundImageURL": {
+    "message": "https://example.com/image.jpg",
+    "description": "Placeholder text for background-image URL `<input>`"
+  },
+  "title@resetOptionsButton": {
+    "message": "重置所有选项",
+    "description": "Text to display for title on reset `<button>`"
+  }
+}

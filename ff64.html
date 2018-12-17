@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8" />
+		<script src="js/ff64.js" async=""></script>
+	</head>
+	<body>
+		<error-message></error-message>
+		<template id="error-message-template">
+			<p><slot name="error"></slot></p>
+			<p>You may still view the feed by clicking <slot name="feed"></slot></p>
+		</template>
+	</body>
+</html>

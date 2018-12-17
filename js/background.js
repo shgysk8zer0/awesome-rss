@@ -57,9 +57,16 @@ async function openFeed({feed, target = 'current', service = 'rss', index = unde
 		break;
 	default:
 		url = new URL(feed);
+		const popup = new URL('ff64.html', location.origin);
+		popup.searchParams.set('feed', url.href);
+		console.log(location);
+		browser.pageAction.setPopup({
+			popup: popup.href,
+			tabId: 1,
+		});
+		browser.tabs.create({url: popup.href});
+		return;
 	}
-
-	console.info(url);
 
 	switch (target) {
 	case 'window':

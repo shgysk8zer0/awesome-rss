@@ -60,6 +60,13 @@
 					</svg>
 					<span>TinyTinyRSS</span>
 				</label>
+				<input type="radio" name="service" id="subscribe-fresh-rss" value="freshRss" data-enables="freshRssUrl">
+				<label for="subscribe-fresh-rss" class="browser-style-label">
+					<svg class="icon" width="32" height="32">
+						<use xlink:href="icons.svg#fresh-rss" />
+					</svg>
+					<span>FreshRSS</span>
+				</label>
 				<br />
 				<label for="nextcloud-url" hidden="">
 					<svg class="icon" width="32">
@@ -73,6 +80,12 @@
 					</svg>
 				</label>
 				<input name="tinyTinyRssUrl" id="tiny-tiny-rss-url" type="url" placeholder="https://ttrss-server.com" disabled="" hidden="" />
+				<label for="fresh-rss-url" hidden="">
+					<svg class="icon" width="32">
+						<use xlink:href="icons.svg#link" />
+					</svg>
+				</label>
+				<input name="freshRssUrl" id="fresh-rss-url" type="url" placeholder="https://demo.freshrss.org" disabled="" hidden="" />
 			</fieldset>
 			<fieldset>
 				<legend data-locale-text="popupOptionsLegend">Popup Options</legend>

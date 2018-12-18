@@ -57,14 +57,9 @@ async function openFeed({feed, target = 'current', service = 'rss', index = unde
 		break;
 	default:
 		url = new URL(feed);
-		const popup = new URL('ff64.html', location.origin);
-		popup.searchParams.set('feed', url.href);
-		console.log(location);
-		browser.pageAction.setPopup({
-			popup: popup.href,
-			tabId: 1,
-		});
-		browser.tabs.create({url: popup.href});
+		const tab = new URL('ff64.html', location.origin);
+		tab.searchParams.set('feed', url.href);
+		browser.tabs.create({url: tab.href});
 		return;
 	}
 
@@ -277,7 +272,7 @@ async function updateHandler(update) {
 				nextcloudUrl: '',
 				tinyTinyRssUrl: '',
 			});
-		case '1.3.5':
+		case '1.3.6':
 			storage.set({freshRssUrl: ''});
 		}
 	}

@@ -2,13 +2,11 @@
 <html lang="en" dir="ltr">
 	<head>
 		<meta charset="utf-8" />
-		<script src="js/ff64.js" async=""></script>
+		<script type="module" src="js/ff64.js" async=""></script>
 	</head>
 	<body>
-		<error-message></error-message>
-		<template id="error-message-template">
-			<p><slot name="error"></slot></p>
-			<p>You may still view the feed by clicking <slot name="feed"></slot></p>
-		</template>
+		<p>As of Firefox 64, Mozilla has removed support for RSS &amp; Live Bookmarks.</p>
+
+		<p>If you have an application that can handle feeds, you may still open it <a is="feed-link">here</a>.</p>
 	</body>
 </html>

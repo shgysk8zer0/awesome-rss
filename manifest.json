@@ -14,7 +14,8 @@
   "default_locale": "en",
   "permissions": [
     "tabs",
-    "storage"
+    "storage",
+    "clipboardWrite"
   ],
   "page_action": {
     "default_icon": "icons/subscribe-64.svg",

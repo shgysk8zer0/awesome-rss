@@ -51,6 +51,10 @@
     "message": "Subscribe using RSS (default)",
     "description": "Title attribute input to select RSS as subscription option"
   },
+  "title@rssClipboardSubscribe": {
+    "message": "Copy to clipboard",
+    "description": "Title attribute input to select RSS clipboard as subscription option"
+  },
   "title@feedlySubscribe": {
     "message": "Subscribe using Feedly",
     "description": "Title attribute for input to select Feedly as subscription option"

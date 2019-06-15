@@ -77,6 +77,10 @@ async function openFeed(click) {
 			service: opts.service,
 		}
 	});
+	
+	if(opts.openFeed =='nothing') {
+		window.close();
+	}
 }
 
 if (['interactive', 'complete'].includes(document.readyState)) {

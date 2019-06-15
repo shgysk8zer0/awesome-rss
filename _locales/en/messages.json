@@ -87,6 +87,10 @@
     "message": "New window",
     "description": "Text to display for new window `<option>`"
   },
+  "option_feedOpenNothing": {
+    "message": "Nothing",
+    "description": "Text to display for nothing `<option>`"
+  },
   "title@popupTemplateLabel": {
     "message": "Template theme",
     "description": "Text to display for popup template selection `<label>`"

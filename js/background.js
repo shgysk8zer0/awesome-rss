@@ -45,6 +45,10 @@ async function openFeed({feed, target = 'current', service = 'rss', index = unde
 		url.searchParams.set('op', 'subscribe');
 		url.searchParams.set('feed_url', feed);
 		break;
+	case 'newsblur':
+		url = new URL('https://www.newsblur.com');
+		url.searchParams.set('url', feed);
+		break;
 	case 'nextcloud':
 		url = new URL('apps/news', opts.nextcloudUrl);
 		url.searchParams.set('subscribe_to', feed);

@@ -59,6 +59,10 @@
     "message": "Mit Inoreader abonnieren",
     "description": "Title attribute for input to select Inoreader as subscription option"
   },
+  "title@newsblurSubscribe": {
+    "message": "Mit Newsblur abonnieren",
+    "description": "Title attribute for input to select Newsblur as subscription option"
+  },
   "popupOptionsLegend": {
     "message": "Popup-Einstellungen",
     "description": "Text for popup options section `<legend>`"

@@ -77,6 +77,10 @@
     "message": "Nouvel onglet",
     "description": "Text to display for new tab `<option>`"
   },
+  "option_feedOpenAdjacentTab": {
+    "message": "Onglet adjacent",
+    "description": "Text to display for new tab `<option>`"
+  },
   "option_feedOpenNewWindow": {
     "message": "Nouvelle fenêtre",
     "description": "Text to display for new window `<option>`"

@@ -32,6 +32,13 @@
 					</svg>
 					<span>RSS</span>
 				</label>
+				<input type="radio" name="service" id="subscribe-rss-clipboard" value="rss-clipboard" />
+					<label for="subscribe-rss-clipboard" class="browser-style-label" title="Copy to clipboard" data-locale-title="rssClipboardSubscribe">
+					<svg class="icon" width="32" height="32">
+						<use xlink:href="icons.svg#rss" />
+					</svg>
+					<span>RSS-clipboard</span>
+				</label>
 				<input type="radio" name="service" value="feedly" id="subscribe-feedly" />
 				<label for="subscribe-feedly" class="browser-style-label" title="Subscribe using Feedly" data-locale-title="feedlySubscribe">
 					<svg class="icon" width="60" height="32">
@@ -99,6 +106,7 @@
 					<option value="next" data-locale-text="option_feedOpenAdjacentTab">Adjacent tab</option>
 					<option value="tab" data-locale-text="option_feedOpenNewTab">New tab</option>
 					<option value="window" data-locale-text="option_feedOpenNewWindow">New window</option>
+					<option value="nothing" data-locale-text="option_feedOpenNothing">Nothing</option>
 				</select>
 				<br />
 				<label for="template" class="browser-style-label" title="Template theme" data-locale-title="popupTemplateLabel">

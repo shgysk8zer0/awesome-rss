@@ -55,6 +55,10 @@ async function openFeed({feed, target = 'current', service = 'rss', index = unde
 		url.searchParams.set('a', 'add');
 		url.searchParams.set('url_rss', feed);
 		break;
+	case 'rss-clipboard':
+		target = 'nothing';
+		copyToClipboard(feed);
+		break;
 	default:
 		url = new URL(feed);
 	}
@@ -83,6 +87,9 @@ async function openFeed({feed, target = 'current', service = 'rss', index = unde
 		browser.tabs.update(null, {url: url.toString()});
 		break;
 
+	case 'nothing':
+		break;
+
 	default:
 		throw new Error(`Unsupported open feed method: ${target}`);
 	}
@@ -103,6 +110,10 @@ async function clickHandler(tab) {
 		/* eslint no-console: 0 */
 		console.error(err);
 	}
+}
+
+function copyToClipboard(newClip) {  
+	navigator.clipboard.writeText(newClip);
 }
 
 function removeHandler(tabId) {

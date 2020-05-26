@@ -1,6 +1,6 @@
 {
-  "name": "awesome-rss",
-  "version": "1.3.5",
+  "name": "awesome-rss-beta",
+  "version": "1.3.6",
   "description": "Puts an RSS/Atom subscribe button back in URL bar",
   "keywords": [
     "WebExtension",
@@ -19,11 +19,11 @@
       "url": "https://michal.stanke.cz/"
     }
   ],
-  "homepage": "https://addons.mozilla.org/en-US/firefox/addon/awesome-rss/",
+  "homepage": "https://addons.mozilla.org/en-US/firefox/addon/awesome-rss-beta/",
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/shgysk8zer0/awesome-rss"
+    "url": "https://github.com/park0/awesome-rss"
   },
   "bugs": {
     "url": "https://github.com/shgysk8zer0/awesome-rss/issues"

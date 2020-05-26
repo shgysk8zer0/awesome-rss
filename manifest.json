@@ -34,7 +34,6 @@
   }],
   "applications": {
     "gecko": {
-        "id": "",
         "strict_min_version": "52.0"
     }
   }

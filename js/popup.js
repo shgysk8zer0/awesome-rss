@@ -7,7 +7,7 @@ function $(query, base = document) {
 	return [...base.querySelectorAll(query)];
 }
 
-async function init() {
+async function render(links) {
 	const opts = await storage.get([
 		'template',
 		'color',
@@ -18,8 +18,6 @@ async function init() {
 		'bgColor',
 		'bgImage',
 	]);
-	const url = new URL(location.href);
-	const links = JSON.parse(url.searchParams.get('links'));
 	const container = document.getElementById('feeds-container');
 	const template = document.getElementById(opts.template || 'regular-template');
 	if (opts.hasOwnProperty('bgColor')) {
@@ -44,7 +42,8 @@ async function init() {
 		document.documentElement.style.setProperty('--feed-bg-image', `url(${opts.bgImage})`);
 	}
 
-	try {
+        try {
+                container.innerHTML = "";
 		links.forEach(link => {
 			let feed = template.content.cloneNode(true);
 			$('[href]', feed).forEach(node => {
@@ -79,8 +78,36 @@ async function openFeed(click) {
 	});
 }
 
-if (['interactive', 'complete'].includes(document.readyState)) {
-	init();
-} else {
-	document.addEventListener('DOMContentLoaded', init, {once: true});
+async function messageHandler(msg, sender) {
+	switch (msg.type) {
+	case 'feeds':
+	        render(msg.links);
+		break;
+
+	case 'openFeed':
+		if (msg.params.target === 'next') {
+			const tabs = await browser.tabs.query({active: true, currentWindow: true});
+			if (tabs.length === 1) {
+				const tab = tabs[0];
+				msg.params.index = tab.index + 1;
+			}
+		}
+		openFeed(msg.params);
+		break;
+
+	case 'resetOpts':
+		storage.set(defaultOpts);
+		break;
+	}
 }
+
+browser.runtime.onMessage.addListener(messageHandler);
+
+// TODO Learn JS conventions on indentation...
+browser.tabs.query({active: true, currentWindow: true}, tabs => {
+    browser.tabs.executeScript(tabs[0].id, {file: "/js/document.js"})
+	.then(() => {
+	    browser.tabs.sendMessage(tabs[0].id, {type: 'scan'})
+		.catch((e) => { console.log(e);});
+    }, e => { console.log(e); });
+});

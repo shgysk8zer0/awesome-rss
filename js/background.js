@@ -105,94 +105,8 @@ async function clickHandler(tab) {
 	}
 }
 
-function removeHandler(tabId) {
-	delete TABS[tabId];
-}
-
-async function updatePageAction(tab, links) {
-	if (links.length > 0) {
-		const opts = await storage.get('icon');
-		TABS[tab.id] = links.map(link => {
-			link.tabId = tab.id;
-			return link;
-		});
-
-		if (! ICONS.hasOwnProperty(opts.icon)) {
-			opts.icon = defaultOpts.icon;
-		}
-
-		browser.pageAction.setIcon({
-			tabId: tab.id,
-			path: ICONS[opts.icon]
-		});
-
-		browser.pageAction.setTitle({
-			tabId: tab.id,
-			title: browser.i18n.getMessage('pageActionTooltip'),
-		});
-
-		browser.pageAction.show(tab.id);
-	}
-
-	if (links.length === 1) {
-		browser.pageAction.onClicked.addListener(clickHandler);
-	} else if (links.length > 1) {
-		const url = new URL(browser.runtime.getURL('popup.html'));
-
-		url.searchParams.set('links', JSON.stringify(links));
-		browser.pageAction.setPopup({
-			tabId: tab.id,
-			popup: url.toString()
-		});
-	}
-}
-
-async function messageHandler(msg, sender) {
-	switch (msg.type) {
-	case 'feeds':
-		updatePageAction(sender.tab, msg.links);
-		break;
-
-	case 'openFeed':
-		if (msg.params.target === 'next') {
-			const tabs = await browser.tabs.query({active: true, currentWindow: true});
-			if (tabs.length === 1) {
-				const tab = tabs[0];
-				msg.params.index = tab.index + 1;
-			}
-		}
-		openFeed(msg.params);
-		break;
-
-	case 'resetOpts':
-		storage.set(defaultOpts);
-		break;
-	}
-}
-
-function scanPage(tab) {
-	const tabId = typeof(tab) === 'number' ? tab : tab.id || tab.tabId;
-	browser.pageAction.setIcon({
-		tabId: tabId,
-		path: ICONS.disabled,
-	});
-
-	browser.pageAction.setTitle({
-		tabId: tabId,
-		title: browser.i18n.getMessage('extensionNA'),
-	});
-
-	browser.tabs.sendMessage(tabId, {type: 'scan'}).catch(() => {});
-}
-
-async function refreshAllTabsPageAction() {
-	const tabs = await browser.tabs.query({});
-	tabs.forEach(scanPage);
-}
-
 async function optChange(opts) {
 	if (opts.hasOwnProperty('icon') && opts.icon.newValue !== opts.icon.oldValue) {
-		const tabs = await browser.tabs.query({status: 'complete'});
 		let icon = opts.icon.newValue;
 
 		if (! ICONS.hasOwnProperty(icon)) {
@@ -201,22 +115,9 @@ async function optChange(opts) {
 			icon = ICONS[icon];
 		}
 
-		tabs.forEach(async tab => {
-			/**
-			 * Since we do not want to rescan the page to know if there are feeds
-			 * and there is no `getIcon` method, check the title to know if we
-			 * can update the icon without implying that there is a feed to
-			 * subscribe to.
-			*/
-			const title = await browser.pageAction.getTitle({tabId: tab.id});
-
-			if (title !== browser.i18n.getMessage('extensionNA')) {
-				browser.pageAction.setIcon({
-					tabId: tab.id,
+	browser.pageAction.setIcon({
 					path: icon,
 				});
-			}
-		});
 	}
 }
 
@@ -276,9 +177,5 @@ async function updateHandler(update) {
 	}
 }
 
-browser.runtime.onMessage.addListener(messageHandler);
-browser.tabs.onRemoved.addListener(removeHandler);
-browser.tabs.onUpdated.addListener(scanPage);
 browser.storage.onChanged.addListener(optChange);
 browser.runtime.onInstalled.addListener(updateHandler);
-refreshAllTabsPageAction();

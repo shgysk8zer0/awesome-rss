@@ -13,11 +13,12 @@
   },
   "default_locale": "en",
   "permissions": [
-    "tabs",
+    "activeTab",
     "storage"
   ],
-  "page_action": {
+  "browser_action": {
     "default_icon": "icons/subscribe-64.svg",
+    "default_popup": "popup.html",
     "browser_style": true
   },
   "options_ui": {
@@ -27,10 +28,6 @@
   "background": {
     "scripts": ["js/background.js"]
   },
-  "content_scripts": [{
-    "matches": ["<all_urls>"],
-    "js": ["js/document.js"]
-  }],
   "applications": {
     "gecko": {
         "id": "{97d566da-42c5-4ef4-a03b-5a2e5f7cbcb2}",

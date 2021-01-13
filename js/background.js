@@ -12,6 +12,7 @@ const defaultOpts = {
 	bgColor:     '#ffffff',
 	nextcloudUrl: '',
 	tinyTinyRssUrl: '',
+	minifluxUrl: '',
 	freshRssUrl: '',
 };
 
@@ -27,7 +28,7 @@ const ICONS = {
 
 async function openFeed({feed, target = 'current', service = 'rss', index = undefined} = {}) {
 	let url = null;
-	const opts = await storage.get(['nextcloudUrl','tinyTinyRssUrl','freshRssUrl']);
+	const opts = await storage.get(['nextcloudUrl','tinyTinyRssUrl','freshRssUrl','minifluxUrl']);
 	console.info(opts);
 
 	switch (service) {
@@ -44,6 +45,10 @@ async function openFeed({feed, target = 'current', service = 'rss', index = unde
 		url = new URL('public.php', opts.tinyTinyRssUrl);
 		url.searchParams.set('op', 'subscribe');
 		url.searchParams.set('feed_url', feed);
+		break;
+	case 'miniflux':
+		url = new URL('bookmarklet', opts.minifluxUrl);
+		url.searchParams.set('uri', feed);
 		break;
 	case 'nextcloud':
 		url = new URL('apps/news', opts.nextcloudUrl);

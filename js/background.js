@@ -36,6 +36,10 @@ async function openFeed({feed, target = 'current', service = 'rss', index = unde
 		feedly.pathname += encodeURIComponent(feed);
 		url = feedly;
 		break;
+	case 'feedbin':
+		url = new URL('https://feedbin.com/');
+		url.searchParams.set('subscribe', feed);
+		break;
 	case 'inoreader':
 		url = new URL('https://www.inoreader.com');
 		url.searchParams.set('add_feed', feed);

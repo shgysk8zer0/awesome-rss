@@ -55,6 +55,10 @@
     "message": "Пописаться с помощью Feedly",
     "description": "Title attribute for input to select Feedly as subscription option"
   },
+  "title@feedbinSubscribe": {
+    "message": "Пописаться с помощью Feedbin",
+    "description": "Title attribute for input to select Feedbin as subscription option"
+  },
   "title@inoreaderSubscribe": {
     "message": "Пописаться с помощью Inoreader",
     "description": "Title attribute for input to select Inoreader as subscription option"

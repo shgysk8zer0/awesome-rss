@@ -55,6 +55,10 @@
     "message": "使用 Feedly 订阅",
     "description": "Title attribute for input to select Feedly as subscription option"
   },
+  "title@feedbinSubscribe": {
+    "message": "使用 Feedbin 订阅",
+    "description": "Title attribute for input to select Feedbin as subscription option"
+  },
   "title@inoreaderSubscribe": {
     "message": "使用 Inoreader 订阅",
     "description": "Title attribute for input to select Inoreader as subscription option"

@@ -42,7 +42,7 @@ async function openFeed({feed, target = 'current', service = 'rss', index = unde
 		break;
 	case 'tinyTinyRss':
 		url = new URL('public.php', opts.tinyTinyRssUrl);
-		url.searchParams.set('op', 'subscribe');
+		url.searchParams.set('op', 'bookmarklets--subscribe');
 		url.searchParams.set('feed_url', feed);
 		break;
 	case 'nextcloud':
